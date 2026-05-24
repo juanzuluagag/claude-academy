@@ -407,6 +407,194 @@ function AnimTokens() {
   )
 }
 
+function AnimExtendedThinking() {
+  const [mode, setMode] = useState('standard')
+  const [thinkStep, setThinkStep] = useState(-1)
+  const [done, setDone] = useState(false)
+  const timerRef = useRef(null)
+  const thinkSteps = [
+    'Analizando la complejidad del problema...',
+    'Considerando múltiples enfoques posibles...',
+    'Evaluando solución A vs solución B con criterios específicos...',
+    'Verificando consistencia interna del razonamiento...',
+    'Formulando respuesta final con mayor precisión...',
+  ]
+  const runThinking = () => {
+    clearInterval(timerRef.current)
+    setThinkStep(-1); setDone(false)
+    let i = 0
+    timerRef.current = setInterval(() => {
+      setThinkStep(i); i++
+      if (i >= thinkSteps.length) { clearInterval(timerRef.current); setTimeout(() => setDone(true), 600) }
+    }, 500)
+  }
+  useEffect(() => () => clearInterval(timerRef.current), [])
+
+  return (
+    <Anim color="#8B5CF6" title="Extended Thinking — Claude razona antes de responder">
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+        {[['standard', 'Modo estándar', '#6366F1'], ['extended', '⚡ Extended Thinking', '#8B5CF6']].map(([m, label, c]) => (
+          <div key={m} onClick={() => { setMode(m); if (m === 'extended') runThinking(); else { setThinkStep(-1); setDone(false) } }} style={{
+            flex: 1, padding: '8px 12px', borderRadius: 8, cursor: 'pointer', textAlign: 'center',
+            background: mode === m ? `${c}22` : 'rgba(255,255,255,0.04)',
+            border: `1px solid ${mode === m ? c : 'var(--border)'}`,
+            color: mode === m ? '#fff' : 'var(--text-muted)', fontSize: 13, fontWeight: 600, transition: 'all 0.2s',
+          }}>{label}</div>
+        ))}
+      </div>
+      <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#A5B4FC', marginBottom: 12 }}>
+        🧑 "¿Cuál es la mejor estrategia para escalar un negocio de fotografía en 12 meses?"
+      </div>
+      {mode === 'standard' ? (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ fontSize: 20, color: 'var(--text-muted)' }}>→</div>
+          <div style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#6EE7B7', flex: 1 }}>
+            🤖 "Para escalar tu negocio de fotografía considera estas 5 estrategias generales..."
+          </div>
+        </div>
+      ) : (
+        <>
+          <div style={{ background: 'rgba(139,92,246,0.07)', border: '1px dashed rgba(139,92,246,0.4)', borderRadius: 8, padding: 12, marginBottom: 10 }}>
+            <div style={{ fontSize: 10, color: '#C4B5FD', fontFamily: 'var(--font-mono)', marginBottom: 8, letterSpacing: 1 }}>🧠 PENSAMIENTO INTERNO (visible en Extended Thinking)</div>
+            {thinkSteps.map((s, i) => (
+              <div key={i} style={{
+                fontSize: 12, color: thinkStep >= i ? '#DDD6FE' : 'transparent',
+                marginBottom: 5, paddingLeft: 12, borderLeft: `2px solid ${thinkStep >= i ? '#8B5CF6' : 'transparent'}`,
+                transition: 'color 0.3s, border-color 0.3s',
+              }}>{i + 1}. {s}</div>
+            ))}
+          </div>
+          {done && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ fontSize: 20, color: '#8B5CF6' }}>→</div>
+              <div style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.5)', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#6EE7B7', flex: 1 }}>
+                🤖 Respuesta más precisa: considerando tu mercado específico, presupuesto inicial y los 3 canales con mayor ROI para fotografía de bodas en Medellín 2026...
+              </div>
+            </div>
+          )}
+          {!done && thinkStep >= 0 && (
+            <div style={{ fontSize: 12, color: 'var(--text-muted)', fontStyle: 'italic', textAlign: 'center', padding: '8px 0' }}>
+              Procesando... ({thinkStep + 1}/{thinkSteps.length})
+            </div>
+          )}
+        </>
+      )}
+    </Anim>
+  )
+}
+
+function AnimTokenOptimizer() {
+  const [mode, setMode] = useState('messy')
+  const scenarios = {
+    messy: {
+      chats: [{ label: 'Todo mezclado: fotos + precios + redes + contratos + edición + ...', pct: 96, color: '#EF4444' }],
+      verdict: '🔴 Límite alcanzado — Claude pierde el hilo del inicio, calidad degradada',
+      verdictColor: '#EF4444',
+    },
+    optimized: {
+      chats: [
+        { label: 'Chat 1: Estrategia de precios', pct: 28, color: '#10B981' },
+        { label: 'Chat 2: Propuesta de boda específica', pct: 35, color: '#10B981' },
+        { label: 'Chat 3: Calendario redes sociales', pct: 22, color: '#10B981' },
+      ],
+      verdict: '✅ Cada chat tiene contexto enfocado — Claude en su máximo rendimiento',
+      verdictColor: '#10B981',
+    },
+  }
+  const data = scenarios[mode]
+
+  return (
+    <Anim color="#6366F1" title="Tokens — Chat desordenado vs chats separados por tema">
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+        {[['messy', '❌ Un chat largo', '#EF4444'], ['optimized', '✅ Chats separados', '#10B981']].map(([m, label, c]) => (
+          <div key={m} onClick={() => setMode(m)} style={{
+            flex: 1, padding: '8px 12px', borderRadius: 8, cursor: 'pointer', textAlign: 'center',
+            background: mode === m ? `${c}22` : 'rgba(255,255,255,0.04)',
+            border: `1px solid ${mode === m ? c : 'var(--border)'}`,
+            color: mode === m ? '#fff' : 'var(--text-muted)', fontSize: 12, fontWeight: 600, transition: 'all 0.2s',
+          }}>{label}</div>
+        ))}
+      </div>
+      <div style={{ marginBottom: 14 }}>
+        {data.chats.map((c, i) => (
+          <div key={i} style={{ marginBottom: 10 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
+              <span style={{ fontSize: 12, color: 'var(--text-sub)' }}>{c.label}</span>
+              <span style={{ fontSize: 12, fontFamily: 'var(--font-mono)', color: c.color, fontWeight: 700 }}>{c.pct}%</span>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 99, height: 10 }}>
+              <div style={{ width: `${c.pct}%`, height: '100%', background: c.color, borderRadius: 99, transition: 'width 0.6s ease' }} />
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style={{ background: mode === 'messy' ? 'rgba(239,68,68,0.1)' : 'rgba(16,185,129,0.1)', border: `1px solid ${data.verdictColor}44`, borderRadius: 8, padding: '10px 14px', fontSize: 13, color: data.verdictColor, transition: 'all 0.3s' }}>
+        {data.verdict}
+      </div>
+    </Anim>
+  )
+}
+
+function AnimContextEngineering() {
+  const [mode, setMode] = useState('without')
+  const scenarios = {
+    without: {
+      blocks: [
+        { label: 'System prompt', pct: 5, color: '#6366F1' },
+        { label: 'Historial irrelevante', pct: 72, color: '#EF4444' },
+        { label: 'Docs repetidos', pct: 18, color: '#F97316' },
+        { label: 'Tu pregunta', pct: 5, color: '#10B981' },
+      ],
+      verdict: '⚠️ Ventana casi llena — Claude olvida el inicio, calidad degradada',
+      verdictColor: '#EF4444',
+    },
+    with: {
+      blocks: [
+        { label: 'System prompt preciso (15%)', pct: 15, color: '#6366F1' },
+        { label: 'Docs relevantes (30%)', pct: 30, color: '#10B981' },
+        { label: 'Historial filtrado (20%)', pct: 20, color: '#F59E0B' },
+        { label: 'Tu pregunta (10%)', pct: 10, color: '#8B5CF6' },
+        { label: 'Libre para razonar (25%)', pct: 25, color: 'rgba(255,255,255,0.06)', labelColor: 'var(--text-muted)' },
+      ],
+      verdict: '✅ Ventana equilibrada — Claude tiene todo lo necesario y espacio para razonar',
+      verdictColor: '#10B981',
+    },
+  }
+  const data = scenarios[mode]
+
+  return (
+    <Anim color="#10B981" title="Context Engineering — cómo llenar la ventana de contexto">
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+        {[['without', '❌ Sin CE', '#EF4444'], ['with', '✅ Con CE', '#10B981']].map(([m, label, c]) => (
+          <div key={m} onClick={() => setMode(m)} style={{
+            flex: 1, padding: '8px 12px', borderRadius: 8, cursor: 'pointer', textAlign: 'center',
+            background: mode === m ? `${c}22` : 'rgba(255,255,255,0.04)',
+            border: `1px solid ${mode === m ? c : 'var(--border)'}`,
+            color: mode === m ? '#fff' : 'var(--text-muted)', fontSize: 13, fontWeight: 600, transition: 'all 0.2s',
+          }}>{label}</div>
+        ))}
+      </div>
+      <div style={{ fontSize: 11, color: 'var(--text-muted)', marginBottom: 6, fontFamily: 'var(--font-mono)' }}>VENTANA DE CONTEXTO</div>
+      <div style={{ display: 'flex', height: 36, borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border)', marginBottom: 10 }}>
+        {data.blocks.map((b, i) => (
+          <div key={i} title={b.label} style={{ width: `${b.pct}%`, background: b.color, transition: 'width 0.6s ease' }} />
+        ))}
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 12 }}>
+        {data.blocks.map((b, i) => (
+          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            <div style={{ width: 10, height: 10, borderRadius: 2, background: b.color, border: '1px solid rgba(255,255,255,0.1)', flexShrink: 0 }} />
+            <span style={{ fontSize: 11, color: b.labelColor || 'var(--text-sub)' }}>{b.label}</span>
+          </div>
+        ))}
+      </div>
+      <div style={{ background: mode === 'without' ? 'rgba(239,68,68,0.1)' : 'rgba(16,185,129,0.1)', border: `1px solid ${data.verdictColor}44`, borderRadius: 8, padding: '10px 14px', fontSize: 13, color: data.verdictColor, transition: 'all 0.3s' }}>
+        {data.verdict}
+      </div>
+    </Anim>
+  )
+}
+
 // Wrapper genérico para animaciones
 function Anim({ color, title, children }) {
   return (
@@ -424,8 +612,9 @@ const ANIM_MAP = {
   mod1_l1: ['claude_intro', 'context_window', 'tokens'],
   mod1_l2: ['prompt_builder'],
   mod1_l3: ['prompt_builder'],
-  mod1_l6: [],
-  mod1_l7: ['tokens', 'prompt_builder'],
+  mod1_l6: ['extended_thinking'],
+  mod1_l7: ['token_optimizer'],
+  mod1_l8: ['context_engineering'],
   mskills_l1: ['skill_loader'],
   mskills_l3: ['skill_loader'],
   mod4_l5: ['agent_cycle'],
@@ -439,6 +628,9 @@ const ANIM_COMPONENTS = {
   skill_loader: AnimSkillLoader,
   agent_cycle: AnimAgentCycle,
   mcp: AnimMCP,
+  extended_thinking: AnimExtendedThinking,
+  token_optimizer: AnimTokenOptimizer,
+  context_engineering: AnimContextEngineering,
 }
 
 // ─── VIDEO ────────────────────────────────────────────────────────────────────

@@ -4,49 +4,52 @@
 
 export const VIDEOS = {
 
-  // MÓDULO 1 — Claude Chat
-  mod1_l1: {
+  // MÓDULO 0 — Setup & Identidad
+  mod0_l1: {
     id: 'eNcWAoj_sRI',
-    title: 'Como usar Claude Anthropic — Tutorial Español 2026',
+    title: 'Como usar Claude Anthropic — Tutorial completo en español 2026',
     lang: 'ES',
     duration: '~10 min',
     note: 'Tutorial oficial en español, interfaz actualizada 2026',
   },
-  mod1_l2: {
-    id: 'tdjMFxaZo-E',
-    title: 'Claude de 0 a Experto — Guía Completa 2026',
+
+  // MÓDULO 1 — Claude Chat
+  mod1_l1: {
+    id: 'IpVTEyH8LmU',
+    title: 'Tutorial de Claude AI: La guía DEFINITIVA 2026',
     lang: 'ES',
-    duration: '~40 min',
+    duration: '~30 min',
+    note: 'Qué es Claude, cómo funciona, comparativa con otros modelos',
+  },
+  mod1_l2: {
+    id: 'imAjmQy8p8c',
+    title: 'Cómo Utilizar Claude Para Principiantes — Tutorial 2026',
+    lang: 'ES',
+    duration: '~30 min',
     note: 'Incluye sección completa de prompts efectivos',
   },
   mod1_l3: {
-    id: '91Pk0dbfHIw',
-    title: 'Curso básico para crear Prompts — ChatGPT, Gemini, Claude',
+    id: 'tdjMFxaZo-E',
+    title: 'Claude de 0 a Experto: La Guía Completa 2026',
     lang: 'ES',
-    duration: '~25 min',
+    duration: '~40 min',
     note: 'Técnicas avanzadas de prompting en español',
   },
   mod1_l4: {
-    id: 'imAjmQy8p8c',
-    title: 'Cómo Utilizar Claude Para Principiantes — Tutorial 2026',
+    id: 'QrIIC12b7R8',
+    title: 'Cómo Utilizar Claude Para Principiantes — Curso 2026',
     lang: 'ES',
     duration: '~30 min',
     note: 'Cubre Projects, Artifacts y funciones avanzadas',
   },
   mod1_l5: {
-    id: 'Y3MK6OpKDqE',
-    title: 'Domina CLAUDE 2026 en 27 Minutos — Guía Completa en Español',
+    id: 'G7iPM9oWhZE',
+    title: 'Claude AI Tutorial Completo En Español 2025',
     lang: 'ES',
-    duration: '27 min',
+    duration: '~25 min',
     note: 'Casos de uso prácticos y flujos de trabajo reales',
   },
-  mod1_l6: {
-    id: 'ssHbtzGIfXk',
-    title: 'Curso de CLAUDE IA desde CERO y GRATIS en 2026',
-    lang: 'ES',
-    duration: '~45 min',
-    note: 'Incluye sección de Extended Thinking y razonamiento',
-  },
+  // mod1_l6, mod1_l7, mod1_l8 — animaciones interactivas, sin video
 
   // MÓDULO SKILLS
   mskills_l1: {

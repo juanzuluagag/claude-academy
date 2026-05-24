@@ -8,8 +8,8 @@ export const THINKING_LESSON = {
   title: 'Extended Thinking: Claude razona en voz alta',
   duration: '25 min',
   xpReward: 65,
-  videoId: 'dOxUroR57xs',
-  videoCaption: 'Extended Thinking en Claude — razonamiento profundo explicado',
+  videoId: 'NO_VIDEO',
+  videoCaption: 'Animación interactiva incluida en esta lección',
   content: [
     {
       type: 'intro',
@@ -714,8 +714,8 @@ export const TOKEN_SAVING_LESSON = {
   title: 'Domina el uso de tokens: guía completa de optimización',
   duration: '35 min',
   xpReward: 85,
-  videoId: 'ssHbtzGIfXk',
-  videoCaption: 'Optimización de tokens con Claude — guía práctica completa 2026',
+  videoId: 'NO_VIDEO',
+  videoCaption: 'Animación interactiva incluida en esta lección',
   content: [
     {
       type: 'intro',

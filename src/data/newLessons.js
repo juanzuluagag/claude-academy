@@ -9,8 +9,8 @@ export const IDENTITY_SETUP_LESSON = {
   title: 'Configura Claude para que te conozca desde el día uno',
   duration: '35 min',
   xpReward: 80,
-  videoId: 'ssHbtzGIfXk',
-  videoCaption: 'Setup completo de Claude: identidad, voz y contexto persistente 2026',
+  videoId: 'eNcWAoj_sRI',
+  videoCaption: 'Como usar Claude Anthropic — Tutorial completo en español 2026',
   content: [
     {
       type: 'intro',
@@ -128,8 +128,8 @@ export const CONTEXT_ENGINEERING_LESSON = {
   title: 'Context Engineering: la habilidad más importante de 2026',
   duration: '30 min',
   xpReward: 75,
-  videoId: 'Y3MK6OpKDqE',
-  videoCaption: 'Context Engineering vs Prompt Engineering — guía completa 2026',
+  videoId: 'NO_VIDEO',
+  videoCaption: 'Animación interactiva incluida en esta lección',
   content: [
     {
       type: 'intro',

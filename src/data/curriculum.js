@@ -150,8 +150,8 @@ export const LESSONS = {
       title: '¿Qué es Claude y cómo funciona?',
       duration: '25 min',
       xpReward: 50,
-      videoId: 'AIrG-pB15ME',
-      videoCaption: 'Introducción a Claude — Canal oficial de Anthropic',
+      videoId: 'IpVTEyH8LmU',
+      videoCaption: 'Tutorial de Claude AI: La guía DEFINITIVA 2026',
       content: [
         {
           type: 'intro',
@@ -225,8 +225,8 @@ export const LESSONS = {
       title: 'Tu primera conversación efectiva',
       duration: '20 min',
       xpReward: 50,
-      videoId: 'T9aRN5JkmL8',
-      videoCaption: 'Prompt Engineering para principiantes — guía práctica',
+      videoId: 'imAjmQy8p8c',
+      videoCaption: 'Cómo Utilizar Claude Para Principiantes — Tutorial 2026',
       content: [
         {
           type: 'intro',
@@ -296,8 +296,8 @@ export const LESSONS = {
       title: 'Técnicas avanzadas de prompting',
       duration: '30 min',
       xpReward: 60,
-      videoId: 'dOxUroR57xs',
-      videoCaption: 'Técnicas avanzadas de Prompt Engineering',
+      videoId: 'tdjMFxaZo-E',
+      videoCaption: 'Claude de 0 a Experto: La Guía Completa 2026',
       content: [
         {
           type: 'intro',
@@ -373,8 +373,8 @@ export const LESSONS = {
       title: 'Funciones especiales de Claude.ai',
       duration: '25 min',
       xpReward: 55,
-      videoId: 'FMBiVlEMvQE',
-      videoCaption: 'Funciones avanzadas de Claude.ai — Projects y Artifacts',
+      videoId: 'QrIIC12b7R8',
+      videoCaption: 'Cómo Utilizar Claude Para Principiantes — Curso 2026',
       content: [
         {
           type: 'intro',
@@ -472,8 +472,8 @@ export const LESSONS = {
       title: 'Casos de uso prácticos del Chat',
       duration: '20 min',
       xpReward: 60,
-      videoId: 'qnD-bRGHsRU',
-      videoCaption: 'Claude para el trabajo real — casos de uso cotidianos',
+      videoId: 'G7iPM9oWhZE',
+      videoCaption: 'Claude AI Tutorial Completo En Español 2025',
       content: [
         {
           type: 'intro',
