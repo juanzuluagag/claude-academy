@@ -66,6 +66,12 @@ export const CLAUDE_CODE_SETUP = {
     },
     {
       type: 'concept',
+      title: 'Cursor Rules vs CLAUDE.md: ¿cuál usar y cuándo?',
+      body: 'Si ya usas Cursor, conoces los .cursorrules — un archivo de instrucciones que Cursor lee al inicio de cada sesión. CLAUDE.md y .cursorrules son conceptualmente iguales: ambos son instrucciones persistentes para el agente. La diferencia clave está en el alcance y la portabilidad. .cursorrules solo funciona en Cursor. CLAUDE.md funciona en Claude Code, y también es leído por Cursor si tienes la extensión Claude Code instalada. Si trabajas con ambas herramientas, CLAUDE.md es el estándar que funciona en los dos entornos sin duplicar instrucciones.',
+      highlight: 'Ventajas de CLAUDE.md sobre .cursorrules: (1) Portabilidad — funciona en Claude Code y en Cursor con extensión Claude. (2) Jerarquía — puedes tener un CLAUDE.md global en ~/.claude/ y uno específico por proyecto; las instrucciones se combinan. (3) Soporte de @filename — puedes referenciar otros archivos de documentación. Desventaja: .cursorrules tiene integración más profunda con el autocompletado de Cursor en algunos flujos. Si solo usas Cursor, .cursorrules también funciona bien.',
+    },
+    {
+      type: 'concept',
       title: 'Los comandos esenciales para empezar',
       body: '/clear — borra el contexto, empieza desde cero. /compact — comprime el historial preservando el hilo. /context — muestra qué está consumiendo contexto. /model — cambia el modelo para la sesión. /cost — ver cuánto has gastado en esta sesión. /hooks — gestionar automatizaciones. /skills — ver las Skills instaladas. Shift+Tab — alterna entre modo auto (Claude decide permisos) y modo manual (apruebas cada acción). Ctrl+C — interrumpe una operación en curso. Ctrl+L — limpia la pantalla sin perder el contexto.',
       highlight: null,
@@ -438,6 +444,12 @@ export const WORKTREES_LESSON = {
       title: 'Cuándo usar worktrees vs Agent Teams',
       body: 'Worktrees (manual): cuando tienes múltiples tareas independientes y quieres supervisar cada agente tú mismo desde terminales separadas. Ideal para 2-4 features en paralelo donde quieres control total. Agent Teams (orquestado): cuando tienes una tarea grande que naturalmente se divide en subtareas independientes y quieres que el agente líder coordine todo automáticamente. Ideal para "construye este feature completo" donde hay frontend, backend, tests y documentación que pueden ir en paralelo. La nota de Anthropic: "multi-agent no tiene sentido para el 95% de tareas de desarrollo ad-hoc". Úsalos para backlogs groomed con cards independientes, no para preguntas conversacionales.',
       highlight: null,
+    },
+    {
+      type: 'concept',
+      title: 'Worktrees de Claude Code vs Cursor 3 Agents Window: diferencias clave',
+      body: 'Cursor lanzó "3 Agents Window" (también llamado Cursor Background Agents) — múltiples instancias de agente visibles en una ventana dividida. Superficialmente similar a los worktrees. La diferencia técnica importante: los worktrees de Claude Code son branches de Git reales. Cada agente trabaja en un espacio de código aislado a nivel de filesystem. En Cursor 3 Agents Window, los agentes comparten el mismo árbol de trabajo — hay mayor riesgo de conflictos si dos agentes editan el mismo archivo. La ventaja de Cursor: interfaz visual integrada que muestra los 3 agentes simultáneamente sin cambiar de terminal. La ventaja de Claude Code worktrees: aislamiento Git real + puedes tener más de 3 agentes (límite documentado: 4-8) + cada agente tiene 200K de contexto propio sin compartir con los otros. Para flujos donde el aislamiento es crítico (migraciones, refactors grandes), worktrees son más seguros. Para iteraciones rápidas con contexto compartido, Cursor Agents Window puede ser más cómodo.',
+      highlight: 'Si usas Cursor + Claude Code al mismo tiempo: usa Cursor Agents Window para tareas rápidas en el mismo contexto, usa worktrees de Claude Code cuando necesitas aislamiento de branch real o más de 3 agentes paralelos.',
     },
     {
       type: 'concept',

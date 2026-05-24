@@ -6,7 +6,7 @@ import { CLAUDE_DESIGN_LESSONS } from './claudeDesignLessons.js'
 import { ADVISOR_STRATEGY_LESSON, CCA_LESSON } from './updateLessons.js'
 import { THINKING_LESSON, COMPUTER_USE_LESSON, MANAGED_AGENTS_LESSON, PROMPT_CACHING_LESSON, CONNECTORS_LESSON, ENTERPRISE_LESSON, TOKEN_SAVING_LESSON, WHATSAPP_AGENT_LESSON, TECH_STACK_LESSON, MCP_BUILD_LESSON, MCP_ECOSYSTEM_LESSON, AI_SAFETY_ADVANCED, AI_SAFETY_EVALS } from './gapLessons.js'
 import { CLAUDE_CODE_LESSONS, DREAMING_LESSON } from './claudeCodeLessons.js'
-import { IDENTITY_SETUP_LESSON, CONTEXT_ENGINEERING_LESSON, SCHEDULED_TASKS_LESSON, CLAUDE_DESIGN_LESSON, AI_SAFETY_LESSON, EVALS_LESSON } from './newLessons.js'
+import { IDENTITY_SETUP_LESSON, CONTEXT_ENGINEERING_LESSON, SCHEDULED_TASKS_LESSON, AI_SAFETY_LESSON, EVALS_LESSON } from './newLessons.js'
 
 export const MODULES = [
   {
@@ -40,7 +40,7 @@ export const MODULES = [
     color: '#EC4899',
     weeks: 'Semana 4',
     available: true,
-    description: 'El producto de Anthropic que hizo caer las acciones de Figma un 7% en su día de lanzamiento. 4 lecciones para dominar el prototipado conversacional con design systems reales, el flujo Design→Code→Producción, y su integración directa con el Proyecto 6.3.',
+    description: 'El producto de Anthropic que hizo caer las acciones de Figma un 7% en su día de lanzamiento. 4 lecciones para dominar el prototipado conversacional con design systems reales, el flujo Design→Code→Producción, y su integración directa con el Proyecto 9.3.',
   },
   {
     id: 'mod2',

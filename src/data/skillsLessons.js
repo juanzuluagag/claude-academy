@@ -197,11 +197,17 @@ export const SKILLS_LESSONS = [
         highlight: 'Esto significa que puedes tener cientos de Skills instaladas sin que afecten la velocidad o el costo de las conversaciones donde no se usan.',
       },
       {
+        type: 'concept',
+        title: 'SKILL.md es portable: funciona en Claude Code, Cursor y más',
+        body: 'Una de las ventajas más subestimadas de las Skills: el archivo SKILL.md no está atado a Claude Code. La misma Skill que usas en Claude Code funciona en Cursor con la extensión de Claude instalada, y en cualquier herramienta que adopte el estándar de Skills de Anthropic. Esto significa que la inversión en escribir una buena Skill de "correos-empresa" o "fotografia-retrato" vale para todos tus entornos de trabajo, no solo para uno. Guarda tus Skills personalizadas en ~/.claude/skills/ — esa carpeta se aplica globalmente en cualquier proyecto que abras con Claude Code.',
+        highlight: 'Consejo práctico: si cambias de Claude Code a Cursor o viceversa, tus Skills siguen funcionando. Si colaboras con un equipo, puedes versionar las Skills del proyecto en una carpeta .claude/skills/ en el repositorio compartido — todos en el equipo las heredan automáticamente.',
+      },
+      {
         type: 'cards',
         title: 'Skills vs Prompts vs MCP — las diferencias clave',
         items: [
           { name: 'Prompt', tag: 'Un solo uso', color: '#64748B', desc: 'Instrucción para una conversación específica. Muere al cerrar el chat. Debes repetirlo cada vez.' },
-          { name: 'Skill', tag: 'Reutilizable', color: '#F97316', desc: 'Conocimiento especializado persistente. Se activa automáticamente cuando es relevante. Se escribe una vez, funciona siempre.' },
+          { name: 'Skill', tag: 'Reutilizable', color: '#F97316', desc: 'Conocimiento especializado persistente. Se activa automáticamente cuando es relevante. Se escribe una vez, funciona siempre. Y es portable: el mismo SKILL.md funciona en Claude Code, Cursor con extensión Claude, y cualquier herramienta que respete el estándar.' },
           { name: 'MCP', tag: 'Conexión', color: '#EC4899', desc: 'Conecta Claude con herramientas externas (GitHub, Slack, Drive). Se complementa con Skills: MCP da el acceso, la Skill da el cómo usarlo correctamente.' },
         ],
       },
@@ -282,7 +288,7 @@ export const SKILLS_LESSONS = [
         items: [
           { name: 'find-skills — Vercel', tag: '418K installs', color: '#10B981', desc: 'La meta-skill: descubre e instala otras Skills desde dentro de Claude Code. Punto de partida recomendado para cualquier nuevo usuario de Skills. Instalar primero.' },
           { name: 'frontend-design — Anthropic', tag: '124K installs', color: '#6366F1', desc: 'Elimina el "AI slop" en diseño. Produce UIs memorables con tipografía y layouts creativos en lugar de genérico azul-sobre-blanco. Para React, HTML y artefactos.' },
-          { name: 'nutlope/hallmark', tag: '🆕 Mayo 2026', color: '#EC4899', desc: 'La Skill de diseño más importante lanzada en 2026. 22 temas y 65 gates anti-"AI slop" que Claude verifica antes de entregar cualquier UI: tipografía, color, layout, motion y microinteracciones. Instala: npx skills add nutlope/hallmark. Esencial para el Proyecto 6.3.' },
+          { name: 'nutlope/hallmark', tag: '🆕 Mayo 2026', color: '#EC4899', desc: 'La Skill de diseño más importante lanzada en 2026. 22 temas y 65 gates anti-"AI slop" que Claude verifica antes de entregar cualquier UI: tipografía, color, layout, motion y microinteracciones. Instala: npx skills add nutlope/hallmark. Esencial para el Proyecto 9.3.' },
           { name: 'obra/superpowers', tag: '40.9K ⭐ GitHub', color: '#8B5CF6', desc: 'El framework de desarrollo más completo. 7 fases: Brainstorm → Spec → Plan → TDD → Subagentes → Review → Finalize. Literalmente elimina código sin tests.' },
           { name: 'alirezarezvani/claude-skills', tag: '5.2K ⭐ GitHub', color: '#F97316', desc: '245+ Skills: ingeniería, marketing, producto, C-level. 359 scripts Python stdlib-only. Compatible con Claude Code, Cursor, Codex y Gemini CLI.' },
           { name: 'NeoLabHQ/code-review', tag: 'Multi-agente', color: '#0EA5E9', desc: 'Code review con 6 agentes especializados paralelos: bug-hunter, security-auditor, quality-reviewer, contracts-reviewer, historical-context, test-coverage.' },

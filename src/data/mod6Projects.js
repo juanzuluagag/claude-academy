@@ -5,7 +5,7 @@
 
 // ─── PROYECTO 1: Personal AI Operating System (Cyril Method) ─────────────────
 export const PROJECT_AIOS = {
-  id: 'mod6_p1',
+  id: 'mod9_l1',
   num: '9.1',
   title: 'Tu Personal AI OS con Obsidian + Claude',
   duration: '3-4 horas (proyecto de fin de semana)',
@@ -117,7 +117,7 @@ export const PROJECT_AIOS = {
 
 // ─── PROYECTO 2: NotebookLM + Claude — Research Stack Definitivo ──────────────
 export const PROJECT_RESEARCH_STACK = {
-  id: 'mod6_p2',
+  id: 'mod9_l2',
   num: '9.2',
   title: 'Research Stack Definitivo: NotebookLM + Claude',
   duration: '2-3 horas (setup) + uso diario',
@@ -230,7 +230,7 @@ export const PROJECT_RESEARCH_STACK = {
 
 // ─── PROYECTO 3: Sitio Web de Fotografía con Portal de Clientes ───────────────
 export const PROJECT_PHOTOGRAPHY_WEB = {
-  id: 'mod6_p3',
+  id: 'mod9_l3',
   num: '9.3',
   title: 'Sitio Web de Fotografía + Portal de Clientes con Claude Code',
   duration: '1-2 semanas (proyecto completo)',
@@ -355,7 +355,7 @@ export const PROJECT_PHOTOGRAPHY_WEB = {
 
 // ─── PROYECTO 4: QA Automation Agent con Claude Code + Playwright ─────────────
 export const PROJECT_QA_AGENT = {
-  id: 'mod6_p4',
+  id: 'mod9_l4',
   num: '9.4',
   title: 'QA Agent Autónomo: Claude Code + Playwright para tu Sitio',
   duration: '1 semana',
@@ -365,7 +365,7 @@ export const PROJECT_QA_AGENT = {
   content: [
     {
       type: 'intro',
-      text: 'Construiste el sitio web de fotografía en el Proyecto 6.3. Ahora necesitas garantizar que funciona correctamente después de cada cambio. Hacerlo manualmente — abrir el sitio, hacer clic en todo, probar el login, verificar que las galerías privadas no son accesibles sin auth — toma 30 minutos por deploy. Un QA Agent con Claude Code y Playwright lo hace en 3 minutos, en cada Pull Request, automáticamente. Para siempre.',
+      text: '⚠️ Prerequisito: este proyecto depende de haber completado el Proyecto 9.3 (Sitio Web de Fotografía + Portal de Clientes). El QA Agent testea ese sistema — sin él no hay nada que probar.\n\nConstruiste el sitio web de fotografía en el Proyecto 9.3. Ahora necesitas garantizar que funciona correctamente después de cada cambio. Hacerlo manualmente — abrir el sitio, hacer clic en todo, probar el login, verificar que las galerías privadas no son accesibles sin auth — toma 30 minutos por deploy. Un QA Agent con Claude Code y Playwright lo hace en 3 minutos, en cada Pull Request, automáticamente. Para siempre.',
     },
     {
       type: 'concept',
@@ -406,7 +406,7 @@ export const PROJECT_QA_AGENT = {
     {
       type: 'concept',
       title: 'Los tests críticos para tu sitio de fotografía',
-      body: 'Para el portal de fotografía del Proyecto 6.3, estos son los tests de mayor prioridad: (1) Auth flow: registro → aprobación → login → acceso al portal. (2) Privacy guard: usuario A no puede ver proyectos de usuario B. (3) Upload flow: subir fotos a un proyecto y verificar que aparecen en la galería. (4) Comment system: crear, ver y responder comentarios en fotos. (5) Admin flow: aprobar un usuario, crear un proyecto, asignar a un cliente. Estos 5 flujos cubren el 90% de los paths críticos.',
+      body: 'Para el portal de fotografía del Proyecto 9.3, estos son los tests de mayor prioridad: (1) Auth flow: registro → aprobación → login → acceso al portal. (2) Privacy guard: usuario A no puede ver proyectos de usuario B. (3) Upload flow: subir fotos a un proyecto y verificar que aparecen en la galería. (4) Comment system: crear, ver y responder comentarios en fotos. (5) Admin flow: aprobar un usuario, crear un proyecto, asignar a un cliente. Estos 5 flujos cubren el 90% de los paths críticos.',
       highlight: null,
     },
     {
@@ -459,7 +459,7 @@ export const PROJECT_QA_AGENT = {
   ],
   challenge: {
     title: 'Proyecto 9.4 — QA Agent para tu sitio de fotografía',
-    desc: 'Construye el pipeline completo de QA automatizada sobre el sitio del Proyecto 6.3.',
+    desc: 'Construye el pipeline completo de QA automatizada sobre el sitio del Proyecto 9.3.',
     steps: [
       'Configura el Playwright MCP Server: sigue las instrucciones de microsoft/playwright-mcp en GitHub. Verifica que Claude Code puede controlar el navegador.',
       'Instala la Playwright Skill: npx skills add testdino-hq/playwright-skill/core. Verifica que Claude Code la reconoce con /skills.',
@@ -476,7 +476,7 @@ export const PROJECT_QA_AGENT = {
 
 // ─── PROYECTO 5: Claude como Asistente de Investigación Fotográfica ───────────
 export const PROJECT_PHOTOGRAPHY_AI = {
-  id: 'mod6_p5',
+  id: 'mod9_l5',
   num: '9.5',
   title: 'Claude como Asistente Creativo de Fotografía',
   duration: '3-5 horas de setup + uso continuo',
@@ -539,7 +539,7 @@ export const PROJECT_PHOTOGRAPHY_AI = {
     {
       type: 'concept',
       title: 'El sistema de Knowledge fotográfico en Obsidian',
-      body: 'Dentro de tu vault del Proyecto 6.1, crea una sección específica: 02-RESOURCES/photography/ con subcarpetas: referentes/ (notas sobre fotógrafos que estudias), técnicas/ (apuntes sobre luz, composición, post-proceso), clientes/ (un archivo por tipo de cliente: bodas, retratos, corporativo), y tendencias/ (investigación de mercado de NotebookLM). Claude Code puede leer todo esto para dar recomendaciones contextualizadas a tu trabajo específico.',
+      body: 'Dentro de tu vault del Proyecto 9.1, crea una sección específica: 02-RESOURCES/photography/ con subcarpetas: referentes/ (notas sobre fotógrafos que estudias), técnicas/ (apuntes sobre luz, composición, post-proceso), clientes/ (un archivo por tipo de cliente: bodas, retratos, corporativo), y tendencias/ (investigación de mercado de NotebookLM). Claude Code puede leer todo esto para dar recomendaciones contextualizadas a tu trabajo específico.',
       highlight: 'El sistema de knowledge fotográfico se hace más valioso con el tiempo. Cada sesión que haces, cada fotógrafo que estudias, cada precio que negocias — todo queda en el vault. En 6 meses, Claude tiene el contexto de 50 sesiones y puede hacer recomendaciones mucho más precisas que al inicio.',
     },
     {
@@ -605,7 +605,7 @@ export { PROJECT_AIOS as PROJECT_KNOWLEDGE_OS }
 
 // TECH_STACK_LESSON moved to this file from gapLessons
 export const TECH_STACK_LESSON = {
-  id: 'mod6_p0',
+  id: 'mod9_l0',
   num: '9.0',
   title: 'Stack técnico, Skills y deploy: todo lo que necesitas antes de construir',
   duration: '40 min',

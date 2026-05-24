@@ -377,10 +377,11 @@ export const SCHEDULED_TASKS_LESSON = {
   },
 }
 
-// ─── LECCIÓN: Claude Design → nuevo módulo o dentro de CoWork ─────────────────
-export const CLAUDE_DESIGN_LESSON = {
-  id: 'mod3_l3_design',
-  num: '5.3',
+// ─── LECCIÓN: Claude Design → módulo propio (mod7). Esta lección fue reubicada. ──
+// Ver claudeDesignLessons.js para el contenido completo.
+const CLAUDE_DESIGN_LESSON = {
+  id: 'mod7_design_legacy',
+  num: '2.x',
   title: 'Claude Design: prototipos y diseño visual con IA',
   duration: '20 min',
   xpReward: 60,

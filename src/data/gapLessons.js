@@ -807,7 +807,7 @@ export const TOKEN_SAVING_LESSON = {
           name: 'Karpathy raw/wiki pattern',
           tag: '95% de ahorro documentado',
           color: '#10B981',
-          desc: 'En lugar de darle a Claude archivos crudos, primero destílalos en un wiki compacto. Un usuario convirtió 383 archivos y 100+ transcripciones en un wiki compacto y redujo su consumo de tokens un 95%. Ideal para el Personal AI OS del Proyecto 6.1.',
+          desc: 'En lugar de darle a Claude archivos crudos, primero destílalos en un wiki compacto. Un usuario convirtió 383 archivos y 100+ transcripciones en un wiki compacto y redujo su consumo de tokens un 95%. Ideal para el Personal AI OS del Proyecto 9.1.',
         },
         {
           name: 'Compact proactivo por checkpoints',
@@ -951,7 +951,7 @@ export const WHATSAPP_AGENT_LESSON = {
     },
     {
       type: 'concept',
-      title: 'Integración con el portal de clientes (Proyecto 6.3)',
+      title: 'Integración con el portal de clientes (Proyecto 9.3)',
       body: 'El agente y el portal son complementarios, no sustitutos. Flujo integrado: (1) Nuevo cliente escribe por WhatsApp → agente responde, captura su teléfono. (2) Tú creas el proyecto en el portal y asignas al cliente. (3) Sistema envía WhatsApp automático: "Hola [nombre], tu portal está listo. Entra aquí [link] — usa tu teléfono para hacer login con el código que te llegará." (4) Para dudas rápidas durante el proyecto: WhatsApp. Para revisar fotos, dar feedback, aprobar entrega: portal. (5) Al completar el proyecto: WhatsApp de cierre con link a dejar reseña.',
       highlight: null,
     },
@@ -980,7 +980,7 @@ export const WHATSAPP_AGENT_LESSON = {
       exp: 'Whapi.cloud elimina toda la fricción de inicio: no requiere cuenta de Meta Business verificada, no necesita configuración de webhooks manual, el token se copia directamente al proyecto. Meta y Twilio son mejores para producción a escala, pero tienen días o semanas de proceso de aprobación. Whapi.cloud para lanzar hoy, migrar a Meta cuando estés listo.',
     },
     {
-      q: '¿Cómo se diferencia la función del agente de WhatsApp vs el portal de clientes del Proyecto 6.3?',
+      q: '¿Cómo se diferencia la función del agente de WhatsApp vs el portal de clientes del Proyecto 9.3?',
       opts: [
         'Son la misma funcionalidad en canales distintos — puedes elegir uno u otro',
         'WhatsApp maneja comunicación rápida e informal en el canal donde ya está el cliente; el portal maneja la experiencia estructurada de revisar fotos, dar feedback y aprobar entregas',
@@ -1010,7 +1010,7 @@ export const WHATSAPP_AGENT_LESSON = {
 
 // ─── LECCIÓN: Stack Técnico + Skills para Producción → Módulo 6 ──────────────
 export const TECH_STACK_LESSON = {
-  id: 'mod6_p0',
+  id: 'mod9_l0',
   num: '9.0',
   title: 'Stack técnico, Skills y deploy: todo lo que necesitas antes de construir',
   duration: '40 min',
@@ -1020,7 +1020,7 @@ export const TECH_STACK_LESSON = {
   content: [
     {
       type: 'intro',
-      text: 'Antes de escribir una línea de código con Claude Code, necesitas dos cosas: entender qué hace cada herramienta de tu stack (para poder describírsela a Claude con precisión) y tener instaladas las Skills correctas (para que Claude genere código de nivel producción desde el primer commit). Esta lección cubre ambas. Al terminarla, llegas al Proyecto 6.3 con el contexto técnico y las herramientas listas.',
+      text: 'Antes de escribir una línea de código con Claude Code, necesitas dos cosas: entender qué hace cada herramienta de tu stack (para poder describírsela a Claude con precisión) y tener instaladas las Skills correctas (para que Claude genere código de nivel producción desde el primer commit). Esta lección cubre ambas. Al terminarla, llegas al Proyecto 9.3 con el contexto técnico y las herramientas listas.',
     },
     {
       type: 'cards',
@@ -1062,13 +1062,19 @@ export const TECH_STACK_LESSON = {
           color: '#000000',
           desc: 'Plataforma donde vive tu sitio en internet. Cada vez que haces un commit en GitHub, Vercel construye y despliega el sitio automáticamente. CDN global significa que tus fotos cargan rápido desde cualquier país.',
         },
+        {
+          name: 'Cursor',
+          tag: 'El IDE (opcional)',
+          color: '#000000',
+          desc: 'Editor de código con IA integrada. Complementa a Claude Code: mientras Claude Code trabaja desde la terminal con acceso completo al filesystem, Cursor te da autocompletado IA en línea y vista de diff visual en tiempo real. Muchos developers usan los dos juntos — Claude Code para tareas agénticas largas, Cursor para ediciones rápidas con el editor visible. Instala la extensión Claude Code dentro de Cursor para que compartan el mismo CLAUDE.md y las mismas Skills.',
+        },
       ],
     },
     {
       type: 'concept',
       title: 'Skills obligatorias — instalar antes de empezar',
       body: 'El ecosistema de Skills (skills.sh, lanzado por Vercel en enero 2026) tiene paquetes oficiales de Vercel, Supabase, Stripe, Cloudflare y más. Son instrucciones de mejores prácticas que Claude Code lee automáticamente cuando son relevantes. Sin ellas, Claude Code puede generar código que funciona pero no sigue los patrones de producción.',
-      highlight: 'Secuencia de instalación antes de iniciar el Proyecto 6.3:\n1. /plugin install modern-web-guidance@googlechrome (animaciones y CSS moderno)\n2. npx skills add vercel-labs/next-best-practices (Next.js patrones)\n3. npx skills add vercel-labs/react-best-practices (React patrones)\n4. npx skills add supabase/postgres-best-practices (base de datos segura)\n5. npx skills add sergiodxa/web-security-skill (OWASP para Next.js/Supabase)\n6. npx skills add nutlope/hallmark (anti-AI-slop: diseño que no parece IA)\n7. npx skills add vercel-labs/deploy-to-vercel (deploy automatizado)',
+      highlight: 'Secuencia de instalación antes de iniciar el Proyecto 9.3:\n1. /plugin install modern-web-guidance@googlechrome (animaciones y CSS moderno)\n2. npx skills add vercel-labs/next-best-practices (Next.js patrones)\n3. npx skills add vercel-labs/react-best-practices (React patrones)\n4. npx skills add supabase/postgres-best-practices (base de datos segura)\n5. npx skills add sergiodxa/web-security-skill (OWASP para Next.js/Supabase)\n6. npx skills add nutlope/hallmark (anti-AI-slop: diseño que no parece IA)\n7. npx skills add vercel-labs/deploy-to-vercel (deploy automatizado)',
     },
     {
       type: 'cards',
@@ -1103,19 +1109,19 @@ export const TECH_STACK_LESSON = {
     {
       type: 'concept',
       title: 'Agentes y MCPs que potencian el proyecto',
-      body: 'Además de Skills, estos MCPs hacen a Claude Code más poderoso durante el desarrollo: Supabase MCP (official): Claude puede ejecutar queries SQL, gestionar migraciones, configurar RLS y revisar el schema directamente desde la conversación. Playwright MCP (Microsoft): para los tests del Proyecto 6.4, Claude controla el navegador directamente. Vercel MCP: Claude puede ver los logs de producción, ver el estado de los deploys y hacer rollbacks si algo sale mal. GitHub MCP: Claude puede crear branches, abrir PRs y revisar el diff antes de hacer merge.',
+      body: 'Además de Skills, estos MCPs hacen a Claude Code más poderoso durante el desarrollo: Supabase MCP (official): Claude puede ejecutar queries SQL, gestionar migraciones, configurar RLS y revisar el schema directamente desde la conversación. Playwright MCP (Microsoft): para los tests del Proyecto 9.4, Claude controla el navegador directamente. Vercel MCP: Claude puede ver los logs de producción, ver el estado de los deploys y hacer rollbacks si algo sale mal. GitHub MCP: Claude puede crear branches, abrir PRs y revisar el diff antes de hacer merge.',
       highlight: 'Instalar los MCPs: en Claude Desktop → Settings → MCP Servers. El Supabase MCP es especialmente importante — permite a Claude revisar tu schema real y generar código que coincide exactamente con tu base de datos, eliminando la causa #1 de bugs en proyectos con IA.',
     },
     {
       type: 'concept',
       title: '3 MCPs adicionales críticos que la mayoría omite',
       body: 'Context7 MCP (github.com/upstash/context7): inyecta la documentación oficial y actualizada de Next.js 15, Supabase, Clerk y Tailwind directamente en el contexto de Claude antes de generar código. Sin él, Claude puede usar APIs deprecadas de versiones anteriores — su training data tiene corte y las librerías cambian. Con Context7, Claude consulta los docs reales antes de escribir cada integración. Browser Tools MCP (github.com/AgentDeskAI/browser-tools-mcp): permite a Claude abrir el navegador, buscar documentación viva, inspeccionar APIs y leer artículos técnicos mientras trabaja. Diferente de Playwright (para tests): Browser Tools es para investigación activa durante el desarrollo. Sequential Thinking MCP (github.com/modelcontextprotocol/servers): fuerza a Claude a desglosar problemas complejos en pasos antes de responder. Elimina las "respuestas de adivino" en decisiones de arquitectura.',
-      highlight: 'Secuencia COMPLETA de instalación antes de empezar el Proyecto 6.3:\n① /plugin install modern-web-guidance@googlechrome\n② npx skills add vercel-labs/next-best-practices\n③ npx skills add supabase/postgres-best-practices\n④ npx skills add sergiodxa/web-security-skill\n⑤ npx skills add nutlope/hallmark — diseño anti-AI-slop (lanzada 19 mayo 2026)\n⑥ MCP: Context7 — documentación actualizada de tus librerías\n⑦ MCP: Browser Tools — investigación activa durante desarrollo\n⑧ MCP: Sequential Thinking — razonamiento estructurado\n⑨ MCP: Supabase oficial — schema real en contexto\n⑩ MCP: GitHub — gestión de repo y PRs\n⑪ MCP: Playwright — tests automáticos (Lección 6.4)',
+      highlight: 'Secuencia COMPLETA de instalación antes de empezar el Proyecto 9.3:\n① /plugin install modern-web-guidance@googlechrome\n② npx skills add vercel-labs/next-best-practices\n③ npx skills add supabase/postgres-best-practices\n④ npx skills add sergiodxa/web-security-skill\n⑤ npx skills add nutlope/hallmark — diseño anti-AI-slop (lanzada 19 mayo 2026)\n⑥ MCP: Context7 — documentación actualizada de tus librerías\n⑦ MCP: Browser Tools — investigación activa durante desarrollo\n⑧ MCP: Sequential Thinking — razonamiento estructurado\n⑨ MCP: Supabase oficial — schema real en contexto\n⑩ MCP: GitHub — gestión de repo y PRs\n⑪ MCP: Playwright — tests automáticos (Lección 9.4)',
     },
     {
       type: 'concept',
       title: 'El flujo de deploy a producción',
-      body: 'Paso 1: Desarrollo local en tu Mac con npm run dev. Paso 2: Cada cambio va a una branch de GitHub — nunca directo a main. Paso 3: Vercel crea automáticamente una URL de preview por cada branch — puedes probar antes de publicar. Paso 4: Los tests de Playwright (Proyecto 6.4) corren automáticamente en GitHub Actions al abrir un Pull Request. Paso 5: Si todos los tests pasan y tú apruebas, el merge va a main y Vercel despliega en producción automáticamente. Paso 6: Monitorizas en Vercel Analytics que todo funcione.',
+      body: 'Paso 1: Desarrollo local en tu Mac con npm run dev. Paso 2: Cada cambio va a una branch de GitHub — nunca directo a main. Paso 3: Vercel crea automáticamente una URL de preview por cada branch — puedes probar antes de publicar. Paso 4: Los tests de Playwright (Proyecto 9.4) corren automáticamente en GitHub Actions al abrir un Pull Request. Paso 5: Si todos los tests pasan y tú apruebas, el merge va a main y Vercel despliega en producción automáticamente. Paso 6: Monitorizas en Vercel Analytics que todo funcione.',
       highlight: 'Prompt para iniciar el proyecto correctamente: "Antes de escribir código, configura el proyecto con: (1) Repositorio en GitHub, (2) Proyecto en Vercel conectado al repo, (3) Proyecto en Supabase con las tablas base, (4) Variables de entorno configuradas en Vercel. Usa alinaqi/claude-bootstrap como base. Cuando el setup esté completo, muéstrame la URL de preview."',
     },
     {
@@ -1162,7 +1168,7 @@ export const TECH_STACK_LESSON = {
   ],
   challenge: {
     title: 'Reto 6.0 — Setup completo antes de construir',
-    desc: 'Configura todo el entorno del proyecto antes de escribir la primera línea de código del Proyecto 6.3.',
+    desc: 'Configura todo el entorno del proyecto antes de escribir la primera línea de código del Proyecto 9.3.',
     steps: [
       'Crea las cuentas que necesitarás: GitHub (gratis), Vercel (gratis), Supabase (gratis), Clerk (gratis hasta 50K MAU). Guarda los emails y contraseñas en tu gestor de contraseñas.',
       'Instala las herramientas CLI en tu Mac: npm install -g vercel, npm install -g supabase, npm install -g @anthropic-ai/claude-code. Verifica con: vercel --version, supabase --version, claude --version.',
@@ -1171,7 +1177,7 @@ export const TECH_STACK_LESSON = {
       'Verifica que todo funciona: abre Claude Code en una carpeta vacía y escribe "/skills" — deberías ver todas las Skills instaladas. Escribe "/plugins" — deberías ver Modern Web Guidance.',
       'Crea un repositorio en GitHub llamado "photography-portal". Conéctalo a Vercel. Crea un proyecto en Supabase. Guarda las URLs y keys en un archivo .env.local (que está en .gitignore).',
     ],
-    checkpoint: 'El setup está completo cuando: (1) Tienes todas las cuentas creadas y verificadas. (2) /skills en Claude Code muestra las 5 Skills instaladas. (3) Vercel está conectado a tu repositorio de GitHub y muestra el proyecto en el dashboard. (4) Supabase muestra tu proyecto con el schema vacío listo para empezar. Ese es el punto de partida del Proyecto 6.3.',
+    checkpoint: 'El setup está completo cuando: (1) Tienes todas las cuentas creadas y verificadas. (2) /skills en Claude Code muestra las 5 Skills instaladas. (3) Vercel está conectado a tu repositorio de GitHub y muestra el proyecto en el dashboard. (4) Supabase muestra tu proyecto con el schema vacío listo para empezar. Ese es el punto de partida del Proyecto 9.3.',
   },
 }
 
