@@ -4,7 +4,7 @@
 // Fuentes verificadas: mayo 2026
 
 // ─── PROYECTO 1: Knowledge OS — sistema de aprendizaje permanente (agnóstico al dominio) ──
-export const PROJECT_AIOS = {
+export const PROJECT_KNOWLEDGE_OS = {
   id: 'mod9_l1',
   num: '9.1',
   title: 'Knowledge OS: tu sistema de aprendizaje permanente con Obsidian + Claude',
@@ -523,9 +523,6 @@ export const PROJECT_QA_AGENT = {
   },
 }
 
-// ─── ALIASES ─────────────────────────────────────────────────────────────────
-// PROJECT_KNOWLEDGE_OS = alias de PROJECT_AIOS (9.1)
-export { PROJECT_AIOS as PROJECT_KNOWLEDGE_OS }
 
 // TECH_STACK_LESSON moved to this file from gapLessons
 export const TECH_STACK_LESSON = {
