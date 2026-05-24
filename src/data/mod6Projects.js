@@ -3,19 +3,25 @@
 // 5 proyectos reales basados en tus intereses específicos
 // Fuentes verificadas: mayo 2026
 
-// ─── PROYECTO 1: Personal AI Operating System (Cyril Method) ─────────────────
+// ─── PROYECTO 1: Knowledge OS — sistema de aprendizaje permanente (agnóstico al dominio) ──
 export const PROJECT_AIOS = {
   id: 'mod9_l1',
   num: '9.1',
-  title: 'Tu Personal AI OS con Obsidian + Claude',
+  title: 'Knowledge OS: tu sistema de aprendizaje permanente con Obsidian + Claude',
   duration: '3-4 horas (proyecto de fin de semana)',
   xpReward: 150,
   videoId: 'roPfcQHdUtY',
-  videoCaption: 'Obsidian + Claude Code como sistema operativo personal — guía completa 2026',
+  videoCaption: 'Knowledge OS con Obsidian + Claude Code — sistema de aprendizaje para cualquier dominio 2026',
   content: [
     {
       type: 'intro',
-      text: 'Un tool requiere que tú lo uses. Un operating system simplemente corre. Este proyecto transforma Obsidian de una app de notas en un sistema que genera tu briefing de la mañana, procesa todo lo que capturas, revisa tus proyectos cada semana, y trabaja mientras tú duermes. Basado en la arquitectura de CyrilXBT, verificada y adaptada a mayo 2026.',
+      text: 'Un tool requiere que tú lo uses. Un operating system simplemente corre. Knowledge OS transforma Obsidian de una app de notas en un sistema autónomo que genera tu briefing diario, procesa todo lo que capturas, revisa tus proyectos semanalmente, y trabaja mientras duermes — sin importar el dominio. Hoy lo vas a instanciar para fotografía. Mañana lo puedes instanciar para Claude IA (eso es el Proyecto 9.2), para fútbol, para literatura, para QA testing. La infraestructura es siempre la misma: Obsidian + Claude + GitHub. Solo cambia el contenido que alimentas. Basado en la arquitectura de CyrilXBT, verificada y adaptada a mayo 2026.',
+    },
+    {
+      type: 'concept',
+      title: 'Knowledge OS es agnóstico al dominio — eso es lo que lo hace poderoso',
+      body: 'La mayoría de sistemas de gestión de conocimiento te atan a un tema o flujo específico. Knowledge OS no. Su arquitectura separa la infraestructura (cómo se almacena, procesa y automatiza) del contenido (qué se almacena). Esa separación es intencional: una vez que lo tienes funcionando para fotografía, agregar un dominio nuevo es tan simple como crear una carpeta nueva en RESOURCES/ y definir nuevas fuentes para los workflows. El proyecto 9.2 (Living Academy) es exactamente ese principio aplicado: es Knowledge OS corriendo para el dominio "ecosistema Claude IA", con fuentes automáticas en lugar de manuales.',
+      highlight: 'Señal de que lo entendiste: cuando alguien te pregunta "¿para qué sirve?" y puedes responder con ejemplos de 3 dominios distintos sin cambiar la arquitectura. El sistema es el mismo; el conocimiento es diferente.',
     },
     {
       type: 'concept',
@@ -101,7 +107,7 @@ export const PROJECT_AIOS = {
     },
   ],
   challenge: {
-    title: 'Proyecto 9.1 — Construye tu Personal AI OS este fin de semana',
+    title: 'Proyecto 9.1 — Construye tu Knowledge OS este fin de semana',
     desc: 'El sistema completo en 2 días. Build order exacto para que funcione sin errores.',
     steps: [
       'SÁBADO MAÑANA (2h) — Storage Layer: Instala Obsidian si no lo tienes. Crea la estructura de 8 carpetas exactamente como se describe. Crea tu CLAUDE.md con información real: tus proyectos activos, tus áreas de vida, tus 3 prioridades de esta semana.',
@@ -115,132 +121,118 @@ export const PROJECT_AIOS = {
   },
 }
 
-// ─── PROYECTO 2: NotebookLM + Claude — Research Stack Definitivo ──────────────
-export const PROJECT_RESEARCH_STACK = {
+// ─── PROYECTO 2: Living Academy — primera instancia de Knowledge OS ──────────
+export const PROJECT_LIVING_ACADEMY = {
   id: 'mod9_l2',
   num: '9.2',
-  title: 'Research Stack Definitivo: NotebookLM + Claude',
-  duration: '2-3 horas (setup) + uso diario',
+  title: 'Living Academy: Knowledge OS aplicado al ecosistema Claude IA',
+  duration: '2-3 horas (setup) + automatización permanente',
   xpReward: 120,
   videoId: 'ssHbtzGIfXk',
-  videoCaption: 'NotebookLM + Claude Code: el research stack que nadie usa pero debería — 2026',
+  videoCaption: 'Living Academy: cómo este curso se actualiza solo con GitHub Actions y Claude — 2026',
   content: [
     {
       type: 'intro',
-      text: 'NotebookLM puede procesar 300 fuentes simultáneamente con citaciones verificadas. Claude puede razonar, sintetizar y generar entregables de cualquier tipo. El problema: la mayoría los usa por separado. Cuando los conectas vía MCP, obtienes algo diferente: NotebookLM hace la investigación, Claude escribe el contenido — sin copiar y pegar, sin cambiar de pestaña, sin perder citaciones.',
+      text: 'El Proyecto 9.1 te enseñó la infraestructura de Knowledge OS: Obsidian + Claude + GitHub + automatización. Este proyecto es esa infraestructura corriendo en producción, aplicada a un dominio específico: el ecosistema Claude IA. Living Academy monitorea semanalmente las fuentes oficiales de Anthropic — blog, GitHub releases, documentación, canales de YouTube, comunidades — y genera Pull Requests automáticas con actualizaciones de contenido. No es un curso que se actualiza cuando alguien lo recuerda. Es un sistema que se actualiza porque tiene un cron job. Ese es el principio del Proyecto 9.1 llevado a producción real.',
     },
     {
       type: 'concept',
-      title: '¿Qué es NotebookLM y por qué es el mejor compañero de Claude?',
-      body: 'NotebookLM es la herramienta de investigación de Google, powered por Gemini 2.5. Su superpoder: procesa hasta 300 fuentes (PDFs, URLs, YouTube, Google Docs, audio) y responde preguntas con citaciones exactas apuntando a qué fuente dijo qué. Su limitación: las respuestas quedan en el navegador. No genera código, no crea archivos, no automatiza. Ahí entra Claude. NotebookLM + Claude = investigación verificada + ejecución autónoma.',
-      highlight: 'Regla de uso: un notebook por tema, no uno gigante con todo. NotebookLM te da 100 notebooks gratis. Úsalos: "Competidores Q2 2026", "Arquitectura de sistemas 2026", "Fotografía de bodas — tendencias". Notebooks específicos producen respuestas más precisas.',
+      title: 'La diferencia entre un curso estático y un Living Course',
+      body: 'Un curso estático es una fotografía del conocimiento en el momento en que alguien lo escribió. Envejece. Un Living Course es un sistema que mantiene sincronización permanente con su dominio de conocimiento. Cuando Anthropic lanza Claude 4 Opus, cuando sale una nueva versión de Claude Code, cuando aparece un MCP server que cambia cómo se trabaja — Living Academy lo detecta, genera un draft de actualización, y abre un PR para revisión humana. El profesor no tiene que estar pendiente: el sistema lo está.',
+      highlight: 'Precisión importante: Living Academy no publica automáticamente. Genera drafts y abre Pull Requests. Siempre hay una revisión humana antes de que el cambio llegue al curso. La autonomía está en detectar y proponer, no en publicar.',
+    },
+    {
+      type: 'concept',
+      title: 'La arquitectura de monitoring semanal',
+      body: 'GitHub Actions corre un cron job cada lunes a las 6AM UTC. El workflow hace 4 cosas en secuencia: (1) Source monitoring: verifica cada fuente configurada buscando contenido nuevo desde el lunes anterior. (2) Relevance filtering: Claude determina si el contenido nuevo es relevante para el curso (no todo lo que publica Anthropic merece una lección). (3) Draft generation: para contenido relevante, Claude genera el draft de actualización siguiendo los estándares del curso. (4) PR creation: abre un Pull Request con el draft, el contexto de por qué es relevante, y las instrucciones de revisión. El PR llega a tu inbox de GitHub.',
+      highlight: 'Por qué lunes: el equipo de Anthropic típicamente anuncia cosas a finales de semana. El monitoring el lunes a las 6AM captura los anuncios del fin de semana y permite revisión durante el día de trabajo.',
     },
     {
       type: 'cards',
-      title: '3 formas de conectar NotebookLM con Claude (de más simple a más potente)',
+      title: 'Las fuentes que Living Academy monitorea',
       items: [
-        {
-          name: 'Nivel 1: Copy-paste manual',
-          tag: 'Sin setup',
-          color: '#10B981',
-          desc: 'Haces una pregunta en NotebookLM, copias la respuesta con citaciones, la pegas en Claude con instrucciones de qué hacer con ella. Lento pero funciona hoy mismo sin configurar nada.',
-        },
-        {
-          name: 'Nivel 2: Plugin de Claude Code',
-          tag: 'Recomendado',
-          color: '#6366F1',
-          desc: 'Instala el plugin notebooklm de Claude Code. Comandos: /nlm list (ver tus notebooks), /nlm ask "pregunta" (respuesta con citaciones directo en la terminal). Claude usa la respuesta para generar entregables automáticamente.',
-        },
-        {
-          name: 'Nivel 3: MCP + automatización completa',
-          tag: 'Avanzado',
-          color: '#F97316',
-          desc: 'Configura el MCP server de NotebookLM. Claude puede crear notebooks, agregar fuentes, hacer preguntas y usar las respuestas en workflows automáticos — todo sin que intervengas.',
-        },
+        { name: 'Blog de Anthropic', tag: 'Oficial', color: '#6366F1', desc: 'anthropic.com/news — lanzamientos de modelos, actualizaciones de política, research papers públicos. Fuente primaria para cambios de Claude.' },
+        { name: 'GitHub Releases', tag: 'Técnico', color: '#10B981', desc: 'Repos: anthropics/anthropic-sdk-python, anthropics/anthropic-sdk-typescript, anthropics/claude-code. Nuevas versiones con changelogs detallados.' },
+        { name: 'Documentación oficial', tag: 'Referencia', color: '#F97316', desc: 'docs.anthropic.com — cambios en API, nuevas guías, modelos deprecados, pricing actualizado. Claude diff-ea versión a versión.' },
+        { name: 'YouTube y comunidad', tag: 'Ecosistema', color: '#8B5CF6', desc: 'Canal oficial de Anthropic, canales verificados de la comunidad Claude. Tutoriales nuevos, casos de uso documentados, actualizaciones de herramientas.' },
       ],
     },
     {
       type: 'concept',
-      title: 'El workflow de 15 minutos que reemplaza medio día de investigación',
-      body: 'Flujo documentado y verificado: (1) Crea un notebook en NotebookLM sobre tu tema. Agrega 10-20 fuentes relevantes (PDFs, URLs, YouTube). (2) En Claude Code, usa /nlm ask para hacer 3-5 preguntas clave al notebook. (3) Claude recibe las respuestas con citaciones. (4) Claude genera el entregable final: reporte, newsletter, brief de estrategia, post de blog, deck de presentación. (5) Todo el output queda en tu vault de Obsidian. Sin copiar, sin pegar, sin perder el hilo.',
-      highlight: 'Caso real documentado: un developer construyó un dashboard completo de Next.js en un día usando NotebookLM para investigar la arquitectura y Claude Code para construirla. Prompts de máximo 2 oraciones. "NotebookLM hizo el pensar, Claude Code hizo el construir."',
+      title: 'El patrón es replicable: Living Photography, Living Football, Living Finance',
+      body: 'Knowledge OS es la infraestructura. Living Academy es la primera instancia de ese patrón aplicado a un dominio. Pero el patrón no es exclusivo de Claude IA. Living Photography monitorea publicaciones de Magnum Photos, lanzamientos de Lightroom, entrevistas con fotógrafos de referencia — y actualiza automáticamente tu sistema de conocimiento fotográfico en Obsidian. Living Football monitorea transfers, estadísticas de temporada, análisis tácticos. Living Finance monitorea earnings calls, cambios regulatorios, papers económicos. La infraestructura es idéntica. Solo cambia la configuración de fuentes y los criterios de relevancia.',
+      highlight: 'Este es el momento donde el Proyecto 9.1 y el 9.2 se conectan. Knowledge OS te da la arquitectura. Living Academy te da el primer caso real de cómo funciona en producción. Tu siguiente paso natural es: ¿para qué dominio importante para ti lo instanciarías?',
     },
     {
       type: 'concept',
-      title: 'Knowledge Distillation: convertir investigación en Skills permanentes',
-      body: 'La técnica más avanzada: usar NotebookLM + Claude para crear un SKILL.md permanente a partir de un corpus de investigación. Proceso: (1) Creas un notebook con las mejores fuentes sobre un tema (Playwright testing, fotografía de retrato, arquitectura de sistemas). (2) Claude hace una batería de preguntas estructuradas al notebook. (3) Las respuestas se sintetizan en un SKILL.md que Claude puede usar en cualquier proyecto futuro. Entrenas una vez, reutilizas para siempre.',
-      highlight: null,
-    },
-    {
-      type: 'concept',
-      title: 'Aplicación práctica: Research Stack para fotografía',
-      body: 'Flujo específico para tu caso: (1) Notebook "Tendencias fotografía de bodas 2026" — agrega 20 artículos, PDFs de revistas, videos de YouTube de fotógrafos referentes. (2) Notebook "Precios y paquetes — competencia" — agrega sitios web de fotógrafos en tu ciudad. (3) Claude consulta ambos notebooks y genera: análisis de mercado, propuesta de precios, guía de estilo para tu portafolio. (4) Todo se archiva en tu vault de Obsidian bajo RESOURCES/photography/.',
+      title: 'Cómo construir tu propio Living [Dominio]',
+      body: 'Requisito: tener el Knowledge OS del Proyecto 9.1 funcionando. Proceso: (1) Define el dominio y las 4-6 fuentes primarias que lo cubren. (2) En tu vault de Obsidian, crea 02-RESOURCES/[dominio]/sources.md con las URLs y criterios de relevancia. (3) En GitHub Actions, crea el workflow de monitoring: cron lunes 6AM, script que lee sources.md, llama a Claude API con las fuentes nuevas, evalúa relevancia, genera draft si corresponde. (4) Configura las GitHub Actions secrets: ANTHROPIC_API_KEY, GITHUB_TOKEN. (5) El primer lunes después del setup, el workflow corre y ves si detecta algo relevante.',
       highlight: null,
     },
   ],
   quiz: [
     {
-      q: '¿Cuál es la ventaja crítica de NotebookLM sobre simplemente darle URLs a Claude para que las lea?',
+      q: '¿Cuál es la relación entre Knowledge OS (9.1) y Living Academy (9.2)?',
       opts: [
-        'NotebookLM es más rápido que Claude para leer páginas web',
-        'NotebookLM procesa hasta 300 fuentes con citaciones exactas — cada respuesta indica qué fuente específica dijo qué, eliminando alucinaciones en los datos de investigación',
-        'NotebookLM es gratis mientras que usar la API de Claude tiene costo',
-        'NotebookLM puede procesar archivos de audio y video que Claude no puede',
+        'Son proyectos independientes con infraestructuras distintas — Living Academy es más avanzado',
+        'Living Academy es la primera instancia de Knowledge OS aplicada a un dominio específico — la infraestructura es la misma, solo cambian las fuentes y los criterios de relevancia',
+        'Knowledge OS es la versión personal de Living Academy para uso individual',
+        'Living Academy reemplaza a Knowledge OS cuando el estudiante avanza lo suficiente',
       ],
       correct: 1,
-      exp: 'La citación exacta es el superpoder. Cuando NotebookLM dice algo, te dice exactamente qué PDF, en qué página, qué video de YouTube, en qué minuto. Claude razona muy bien pero puede alucinar fuentes. NotebookLM no inventa — solo sintetiza lo que está en tus fuentes reales.',
+      exp: 'La relación es instancia-patrón. Knowledge OS es el patrón: la arquitectura de Obsidian + Claude + GitHub + automatización. Living Academy es una instancia de ese patrón aplicada al dominio "ecosistema Claude IA". La misma relación existe entre Living Academy y Living Photography: mismo patrón, dominio diferente.',
     },
     {
-      q: '¿Qué es la "Knowledge Distillation" en el contexto de NotebookLM + Claude?',
+      q: '¿Por qué Living Academy genera Pull Requests en lugar de publicar actualizaciones directamente?',
       opts: [
-        'Reducir el tamaño de un notebook eliminando fuentes redundantes',
-        'Usar NotebookLM para investigar un tema y Claude para convertir esa investigación en un SKILL.md permanente que Claude puede usar en cualquier proyecto futuro',
-        'Exportar los audios de NotebookLM a un formato que Claude pueda procesar',
-        'Un proceso de fine-tuning donde NotebookLM entrena a Claude en un tema específico',
+        'Porque GitHub Actions no tiene permisos para publicar directamente en el sitio',
+        'Porque siempre hay revisión humana antes de que un cambio llegue al curso — la autonomía está en detectar y proponer, no en publicar',
+        'Porque los Pull Requests son más rápidos de procesar que los commits directos',
+        'Por razones de seguridad: el GITHUB_TOKEN solo tiene permisos de PR, no de push a main',
       ],
       correct: 1,
-      exp: 'Knowledge Distillation = convertir investigación efímera en conocimiento permanente. En lugar de consultar NotebookLM cada vez que necesitas saber algo sobre Playwright o fotografía de retrato, entrenas una Skill que Claude carga automáticamente cuando es relevante. Investigas una vez, aplicas siempre.',
+      exp: 'La decisión arquitectural es intencional. Un sistema que publica automáticamente puede meter errores en el curso sin control. Un sistema que propone PRs mantiene al humano en el loop para la decisión final. Claude detecta, filtra y redacta. El profesor decide si el draft va al curso.',
     },
     {
-      q: 'Para investigar tendencias de fotografía de bodas en tu mercado local, ¿cuántos notebooks de NotebookLM crearías y por qué?',
+      q: 'Quieres crear un "Living Fotografía" que monitoree el ecosistema fotográfico. ¿Qué necesitas cambiar de Living Academy para implementarlo?',
       opts: [
-        'Uno grande con todas las fuentes — es más eficiente y NotebookLM maneja el volumen',
-        'Al menos 2-3 notebooks separados por tema (tendencias globales, competencia local, precios de mercado) — notebooks específicos producen respuestas más precisas y citaciones más útiles',
-        'Tantos como fuentes tengas — un notebook por fuente es la práctica recomendada',
-        'Solo uno — NotebookLM pierde coherencia cuando tienes múltiples notebooks sobre el mismo tema',
+        'Todo — necesitas construir una infraestructura completamente nueva desde cero',
+        'Solo la configuración de fuentes (URLs) y los criterios de relevancia — la infraestructura de GitHub Actions + Claude API + PR generation es idéntica',
+        'El repositorio de GitHub y las APIs, pero puedes reusar el workflow de monitoring sin cambios',
+        'Living Photography requiere skills especiales de visión que Living Academy no tiene',
       ],
       correct: 1,
-      exp: 'La recomendación documentada es un notebook por tema específico. "Tendencias globales de fotografía de bodas" produce respuestas muy diferentes a "Precios de fotógrafos en Medellín". Mezclarlos en un notebook diluye la precisión. Tienes 100 notebooks gratis — úsalos.',
+      exp: 'Este es el punto central del Proyecto 9.2: la infraestructura es el invariante, las fuentes son el variable. Para Living Fotografía cambias sources.md (Magnum Photos, lanzamientos de Lightroom, canales de fotógrafos de referencia) y los criterios de relevancia. El workflow de GitHub Actions se reusa sin modificaciones.',
     },
   ],
   challenge: {
-    title: 'Proyecto 9.2 — Tu primer Research Stack funcional',
-    desc: 'Construye el sistema NotebookLM + Claude para un tema real que necesites investigar ahora.',
+    title: 'Proyecto 9.2 — Instancia tu primer Living [Dominio]',
+    desc: 'Construye un sistema de monitoring automático para el dominio más relevante para ti ahora mismo.',
     steps: [
-      'Elige un tema que necesites investigar en las próximas 2 semanas (tendencias de tu industria, un competidor, una tecnología, un destino para un proyecto fotográfico).',
-      'Crea un notebook en notebooklm.google.com con el nombre del tema. Agrega mínimo 10 fuentes relevantes: artículos, PDFs, videos de YouTube sobre el tema.',
-      'Deja que NotebookLM procese las fuentes (puede tomar unos minutos). Luego haz 5 preguntas clave que responderían tus dudas principales sobre el tema.',
-      'Instala el plugin de NotebookLM para Claude Code: sigue las instrucciones de github.com/ray-manaloto/notebooklm-claude-integration',
-      'En Claude Code, usa /nlm ask para hacer las mismas 5 preguntas. Observa cómo las respuestas llegan con citaciones directamente a tu terminal.',
-      'Pídele a Claude que genere un entregable con esa información: un reporte, un brief de estrategia, o una nota de Obsidian. Guárdalo en 02-RESOURCES/ de tu vault.',
+      'Elige tu dominio: puede ser el ecosistema Claude IA (Living Academy), fotografía, tu industria profesional, o cualquier campo que requieras monitorear activamente.',
+      'Define las 4-6 fuentes primarias de ese dominio. Para cada fuente: URL, frecuencia de actualización estimada, tipo de contenido (blog, releases, video, comunidad), criterio de relevancia.',
+      'En tu vault de Obsidian, crea 02-RESOURCES/[dominio]/sources.md con la configuración de fuentes. Incluye el criterio de relevancia en lenguaje natural — Claude lo leerá para decidir qué es relevante.',
+      'En GitHub, crea el repositorio del Living [Dominio]. Configura las secrets: ANTHROPIC_API_KEY, GITHUB_TOKEN.',
+      'Crea el archivo .github/workflows/weekly-monitor.yml usando como referencia la arquitectura de Living Academy. Ajusta las fuentes y el criterio de relevancia para tu dominio.',
+      'Activa el workflow manualmente la primera vez (workflow_dispatch) para verificar que funciona. Revisa el PR generado. ¿El contenido detectado es relevante? ¿El draft es útil?',
     ],
-    checkpoint: 'El Research Stack funciona cuando puedes ir desde "tengo 10 fuentes sobre un tema" hasta "tengo un entregable listo con citaciones verificadas" en menos de 30 minutos — sin copiar, sin pegar, sin cambiar de ventana más de una vez.',
+    checkpoint: 'El Living [Dominio] funciona cuando el lunes siguiente — sin que tú hagas nada — aparece un Pull Request en tu repositorio con contenido nuevo relevante de ese dominio, con un draft de cómo integrarlo. Ese PR es la señal de que el sistema está vivo.',
   },
 }
 
-// ─── PROYECTO 3: Sitio Web de Fotografía con Portal de Clientes ───────────────
+// ─── PROYECTO 3: Portal de Fotografía + Asistente Creativo ───────────────────
 export const PROJECT_PHOTOGRAPHY_WEB = {
   id: 'mod9_l3',
   num: '9.3',
-  title: 'Sitio Web de Fotografía + Portal de Clientes con Claude Code',
-  duration: '1-2 semanas (proyecto completo)',
+  title: 'Portal de Fotografía + Asistente Creativo con Claude Code',
+  duration: '2-3 semanas (proyecto completo)',
   xpReward: 200,
   videoId: '73eFWU-edO4',
-  videoCaption: 'Construir un sitio web profesional con Claude Code — de cero a deploy 2026',
+  videoCaption: 'Portal de fotografía + asistente creativo con Claude Code — de cero a deploy 2026',
   content: [
     {
       type: 'intro',
-      text: 'Claude Code puede construir desde cero un sitio web profesional de fotografía con: galería visual impactante, sistema de autenticación para clientes, páginas privadas por proyecto donde cada cliente ve solo sus fotos, y un formulario de feedback integrado. Sin agencia, sin developer freelance, sin plantillas genéricas. En tu stack exacto, con tu diseño, desplegado en tu dominio.',
+      text: 'La fotografía tiene dos mundos que raramente se integran: el técnico y el creativo-comercial. Este proyecto cubre los dos. Primero construyes el portal: sitio web profesional con galería visual impactante, autenticación de clientes, páginas privadas por proyecto y sistema de feedback — sin agencia, sin developer freelance. Luego conviertes a Claude en tu asistente creativo permanente: investigar fotógrafos referentes, generar briefs de sesión, redactar propuestas a clientes, y mantener tu sistema de knowledge fotográfico actualizado. El portal técnico que necesitan tus clientes, y el asistente creativo que necesita tu negocio, en un solo proyecto.',
     },
     {
       type: 'concept',
@@ -302,6 +294,60 @@ export const PROJECT_PHOTOGRAPHY_WEB = {
       body: 'Claude Code puede hacer el deploy completo. Instrucción: "Conecta este proyecto a Vercel, configura las variables de entorno necesarias, y despliega en producción." Vercel ofrece plan gratuito con dominio personalizado. Para el dominio: compra en Namecheap o Google Domains, Claude Code configura los DNS. El sitio puede estar en vivo en menos de 1 hora después de terminado el desarrollo.',
       highlight: null,
     },
+    {
+      type: 'cards',
+      title: 'Los 6 flujos de trabajo del Asistente Creativo',
+      items: [
+        {
+          name: 'Investigación de referentes',
+          tag: 'Inspiración',
+          color: '#6366F1',
+          desc: 'NotebookLM + Claude para estudiar a fondo el trabajo de fotógrafos que admiras. Claude analiza: qué hace única su luz, su composición, su relación con sujetos. Genera guías de estilo personalizadas.',
+        },
+        {
+          name: 'Brief de sesión fotográfica',
+          tag: 'Pre-producción',
+          color: '#10B981',
+          desc: 'Dado el tipo de sesión (bodas, retratos, comercial), el cliente, la locación y el estilo deseado — Claude genera el brief completo: lista de shots, configuraciones de cámara sugeridas, lista de props, timeline del día.',
+        },
+        {
+          name: 'Propuestas y contratos',
+          tag: 'Negocio',
+          color: '#F97316',
+          desc: 'Claude redacta propuestas personalizadas para cada cliente basadas en tu plantilla, sus necesidades específicas y tus tarifas. También genera contratos básicos que luego revisas con un abogado.',
+        },
+        {
+          name: 'Estrategia de precios',
+          tag: 'Negocio',
+          color: '#8B5CF6',
+          desc: 'NotebookLM para investigar precios de la competencia en tu mercado. Claude para analizar tu estructura de costos y generar una estrategia de precios con 3 paquetes posicionados en diferentes segmentos.',
+        },
+        {
+          name: 'Textos para portafolio y redes',
+          tag: 'Contenido',
+          color: '#EC4899',
+          desc: 'Claude escribe las descripciones de tus proyectos para el sitio web, los captions para Instagram, los posts de LinkedIn sobre procesos creativos — todo en tu voz, usando tu Voice Profile y Anti-AI Writing file.',
+        },
+        {
+          name: 'Análisis post-sesión',
+          tag: 'Aprendizaje',
+          color: '#0EA5E9',
+          desc: 'Después de una sesión, describes qué funcionó y qué no. Claude ayuda a identificar patrones, sugiere qué mejorar técnicamente, y actualiza tu CLAUDE.md con lo aprendido.',
+        },
+      ],
+    },
+    {
+      type: 'concept',
+      title: 'El sistema de knowledge fotográfico en Obsidian',
+      body: 'Dentro de tu vault del Proyecto 9.1, crea una sección específica: 02-RESOURCES/photography/ con subcarpetas: referentes/ (notas sobre fotógrafos que estudias), técnicas/ (apuntes sobre luz, composición, post-proceso), clientes/ (un archivo por tipo de cliente: bodas, retratos, corporativo), y tendencias/ (investigación de mercado de NotebookLM). Claude Code puede leer todo esto para dar recomendaciones contextualizadas a tu trabajo específico.',
+      highlight: 'El sistema de knowledge fotográfico se hace más valioso con el tiempo. Cada sesión que haces, cada fotógrafo que estudias, cada precio que negocias — todo queda en el vault. En 6 meses, Claude tiene el contexto de 50 sesiones y puede hacer recomendaciones mucho más precisas que al inicio.',
+    },
+    {
+      type: 'concept',
+      title: 'Skill personalizada: claude-fotografia.md',
+      body: 'El paso final del asistente creativo es construir una Skill específica para tu negocio fotográfico. En ~/.claude/skills/claude-fotografia.md defines: tu estilo fotográfico, tus fotógrafos referentes, tus tarifas típicas por tipo de proyecto, tu mercado objetivo, tus valores como fotógrafo. Cuando esta Skill está activa, Claude responde sobre fotografía como alguien que conoce tu trabajo específico — no como un asistente genérico. Portable entre Claude Code, Cursor con extensión Claude, y cualquier IDE compatible.',
+      highlight: null,
+    },
   ],
   quiz: [
     {
@@ -339,8 +385,8 @@ export const PROJECT_PHOTOGRAPHY_WEB = {
     },
   ],
   challenge: {
-    title: 'Proyecto 9.3 — Construye tu sitio de fotografía este mes',
-    desc: 'De brief a sitio en producción. Plan de 2 semanas con Claude Code.',
+    title: 'Proyecto 9.3 — Portal + Asistente Creativo en 3 semanas',
+    desc: 'De brief a sitio en producción, más tu asistente creativo funcionando. Plan de 3 semanas con Claude Code.',
     steps: [
       'SEMANA 1, DÍA 1 — Brief visual: Escoge 3 sitios de fotógrafos que admires. Prepara 10 fotos de tu portafolio que representen tu estilo. Define: paleta de colores, tipografía preferida, tono del copy (íntimo, profesional, artístico).',
       'SEMANA 1, DÍA 2-3 — Setup y diseño: Crea un Project en Claude con tus referencias visuales. Usa Claude Design para generar el sistema visual. Pide: "Crea el setup inicial del proyecto Next.js con la estructura de carpetas, Tailwind configurado con mi paleta, y los componentes base."',
@@ -348,8 +394,11 @@ export const PROJECT_PHOTOGRAPHY_WEB = {
       'SEMANA 2, DÍA 1-2 — Autenticación: "Implementa NextAuth.js. Clientes se registran con email. Yo apruebo manualmente cada cuenta desde el panel de admin. Crea el panel de admin básico."',
       'SEMANA 2, DÍA 3-4 — Portal privado: "Construye el módulo de proyectos privados. Cada cliente solo ve sus proyectos. Incluye: galería de fotos, sistema de favoritos, campo de comentarios por foto."',
       'SEMANA 2, DÍA 5 — Deploy: "Despliega en Vercel. Configura el dominio [tudominio].com. Verifica que la autenticación funciona en producción."',
+      'SEMANA 3, DÍA 1-2 — Knowledge fotográfico: En tu vault de Obsidian, crea 02-RESOURCES/photography/ con las subcarpetas: referentes/, técnicas/, clientes/, tendencias/. Selecciona 3 fotógrafos referentes y crea un notebook de NotebookLM por cada uno.',
+      'SEMANA 3, DÍA 3-4 — Skill personalizada: Crea ~/.claude/skills/claude-fotografia.md con tu estilo, referentes, tarifas y mercado objetivo. Prueba con: "Un cliente me contactó para fotografiar su boda de 80 personas en una finca en el campo. Genera el brief de sesión y la propuesta."',
+      'SEMANA 3, DÍA 5 — Integración: Conecta los flujos de trabajo del asistente creativo al portal. Los briefs de sesión y propuestas generados por Claude deben poder subirse directamente al panel de admin del portal.',
     ],
-    checkpoint: 'El proyecto está completo cuando: (1) El sitio está live en tu dominio. (2) Puedes crear una cuenta de cliente de prueba y verificar que solo ve los proyectos que le asignas. (3) Puedes subir fotos a un proyecto privado y el cliente puede comentarlas. (4) Tú puedes ver todos los comentarios en tu panel de admin.',
+    checkpoint: 'El proyecto está completo cuando: (1) El sitio está live en tu dominio y un cliente de prueba puede ver solo sus proyectos. (2) Claude genera un brief de sesión que suena como escrito por alguien que conoce tu estilo específico — no como una respuesta genérica. Esos dos checkpoints juntos son el 9.3.',
   },
 }
 
@@ -474,133 +523,8 @@ export const PROJECT_QA_AGENT = {
   },
 }
 
-// ─── PROYECTO 5: Claude como Asistente de Investigación Fotográfica ───────────
-export const PROJECT_PHOTOGRAPHY_AI = {
-  id: 'mod9_l5',
-  num: '9.5',
-  title: 'Claude como Asistente Creativo de Fotografía',
-  duration: '3-5 horas de setup + uso continuo',
-  xpReward: 130,
-  videoId: 'Y3MK6OpKDqE',
-  videoCaption: 'Claude para fotógrafos: workflows creativos y de negocio — guía 2026',
-  content: [
-    {
-      type: 'intro',
-      text: 'La fotografía tiene dos mundos que raramente se tocan: el creativo y el de negocio. Claude puede potenciar ambos. En el mundo creativo: investigar fotógrafos referentes, analizar composición, generar conceptos para sesiones, escribir los textos que acompañan las fotos. En el mundo de negocio: propuestas a clientes, estrategia de precios, contratos, gestión de leads. Este proyecto integra todos los flujos de trabajo fotográficos con Claude.',
-    },
-    {
-      type: 'concept',
-      title: 'Skills fotográficas de la comunidad verificadas (mayo 2026)',
-      body: 'El ecosistema de Skills de Claude tiene varias específicas para fotografía. La más notable: Gallery AI Photo Architect (mcpmarket.com/tools/skills/ai-photo-gallery-architect) — Claude actúa como curador digital aplicando los principios de Keith Smith y John Szarkowski para crear secuencias fotográficas con ritmo visual, coherencia temática y arco narrativo. No es una galería de grid simple: es curaduría de nivel editorial. Otras Skills útiles: exif-extractor (metadata de fotos), lightroom-preset-generator (crea presets personalizados describiendo el look que buscas).',
-      highlight: null,
-    },
-    {
-      type: 'cards',
-      title: 'Los 6 flujos de trabajo fotográficos con Claude',
-      items: [
-        {
-          name: 'Investigación de referentes',
-          tag: 'Inspiración',
-          color: '#6366F1',
-          desc: 'NotebookLM + Claude para estudiar a fondo el trabajo de fotógrafos que admiras. Claude analiza: qué hace única su luz, su composición, su relación con sujetos. Genera guías de estilo personalizadas.',
-        },
-        {
-          name: 'Brief de sesión fotográfica',
-          tag: 'Pre-producción',
-          color: '#10B981',
-          desc: 'Dado el tipo de sesión (bodas, retratos, comercial), el cliente, la locación y el estilo deseado — Claude genera el brief completo: lista de shots, configuraciones de cámara sugeridas, lista de props, timeline del día.',
-        },
-        {
-          name: 'Propuestas y contratos',
-          tag: 'Negocio',
-          color: '#F97316',
-          desc: 'Claude redacta propuestas personalizadas para cada cliente basadas en tu plantilla, sus necesidades específicas y tus tarifas. También genera contratos básicos que luego revisas con un abogado.',
-        },
-        {
-          name: 'Estrategia de precios',
-          tag: 'Negocio',
-          color: '#8B5CF6',
-          desc: 'NotebookLM para investigar precios de la competencia en tu mercado. Claude para analizar tu estructura de costos y generar una estrategia de precios con 3 paquetes posicionados en diferentes segmentos.',
-        },
-        {
-          name: 'Textos para portafolio y redes',
-          tag: 'Contenido',
-          color: '#EC4899',
-          desc: 'Claude escribe las descripciones de tus proyectos para el sitio web, los captions para Instagram, los posts de LinkedIn sobre procesos creativos — todo en tu voz, usando tu Voice Profile y Anti-AI Writing file.',
-        },
-        {
-          name: 'Análisis post-sesión',
-          tag: 'Aprendizaje',
-          color: '#0EA5E9',
-          desc: 'Después de una sesión, describes qué funcionó y qué no. Claude ayuda a identificar patrones, sugiere qué mejorar técnicamente, y actualiza tu CLAUDE.md con lo aprendido.',
-        },
-      ],
-    },
-    {
-      type: 'concept',
-      title: 'El sistema de Knowledge fotográfico en Obsidian',
-      body: 'Dentro de tu vault del Proyecto 9.1, crea una sección específica: 02-RESOURCES/photography/ con subcarpetas: referentes/ (notas sobre fotógrafos que estudias), técnicas/ (apuntes sobre luz, composición, post-proceso), clientes/ (un archivo por tipo de cliente: bodas, retratos, corporativo), y tendencias/ (investigación de mercado de NotebookLM). Claude Code puede leer todo esto para dar recomendaciones contextualizadas a tu trabajo específico.',
-      highlight: 'El sistema de knowledge fotográfico se hace más valioso con el tiempo. Cada sesión que haces, cada fotógrafo que estudias, cada precio que negocias — todo queda en el vault. En 6 meses, Claude tiene el contexto de 50 sesiones y puede hacer recomendaciones mucho más precisas que al inicio.',
-    },
-    {
-      type: 'concept',
-      title: 'Workflow: de idea a sesión fotográfica en 30 minutos',
-      body: 'Un cliente te contacta para una sesión de retratos en el campo. Proceso con Claude: (1) Claude consulta tu knowledge base de retratos en Obsidian. (2) Genera el brief de sesión: lista de 20 shots, momento del día recomendado para la luz, 3 locaciones posibles en campo, props sugeridos. (3) Redacta la propuesta personalizada con tu plantilla de precios. (4) Genera el contrato base. (5) Crea la nota del proyecto en 01-ACTIVE/projects/ de tu vault. Todo en una sola conversación de 15 minutos.',
-      highlight: null,
-    },
-  ],
-  quiz: [
-    {
-      q: '¿Qué hace la Skill "Gallery AI Photo Architect" que es diferente a simplemente mostrar fotos en un grid?',
-      opts: [
-        'Aplica filtros automáticamente a las fotos usando inteligencia artificial de visión',
-        'Aplica principios curatoriales de Keith Smith y Szarkowski para crear secuencias con ritmo visual, coherencia temática y arco narrativo — como una exhibición editorial, no un grid',
-        'Organiza las fotos automáticamente por fecha y hora usando los metadatos EXIF',
-        'Comprime las fotos para que el sitio web cargue más rápido',
-      ],
-      correct: 1,
-      exp: 'La curaduría va más allá del orden. Keith Smith y John Szarkowski son teóricos de la fotografía que desarrollaron principios sobre cómo las fotos dialogan entre sí, crean tensión y resolución, y guían al espectador. Aplicar esos principios automáticamente es lo que hace la diferencia entre una galería amateur y una presentación de nivel editorial.',
-    },
-    {
-      q: '¿Por qué el sistema de knowledge fotográfico en Obsidian se vuelve más valioso con el tiempo?',
-      opts: [
-        'Porque Obsidian optimiza automáticamente la organización con el tiempo',
-        'Porque cada sesión documentada, fotógrafo estudiado y precio negociado agrega contexto — Claude hace recomendaciones más precisas con 50 sesiones de historia que con ninguna',
-        'Porque el storage de Obsidian se vuelve más eficiente cuanto más datos contiene',
-        'El valor no aumenta con el tiempo — es constante desde el primer día',
-      ],
-      correct: 1,
-      exp: 'Este es el principio de compounding aplicado al conocimiento. El día 1, Claude no sabe nada sobre tu estilo fotográfico. Al mes 6, sabe que siempre fotografías bodas con luz de hora dorada, que prefieres locaciones industriales para retratos, que tu cliente tipo es clase media-alta. Esas capas de contexto hacen que cada recomendación sea más precisa.',
-    },
-    {
-      q: '¿Cómo usarías NotebookLM específicamente para desarrollar tu estrategia de precios como fotógrafo?',
-      opts: [
-        'Cargando tu propio historial de facturas para que NotebookLM analice tu rentabilidad',
-        'Creando un notebook con sitios web de fotógrafos de tu mercado, artículos sobre pricing de fotografía, y estudios de mercado — luego consultando patrones de precios, paquetes populares y posicionamiento',
-        'NotebookLM no es útil para estrategia de precios — mejor usar Excel directamente',
-        'Preguntando directamente a NotebookLM cuánto cobrar sin agregar ninguna fuente',
-      ],
-      correct: 1,
-      exp: 'NotebookLM es un sintetizador de fuentes, no una bola de cristal. Su poder está en procesar tus fuentes reales: sitios de competidores, artículos de la industria, estudios de mercado. Con esas fuentes bien cargadas, puede identificar rangos de precios por tipo de servicio, tendencias de paquetización, y puntos de diferenciación — todo con citaciones verificables.',
-    },
-  ],
-  challenge: {
-    title: 'Proyecto 9.5 — Tu sistema de knowledge fotográfico',
-    desc: 'Construye la base de conocimiento fotográfico que hace a Claude un verdadero asistente de tu negocio.',
-    steps: [
-      'En tu vault de Obsidian, crea la estructura: 02-RESOURCES/photography/ con las subcarpetas: referentes/, técnicas/, clientes/, tendencias/, propuestas-templates/.',
-      'Selecciona 3 fotógrafos que admires profundamente. Crea un notebook de NotebookLM por cada uno con sus mejores entrevistas, libros disponibles online, análisis de su trabajo, videos de YouTube. Pide a Claude que genere una nota de análisis de cada fotógrafo en referentes/.',
-      'Documenta tu proceso y estilo actuales: escribe (o deja que Claude te entreviste sobre) cómo trabajas, qué es lo que más te gusta fotografiar, cuáles son tus sesiones más exitosas y por qué.',
-      'Crea las plantillas base: plantilla de propuesta para clientes, plantilla de contrato básico, plantilla de brief de sesión. Guárdalas en propuestas-templates/.',
-      'Construye una Skill personalizada: claude-fotografia.md en ~/.claude/skills/ con instrucciones específicas de cómo Claude debe ayudarte con fotografía: tu estilo, tus referentes, tus tarifas típicas, tu mercado objetivo.',
-      'Prueba el sistema: dile a Claude "Un cliente me contactó para fotografiar su boda de 80 personas en una finca en el campo en diciembre. Genera el brief de sesión y la propuesta." Evalúa qué tan contextualizado y útil es el resultado.',
-    ],
-    checkpoint: 'El sistema funciona cuando le describes una sesión a Claude y él genera un brief y propuesta que suenan como escritos por alguien que conoce tu trabajo específico — no como una respuesta genérica de fotografía. Ese nivel de contextualización es el objetivo.',
-  },
-}
-
-// ─── ALIASES AND NEW EXPORTS ─────────────────────────────────────────────────
-// Knowledge OS = fusion of AIOS + Research Stack + Living Academy
+// ─── ALIASES ─────────────────────────────────────────────────────────────────
+// PROJECT_KNOWLEDGE_OS = alias de PROJECT_AIOS (9.1)
 export { PROJECT_AIOS as PROJECT_KNOWLEDGE_OS }
 
 // TECH_STACK_LESSON moved to this file from gapLessons

@@ -25,11 +25,10 @@ en Medellín, Colombia.
 
 ## Proyectos Maestros (Módulo 9 — orden DEFINITIVO)
 9.0 — Stack técnico y setup
-9.1 — Knowledge OS (fusión: Personal AI OS + Research Stack + Living Academy automatizado)
-9.2 — Living Academy (curso que se actualiza solo en GitHub — PENDIENTE construir)
-9.3 — QA Agent Autónomo
-9.4 — Portal de Fotografía + Asistente Creativo (fusión — PENDIENTE completar)
-9.5 — QA Agent del Portal
+9.1 — Knowledge OS (genérico, extensible a cualquier dominio: fotografía, Claude IA, fútbol, etc. Infraestructura: Obsidian + Claude + GitHub)
+9.2 — Living Academy (primera instancia de Knowledge OS aplicada al ecosistema Claude IA — el patrón es replicable: Living Photography, Living Football, Living Finance)
+9.3 — Portal de Fotografía + Asistente Creativo (fusión: portal web con autenticación de clientes + 6 flujos de trabajo creativos + Skill personalizada claude-fotografia.md)
+9.4 — QA Agent del Portal (testea el sitio del Proyecto 9.3 con Claude Code + Playwright)
 
 ## Decisiones técnicas tomadas (NO reabrir)
 - Auth del portal: Clerk + Twilio WhatsApp (OTP). Better Auth descartado.
@@ -47,19 +46,16 @@ Mobile-first, OTP por WhatsApp, máx. 5 colaboradores por proyecto
 ## Pendientes críticos (en orden de prioridad)
 1. Definir pasos exactos del tracker de 3 fases del portal (Pre-producción /
    Producción / Post-producción) por tipo de proyecto (Boda/Retrato/Producto/Moda)
-2. Construir lección 9.1 Knowledge OS fusionada
-3. Construir lección 9.2 Living Academy (GitHub Actions semanal)
-4. Fusionar contenido creativo de fotografía (antiguo 9.5) en Proyecto 9.4
-5. Resolver problemas estructurales documentados abajo
 
-## Problemas estructurales a resolver
-1. IDs internos (mod6_p0, mod6_p1...) no coinciden con numeración (9.0, 9.1...)
-2. Lección 9.3 QA Agent depende del portal 9.4 — agregar nota de dependencia
-3. Claude Design referenciado en CoWork (lección 5.3) — eliminar esa referencia
-4. Agregar en lección 3.1: Cursor Rules vs CLAUDE.md con ventajas/desventajas
-5. Lección 3.4 Worktrees — agregar comparación con Cursor 3 Agents Window
-6. Lección 4.1 Skills — agregar que SKILL.md es portable entre herramientas
-7. Lección 9.0 Stack técnico — agregar Cursor en el stack
+## Problemas estructurales resueltos (commit c42f2b9 + refactor 9.x)
+- IDs internos ya usan mod9_l* consistente con numeración 9.x
+- QA Agent (9.4) ya tiene nota de prerequisito del portal (9.3)
+- Claude Design removido de CoWork (lección 5.3)
+- Cursor Rules vs CLAUDE.md añadido a lección 3.1
+- Cursor 3 Agents Window añadido a lección 3.4
+- SKILL.md portabilidad añadida a lección 4.1
+- Knowledge OS y Living Academy separados como 9.1 y 9.2 definitivo
+- PROJECT_PHOTOGRAPHY_AI fusionado en 9.3 — eliminado como proyecto independiente
 
 ## Cómo verificar que los datos compilan
 node --input-type=module -e "import('./src/data/curriculum.js').then(m => {
