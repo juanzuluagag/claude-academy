@@ -4,7 +4,7 @@ import { SKILLS_LESSONS } from './skillsLessons.js'
 import { PROJECT_KNOWLEDGE_OS, PROJECT_LIVING_ACADEMY, PROJECT_PHOTOGRAPHY_WEB, PROJECT_QA_AGENT } from './mod6Projects.js'
 import { CLAUDE_DESIGN_LESSONS } from './claudeDesignLessons.js'
 import { ADVISOR_STRATEGY_LESSON, CCA_LESSON } from './updateLessons.js'
-import { THINKING_LESSON, COMPUTER_USE_LESSON, MANAGED_AGENTS_LESSON, PROMPT_CACHING_LESSON, CONNECTORS_LESSON, ENTERPRISE_LESSON, TOKEN_SAVING_LESSON, WHATSAPP_AGENT_LESSON, TECH_STACK_LESSON, MCP_BUILD_LESSON, MCP_ECOSYSTEM_LESSON, AI_SAFETY_ADVANCED, AI_SAFETY_EVALS } from './gapLessons.js'
+import { THINKING_LESSON, COMPUTER_USE_LESSON, MANAGED_AGENTS_LESSON, PROMPT_CACHING_LESSON, CONNECTORS_LESSON, ENTERPRISE_LESSON, TOKEN_SAVING_LESSON, WHATSAPP_AGENT_LESSON, TECH_STACK_LESSON, MCP_BUILD_LESSON, MCP_ECOSYSTEM_LESSON, AI_SAFETY_ADVANCED, AI_SAFETY_EVALS, MICROSOFT365_LESSON } from './gapLessons.js'
 import { CLAUDE_CODE_LESSONS, DREAMING_LESSON } from './claudeCodeLessons.js'
 import { IDENTITY_SETUP_LESSON, CONTEXT_ENGINEERING_LESSON, SCHEDULED_TASKS_LESSON, AI_SAFETY_LESSON, EVALS_LESSON } from './newLessons.js'
 
@@ -137,7 +137,7 @@ export const LESSONS = {
   mod_safety: [AI_SAFETY_LESSON, AI_SAFETY_ADVANCED, AI_SAFETY_EVALS],
   mod_skills: SKILLS_LESSONS,
   mod2: [...CLAUDE_CODE_LESSONS, ADVISOR_STRATEGY_LESSON],
-  mod3: [COMPUTER_USE_LESSON, SCHEDULED_TASKS_LESSON, WHATSAPP_AGENT_LESSON],
+  mod3: [COMPUTER_USE_LESSON, SCHEDULED_TASKS_LESSON, WHATSAPP_AGENT_LESSON, MICROSOFT365_LESSON],
   mod4: [MANAGED_AGENTS_LESSON, EVALS_LESSON, DREAMING_LESSON],
   mod5: [CONNECTORS_LESSON, MCP_BUILD_LESSON, MCP_ECOSYSTEM_LESSON],
   mod7: [...CLAUDE_DESIGN_LESSONS],
@@ -531,6 +531,92 @@ export const LESSONS = {
           'Al terminar los 5 días, califica del 1 al 10 qué tan útil fue Claude en cada uso.',
         ],
         checkpoint: 'Al finalizar los 5 días deberías tener al menos 3 usos donde Claude superó tus expectativas. Esos son tus "quick wins" — los casos de uso que adoptarás de forma permanente en tu rutina de trabajo.',
+      },
+    },
+    {
+      id: 'mod1_l5b',
+      num: '1.5b',
+      title: 'Visión, Artifacts y Projects: las 3 funciones más infrautilizadas',
+      duration: '25 min',
+      xpReward: 75,
+      videoId: 'NO_VIDEO',
+      videoCaption: 'Animación interactiva incluida',
+      content: [
+        {
+          type: 'intro',
+          text: 'Tres funciones que el 80% de usuarios de Claude.ai nunca descubren porque no son obvias en la interfaz: subir imágenes y PDFs directamente al chat, generar Artifacts interactivos en lugar de texto plano, y organizar proyectos con contexto persistente. Dominar estas tres cambia radicalmente lo que puedes pedirle a Claude.',
+        },
+        {
+          type: 'concept',
+          title: 'Visión: Claude puede ver lo que tú ves',
+          body: 'Claude acepta imágenes en PNG, JPEG, GIF y WebP en todos los modelos actuales. Puedes subirlas arrastrándolas al chat, usando el botón de adjunto, o pegando con Ctrl+V desde el clipboard. También acepta PDFs completos con múltiples páginas, tablas y gráficos. Claude analiza el documento completo con su layout, no solo el texto extraído.\n\nCasos de uso directos para tu negocio: subir una foto tuya y pedir feedback de composición e iluminación. Subir una captura de pantalla de un error y pedir diagnóstico. Subir un contrato en PDF y pedir un resumen de las cláusulas más importantes. Subir el logo de un cliente y pedir que el portal refleje sus colores exactos.\n\nLo que Claude NO puede hacer: generar imágenes o videos. Puede analizar imágenes pero no crearlas. Esta es una diferencia importante con ChatGPT y Gemini.',
+          highlight: 'Para fotografía: sube una foto tuya y escribe "Analiza esta fotografía como si fueras un editor de National Geographic. Dame feedback específico de composición, iluminación, momento decisivo, y qué cambiarías." El nivel de feedback que obtienes es el de un critique profesional.',
+        },
+        {
+          type: 'concept',
+          title: 'Artifacts: objetos vivos, no texto que desaparece',
+          body: 'Cuando Claude genera contenido sustancial (código, HTML, React, SVGs, diagramas Mermaid, Markdown estructurado), puede abrirlo en un panel lateral interactivo — el Artifact. La diferencia fundamental: el texto en el chat desaparece cuando scrolleas. El Artifact vive en el panel, puedes editarlo, iterarlo, previsualizarlo en vivo, y compartirlo con una URL pública.\n\nCuándo pedir un Artifact explícitamente: "Crea esto como un Artifact" o "Genera el componente React en un Artifact". Cuándo NO pedirlo: respuestas conversacionales, listas cortas, explicaciones — esas van mejor en el chat. La regla simple: si vas a copiar el output, quieres un Artifact. Si solo vas a leerlo, el chat está bien.\n\nLos Artifacts dentro de Projects se guardan por 90 días y son accesibles desde cualquier conversación del mismo Project. La práctica recomendada: prefijar con fecha — "2026-05 Propuesta Cliente X" — para mantenerlos organizados.',
+          highlight: null,
+        },
+        {
+          type: 'concept',
+          title: 'Projects: el contexto que no tienes que repetir nunca más',
+          body: 'Un Project es un espacio de trabajo con memoria persistente. Cada conversación dentro de un Project comienza con Claude conociendo: tus instrucciones de sistema (quién eres, cómo trabajar contigo), los documentos que subiste (guías de marca, documentación técnica, contratos tipo), y los Artifacts ya generados.\n\nPara tu negocio de fotografía: crea un Project llamado "Estudio de Fotografía". Sube tu guía de precios, tu proceso de trabajo, tus contratos tipo, y tu guía de marca. Desde ese momento, cualquier pregunta sobre presupuestos, clientes, o comunicación empieza con Claude conociendo tu negocio completo.\n\nLímite práctico documentado: máximo 3-5 documentos por Project. Más que eso y el contexto se diluye. Si tienes más documentos, divide en sub-Projects por tema. Cuando el Project se acerca al límite de contexto, Claude activa RAG automáticamente para expandir la capacidad.',
+          highlight: null,
+        },
+        {
+          type: 'concept',
+          title: 'Interview Mode: Claude te pregunta antes de construir',
+          body: 'El error más costoso en Claude Code: darle un prompt vago, Claude asume el alcance, implementa la solución incorrecta, y tú pierdes tiempo en rollbacks. Interview Mode invierte el flujo: en lugar de tú prompting a Claude, Claude te entrevista a ti primero.\n\nTécnica básica: "Antes de construir nada, hazme las preguntas necesarias para entender exactamente qué necesito. Continúa entrevistándome hasta tener el alcance completo." Claude usará sus herramientas para hacerte preguntas sobre implementación, edge cases, tradeoffs, y criterios de éxito que no habrías considerado.\n\nCustom command: crea .claude/commands/interview.md con: "Lee el archivo @$ARGUMENTS e interviéstame en detalle sobre cualquier ambigüedad o información faltante. Pregunta sobre implementación, UX, edge cases, y criterios de aceptación. Continúa hasta tener el alcance completo. Luego escribe la especificación actualizada al mismo archivo."',
+          highlight: 'Telling Stakes — la técnica más infrautilizada del prompting: dile a Claude quién va a ver el output y qué significa que falle. "Este presupuesto lo lee el cliente más importante de mi año. Si está mal, pierdo el contrato" produce un resultado radicalmente diferente a "escríbeme un presupuesto". Claude ajusta su nivel de cuidado cuando entiende las consecuencias reales.',
+        },
+      ],
+      quiz: [
+        {
+          q: '¿Cuál es la diferencia práctica entre compartir texto en el chat vs generar un Artifact?',
+          opts: [
+            'No hay diferencia — ambos producen el mismo output, Artifact solo es un panel diferente',
+            'El Artifact persiste en un panel editable y compartible; el texto del chat desaparece al scrollear y no se puede editar directamente',
+            'Los Artifacts consumen más tokens que las respuestas en el chat',
+            'Solo los usuarios Pro pueden generar Artifacts — en el plan gratuito todo va al chat',
+          ],
+          correct: 1,
+          exp: 'La diferencia es operacional. El texto del chat está diseñado para leer; el Artifact está diseñado para usar. Puedes editar el Artifact directamente, verlo en preview, compartirlo con una URL, y recuperarlo en futuras conversaciones del mismo Project. Para cualquier output que vayas a usar (copiar, editar, desplegar), el Artifact es la herramienta correcta.',
+        },
+        {
+          q: '¿Cuántos documentos recomienda la práctica documentada tener en un Project de Claude?',
+          opts: [
+            'Sin límite — Claude maneja cualquier cantidad de documentos eficientemente',
+            'Exactamente 1 — más de un documento confunde a Claude sobre cuál priorizar',
+            'Máximo 3-5 documentos por Project — más que eso diluye el contexto y Claude pierde precisión',
+            'El límite es técnico: 10MB totales independientemente del número de archivos',
+          ],
+          correct: 2,
+          exp: 'El límite de 3-5 documentos es una práctica documentada por la comunidad, no un límite técnico. Con más documentos, Claude tiene dificultad priorizando qué información es relevante para cada pregunta específica. La solución para colecciones más grandes: dividir en sub-Projects temáticos.',
+        },
+        {
+          q: 'Vas a pedirle a Claude que escriba una propuesta para tu cliente más importante. ¿Qué técnica aplicas para obtener el mejor resultado?',
+          opts: [
+            '"Escríbeme una propuesta de fotografía" — simple y directo es siempre mejor',
+            'Primero usas Interview Mode para que Claude te haga preguntas, y luego aplicas Telling Stakes: "este cliente representa el 30% de mis ingresos del año"',
+            'Generas varias versiones y eliges la mejor — el prompting iterativo siempre supera la precisión inicial',
+            'Le das a Claude todos los documentos del cliente en un solo mensaje largo para maximizar el contexto',
+          ],
+          correct: 1,
+          exp: 'Interview Mode + Telling Stakes es la combinación más efectiva para outputs de alto impacto. Interview Mode asegura que Claude entiende el alcance completo antes de escribir. Telling Stakes ajusta el nivel de cuidado de Claude al comunicarle las consecuencias reales de un output malo.',
+        },
+      ],
+      challenge: {
+        title: 'Reto 1.5b — Las 3 funciones en práctica',
+        desc: 'Prueba Visión, Artifacts y Projects en situaciones reales de tu negocio de fotografía.',
+        steps: [
+          'Sube una foto tuya al chat de Claude y pide: "Analiza esta fotografía como editor de National Geographic. Feedback específico de composición, iluminación, momento decisivo, y qué cambiarías."',
+          'Pide a Claude que genere tu propuesta de valor como fotógrafo en un Artifact Markdown. Edítalo directamente en el panel hasta que refleje exactamente tu voz.',
+          'Crea un Project en claude.ai llamado "[Tu Nombre] — Estudio de Fotografía". Agrega instrucciones de sistema con tu proceso de trabajo y tu mercado objetivo. Sube un documento con tu lista de precios.',
+          'Dentro del Project, haz esta pregunta: "Un cliente me escribió interesado en una boda de 120 personas el próximo diciembre. ¿Cuánto le cobro y qué le incluyo?" Observa si Claude usa el contexto del Project sin que tú lo menciones.',
+          'Prueba Interview Mode: "Quiero crear una automatización para seguimiento de clientes post-sesión. Antes de sugerir nada, entrevístame hasta entender exactamente qué necesito."',
+        ],
+        checkpoint: 'El reto está completo cuando: (1) Tienes feedback profesional de una foto real. (2) Tienes un Artifact de tu propuesta de valor editado a tu voz. (3) El Project responde preguntas de negocio usando tu información sin que tú la repitas. Eso es lo que significa tener un asistente que te conoce.',
       },
     },
     THINKING_LESSON,

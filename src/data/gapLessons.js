@@ -834,6 +834,12 @@ export const TOKEN_SAVING_LESSON = {
       bad: 'Sesión única de 3 horas mezclando tareas:\n"Escríbeme un correo..." → respuesta larga\n"Ahora resume este PDF de 80 páginas completo..." → respuesta\n"Y dame ideas para la campaña de marketing..." → respuesta\n\nTokens acumulados al final: ~85,000\nModelo usado: Opus para todo',
       good: 'Tres chats separados, modelo correcto:\nChat 1 (Sonnet): Solo el correo → ~2,000 tokens\nChat 2 (Sonnet): Solo las 3 páginas relevantes del PDF → ~4,000 tokens\nChat 3 (Haiku): Solo el brainstorming de marketing → ~1,500 tokens\n\nTotal: ~7,500 tokens — ahorro del 91%',
     },
+    {
+      type: 'concept',
+      title: 'El ecosistema de herramientas de token management (comunidad verificada, 2026)',
+      body: 'ccusage (13K+ ⭐, github.com/ryoppippi/ccusage): dashboard CLI que muestra tu consumo real de tokens por sesión con predicciones de burn rate basadas en ML. La primera herramienta a instalar — sin baseline no sabes si algo funciona. Instalar: npm install -g ccusage. Usar: ccusage --verbose después de cada sesión costosa.\n\nCaveman mode (51K+ ⭐, github.com/julius-bcss/caveman): Skill que elimina artículos, cortesías y hedging de las respuestas de Claude. Solo código y resultados. Reducción documentada: 50-70% de tokens de output en respuestas técnicas.\n\nModel Router (comunidad): enruta automáticamente al modelo correcto según el tipo de tarea — Haiku para investigación de fondo, Sonnet para trabajo estándar, Opus para decisiones arquitectónicas. Sin cambio manual.\n\nRTK (comunidad, 4K+ ⭐): comprime el output de comandos CLI (git log, npm output, logs) antes de que entre al contexto. 60-90% de reducción en tokens de terminal.\n\nAdvertencia del v2.1.89 (marzo 2026): una actualización de Claude Code causó consumo de tokens 3-50x más rápido que antes. Planes Max 20x se agotaban en 70 minutos. El fix documentado: hacer /compact deliberadamente al 60-70% del contexto en lugar de dejar que auto-compaction dispare al 93%.',
+      highlight: null,
+    },
   ],
   quiz: [
     {
@@ -1637,5 +1643,87 @@ export const AI_SAFETY_EVALS = {
       'Si el score es bajo en algún criterio para múltiples personas, ese criterio identifica una debilidad del prompt de onboarding. Documenta el hallazgo.',
     ],
     checkpoint: 'Tienes un Eval funcionando cuando puedes decir con precisión: "mi sistema de onboarding cumple X de 7 criterios de calidad consistentemente en los 5 tipos de cliente más comunes." Ese número es tu baseline — cualquier cambio al prompt debe mejorar ese número.',
+  },
+}
+
+// ─── LECCIÓN: Claude para Microsoft 365 → Módulo 3 (CoWork) ──────────────────
+export const MICROSOFT365_LESSON = {
+  id: 'mod3_l5_microsoft',
+  num: '5.4',
+  title: 'Claude para Microsoft 365: Excel, Word, PowerPoint y Outlook',
+  duration: '20 min',
+  xpReward: 65,
+  videoId: 'NO_VIDEO',
+  videoCaption: 'Animación interactiva incluida',
+  content: [
+    {
+      type: 'intro',
+      text: 'El 7 de mayo de 2026, Anthropic puso a Claude dentro de Microsoft Office. No como un chatbot en otra ventana — como un asistente que vive en el mismo documento, con el mismo contexto. Sin copy-paste entre ventanas.',
+    },
+    {
+      type: 'concept',
+      title: 'Instalación y acceso',
+      body: 'Los add-ins están en Microsoft AppSource. Busca "Claude" o ve al link directo de Anthropic. Un solo listing cubre Excel, Word y PowerPoint (GA desde mayo 7, 2026). Un listing separado agrega Outlook (public beta). Instalación en menos de 5 minutos: abres cualquier app de Office, vas a Inicio → Complementos, buscas "Claude", haces clic en Agregar, e inicias sesión con tu cuenta de claude.ai. Disponible en Windows, Mac y la versión web de Office. Las apps móviles de Office no están soportadas aún.',
+      highlight: null,
+    },
+    {
+      type: 'concept',
+      title: 'Lo que hace en cada app',
+      body: 'Excel: analiza datos, sugiere fórmulas, interpreta hojas complejas con dependencias entre pestañas, detecta errores en fórmulas anidadas. Útil para presupuestos de proyectos fotográficos, análisis de ingresos mensuales, y comparación de cotizaciones. Advertencia documentada: Claude para Excel tiene un riesgo de prompt injection en celdas ocultas — úsalo solo con hojas de tu propiedad, no de terceros externos.\n\nWord: redacción, edición y formateo inline. Los cambios aparecen como tracked changes — los ves, los aceptas o rechazas. Para cartas a clientes, propuestas, contratos básicos.\n\nPowerPoint: genera slides usando tu slide master y template — respeta tus fuentes, colores y layouts. No genera slides genéricas: lee tu template y construye contenido que se ve como tuyo. Disponible en Max, Team y Enterprise (no Pro).\n\nOutlook: triage de emails, borradores de respuesta, resúmenes de hilos largos. Public beta — puede tener inconsistencias.',
+      highlight: null,
+    },
+    {
+      type: 'concept',
+      title: 'La función diferenciadora: contexto que viaja entre apps',
+      body: 'La ventaja que ningún competidor tiene: Claude lleva el contexto completo de tu conversación cuando cambias de app. Flujo real: abres Outlook, le pides a Claude que resuma un email de un cliente con los requisitos de su boda. Abres Excel, Claude ya sabe los requisitos y te ayuda a construir el presupuesto. Abres Word, Claude usa el presupuesto para redactar la propuesta formal. Abres PowerPoint, Claude crea la presentación con los mismos números y el mismo tono. Todo en una sola conversación sin explicar nada de nuevo.',
+      highlight: 'Para tu negocio de fotografía: el flujo completo de una propuesta de boda — desde el email inicial del cliente hasta la presentación final — se puede completar dentro de Microsoft 365 sin salir de las apps que ya usas. Claude coordina el flujo entre ellas.',
+    },
+  ],
+  quiz: [
+    {
+      q: '¿Cuál es la advertencia de seguridad específica sobre el uso de Claude para Excel?',
+      opts: [
+        'Claude puede modificar fórmulas sin avisar — siempre revisa los cambios antes de guardar',
+        'Existe riesgo de prompt injection en celdas ocultas — úsalo solo con hojas de tu propiedad, no de terceros externos',
+        'Claude para Excel no puede leer tablas con más de 1,000 filas',
+        'No hay advertencias de seguridad — el add-in está completamente sandboxed',
+      ],
+      correct: 1,
+      exp: 'Las celdas ocultas pueden contener texto que instruye a Claude a comportarse de formas no deseadas (prompt injection). Si un tercero te envía una hoja de cálculo con celdas ocultas maliciosas, Claude puede ejecutar instrucciones que tú no pusiste. La mitigación es simple: usa el add-in solo con archivos que tú creaste.',
+    },
+    {
+      q: '¿En qué plan de Microsoft 365 está disponible la función de Claude para PowerPoint con slide masters?',
+      opts: [
+        'En todos los planes incluyendo Microsoft 365 Personal',
+        'Solo en Microsoft 365 Max, Team y Enterprise — no está disponible en el plan Pro',
+        'En cualquier plan de pago — no está disponible en la versión gratuita web',
+        'Solo en Enterprise — requiere acuerdo corporativo con Anthropic',
+      ],
+      correct: 1,
+      exp: 'La función de PowerPoint con slide masters está disponible en Max, Team y Enterprise. El plan Pro no la incluye. Esta restricción es intencional: la funcionalidad de templates avanzados está dirigida a usuarios corporativos que trabajan con sistemas de identidad visual establecidos.',
+    },
+    {
+      q: '¿Cuál es la ventaja diferenciadora de Claude para Microsoft 365 vs usar Claude.ai en una pestaña separada mientras trabajas en Office?',
+      opts: [
+        'Es más rápido porque el add-in usa una API con menor latencia',
+        'El add-in es gratuito; claude.ai requiere suscripción Pro',
+        'El contexto viaja entre apps de Office en una sola conversación — no tienes que explicar el contexto de nuevo cada vez que cambias de Excel a Word a PowerPoint',
+        'El add-in puede editar archivos directamente; claude.ai solo puede sugerir cambios',
+      ],
+      correct: 2,
+      exp: 'El contexto persistente entre apps es la ventaja real. Con claude.ai en pestaña separada, cada vez que cambias de app tienes que copiar y pegar el contexto relevante. Con el add-in, la conversación ya sabe que estás construyendo una propuesta de boda para un cliente específico cuando abres PowerPoint — sin que tú repitas nada.',
+    },
+  ],
+  challenge: {
+    title: 'Reto 5.4 — Tu primer flujo completo en Microsoft 365',
+    desc: 'Instala el add-in y completa un flujo de propuesta fotográfica de extremo a extremo.',
+    steps: [
+      'Instala el add-in de Claude en Microsoft Office: abre Word, ve a Inicio → Complementos → Tienda, busca "Claude", haz clic en Agregar. Inicia sesión con tu cuenta claude.ai.',
+      'En Outlook (si tienes la beta activada): abre un email de un cliente real o simulado con requisitos para una sesión. Pide a Claude que resuma los requisitos clave.',
+      'Abre Excel. Sin explicar nada de nuevo, pide: "Basándote en los requisitos del cliente, ayúdame a construir el presupuesto para esta sesión con mis tarifas habituales." Observa si Claude usa el contexto del email.',
+      'Abre Word. Pide: "Redacta la propuesta formal para este cliente basándote en el presupuesto de Excel." Acepta o rechaza los tracked changes según tu preferencia.',
+      'Si tienes acceso a PowerPoint con slide master: pide "Crea una presentación de 5 slides con el resumen de la propuesta usando mi template." Verifica que respeta tus fuentes y colores.',
+    ],
+    checkpoint: 'El reto está completo cuando completaste al menos 3 de los 5 pasos usando el mismo contexto de conversación sin repetir información entre apps. Ese es el valor diferencial del add-in versus usar Claude.ai en una pestaña separada.',
   },
 }

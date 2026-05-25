@@ -2,6 +2,155 @@
 // Basado en: Scrimba, Anthropic Academy, Code with Claude 2026 (mayo 6),
 // DataCamp, DEV Community, power users verificados — mayo 2026
 
+// ─── 3.0 REFERENCIA COMPLETA — COMANDOS, PREFIJOS Y ATAJOS ───────────────────
+export const CLAUDE_CODE_REFERENCE = {
+  id: 'mod2_l0',
+  num: '3.0',
+  title: 'Referencia completa: comandos, prefijos y atajos de Claude Code',
+  duration: '20 min',
+  xpReward: 60,
+  videoId: 'NO_VIDEO',
+  videoCaption: 'Animación interactiva incluida',
+  content: [
+    {
+      type: 'intro',
+      text: 'Esto separa a los usuarios básicos de los power users. Vuelve aquí cada vez que necesites recordar cómo hacer algo en Claude Code.',
+    },
+    {
+      type: 'concept',
+      title: 'Los 3 prefijos especiales — los más ignorados de Claude Code',
+      body: 'Hay tres caracteres que cambian completamente cómo Claude trata tu input, y casi nadie los conoce porque no aparecen en el menú de ayuda.\n\n! al inicio ejecuta un comando shell directamente: !git log --oneline -5 o !find . -name \'*.test.ts\'. El output entra al contexto automáticamente — Claude lo ve y puede razonar sobre él. Elimina el ciclo de "corro comando → copio output → pego en Claude".\n\n# al inicio agrega un fact permanente a tu CLAUDE.md en el momento: # El rate limit de la API es 60 req/min o # La base de datos de producción es read-only. Sin tener que abrir y editar el archivo manualmente.\n\n@ seguido de una ruta referencia un archivo con Tab completion: Refactoriza @src/auth/login.ts usando el nuevo session API. Claude lo lee directamente. También acepta directorios y URLs. Más eficiente que copiar y pegar el contenido.',
+      highlight: 'El ! es el más poderoso para debugging: !cat logs/error.log le da a Claude los logs reales sin que tengas que copiarlos. El # es el más rápido para capturar decisiones: # Usamos pnpm, nunca npm guarda esa regla permanentemente en el momento en que la decides.',
+    },
+    {
+      type: 'cards',
+      title: 'Los slash commands agrupados por propósito',
+      items: [
+        {
+          name: 'Gestión de contexto',
+          tag: 'Usar más',
+          color: '#EF4444',
+          desc: '/compact — Comprime el historial preservando lo esencial. Usar al 60% de capacidad, no al 95%. Agregar foco: /compact focus on the auth decisions.\n/clear — Borra todo el contexto. Para cuando cambias de tarea completamente.\n/context — Muestra qué está consumiendo espacio. Diagnóstico antes de optimizar.\n/branch — Bifurca la conversación para exploración paralela sin perder el hilo principal.\n/rewind — Vuelve al último checkpoint. También funciona con Esc+Esc.',
+        },
+        {
+          name: 'Modelos y rendimiento',
+          tag: 'Modelos',
+          color: '#6366F1',
+          desc: '/model opus — Cambia a Opus 4.7 para razonamiento complejo.\n/model sonnet — Vuelve a Sonnet 4.6 para trabajo estándar.\n/model haiku — Haiku 4.5 para tareas simples y económicas.\n/effort low|medium|high — Controla cuánto razona Claude. low persiste entre sesiones.\n/fast — Toggle de output rápido cuando no necesitas razonamiento profundo.',
+        },
+        {
+          name: 'Sesiones y navegación',
+          tag: 'Productividad',
+          color: '#10B981',
+          desc: '/resume 1 o /resume nombre — Retoma una sesión anterior donde la dejaste. Hasta 67% más rápido en sesiones de 40MB+.\n/rename feature-auth — Nombra la sesión actual para encontrarla después.\n/export — Exporta la transcripción completa de la sesión.\n/status — Ve el estado actual: modelo activo, configuración, uso.',
+        },
+        {
+          name: 'Agentes y paralelismo',
+          tag: 'Avanzado',
+          color: '#8B5CF6',
+          desc: '/agents — Gestiona subagentes activos.\n/tasks — Lista agentes corriendo en background.\n/bashes — Lista tareas bash en background.\n/goal condición — Define una condición de éxito para que Claude trabaje autónomamente hasta alcanzarla, sin que lo guíes paso a paso. Nuevo mayo 2026.',
+        },
+        {
+          name: 'Skills, plugins y MCP',
+          tag: 'Extensiones',
+          color: '#F97316',
+          desc: '/skills — Lista todas las Skills instaladas con búsqueda por tipo.\n/mcp enable|disable — Activa o desactiva servidores MCP.\n/plugins — Gestiona plugins instalados.\n/hooks — Ver configuración de hooks activos.',
+        },
+        {
+          name: 'Calidad de código',
+          tag: 'Bundled skills',
+          color: '#EC4899',
+          desc: '/simplify — Lanza 3 agentes de revisión en paralelo sobre el código reciente.\n/batch — Descompone un cambio grande en hasta 30 unidades en worktrees paralelos.\n/security-review — Revisa el código en busca de vulnerabilidades.\n/claude-api — Helper para construir con la API de Anthropic.',
+        },
+        {
+          name: 'Setup y diagnóstico',
+          tag: 'Configuración',
+          color: '#0EA5E9',
+          desc: '/init — Inicializa el proyecto con CLAUDE.md.\n/doctor — Diagnóstico completo de la instalación. Primer comando si algo no funciona.\n/config — Abre la interfaz completa de configuración.\n/permissions — Gestiona permisos de forma interactiva.',
+        },
+        {
+          name: 'Utilidades y diversión',
+          tag: 'Extras',
+          color: '#F59E0B',
+          desc: '/voice — Push-to-talk dentro de Claude Code.\n/vim — Activa vim keybindings en el prompt de input.\n/theme — Gestiona temas visuales.\n/powerup — Lecciones interactivas animadas de features.\n/release-notes — Changelog interactivo por versión.\n/buddy — Mascota terminal (18 especies, 5 tiers de rareza). No es broma.',
+        },
+      ],
+    },
+    {
+      type: 'concept',
+      title: 'Flags CLI — controla Claude Code desde el inicio',
+      body: 'Los flags CLI se usan al lanzar claude desde el terminal, no dentro de la sesión.\n\nclaude -c — Continúa la sesión más reciente sin escribir nada.\nclaude -p \'prompt\' — Modo no interactivo: responde y sale. Útil en scripts: claude -p \'lista los TODOs\' > todos.txt.\nclaude -r nombre — Retoma una sesión con ese nombre.\nclaude -n nombre — Inicia la sesión con ese nombre para encontrarla después.\nclaude -w feature-auth — Crea un worktree aislado con ese nombre.\nclaude --model opus — Inicia con Opus 4.7.\nclaude --auto — Activa Auto Mode desde el inicio.\nclaude --from-pr 123 — Abre sesión vinculada a un PR de GitHub.\nclaude --max-turns 10 — Limita turnos autónomos (útil para scripts).\nclaude --output-format json — Output como JSON para procesar con otros comandos.\nclaude --bare — Modo scripted: sin hooks, sin plugins, sin LSP.',
+      highlight: 'La combinación más útil para scripting: claude -p \'describe este error\' --output-format json | jq \'.content[0].text\'. Output limpio, procesable, automatizable.',
+    },
+    {
+      type: 'concept',
+      title: 'Atajos de teclado esenciales',
+      body: 'Ctrl+C — Cancela la operación actual.\nCtrl+L — Limpia la pantalla sin perder el historial.\nCtrl+R — Busca en el historial de comandos.\nCtrl+V — Pega una imagen del clipboard directamente (no solo texto).\nCtrl+B — Manda la operación actual a background — sigues trabajando mientras Claude ejecuta.\nCtrl+X Ctrl+K — Detiene todos los agentes activos.\nCtrl+S — Guarda el borrador del prompt sin enviarlo.\nCtrl+G — Abre editor externo para el prompt actual.\nCmd+; (Mac) — Side chat sin contaminar el hilo principal. El shortcut más útil en Cursor.',
+      highlight: 'Ctrl+B es el shortcut más infrautilizado: mandas una operación larga a background y sigues dando instrucciones. Cuando termina, vuelves con /tasks para ver el resultado.',
+    },
+    {
+      type: 'concept',
+      title: 'Variable de entorno y .claudeignore',
+      body: 'CLAUDE_CODE_NO_FLICKER=1: elimina el parpadeo del terminal durante streaming. Sin ella, Claude redibuja todo el output con cada token. Con ella, el output aparece línea por línea sin saltos. Agregar al .zshrc: export CLAUDE_CODE_NO_FLICKER=1. También habilita soporte de mouse (click y scroll).\n\n.claudeignore: archivo en la raíz del proyecto que le dice a Claude qué ignorar. Funciona igual que .gitignore. Sin él, Claude puede leer node_modules, .next, dist, y otros directorios pesados innecesariamente, consumiendo miles de tokens antes de hacer cualquier trabajo real. Contenido recomendado:\nnode_modules/\n.next/\ndist/\n.git/\ncoverage/\n*.log',
+      highlight: 'Crear el .claudeignore es lo primero que deberías hacer en cualquier proyecto nuevo antes de iniciar Claude Code. Un directorio node_modules típico tiene miles de archivos — Claude los escanea todos si no se lo impides.',
+    },
+    {
+      type: 'concept',
+      title: 'Comandos custom — crea los tuyos',
+      body: 'Puedes crear slash commands propios para tareas repetitivas. Crea un archivo Markdown en .claude/commands/nombre-comando.md (solo para este proyecto) o ~/.claude/commands/nombre-comando.md (global para todos los proyectos). El contenido del archivo es el prompt que se ejecuta. Soporta YAML frontmatter para configuración avanzada:\n\n---\ndescription: Revisa este archivo en busca de issues de seguridad\nallowed-tools: Read, Bash(grep:*)\nmodel: opus\nargument-hint: [ruta-del-archivo]\n---\n\nRevisa @$ARGUMENTS buscando vulnerabilidades de seguridad según OWASP Top 10. Dame: el issue, el nivel de riesgo (crítico/alto/medio/bajo), y el fix recomendado.\n\nUso: /security-check src/auth/login.ts',
+      highlight: null,
+    },
+  ],
+  quiz: [
+    {
+      q: 'Estás en una sesión de Claude Code y necesitas saber cuántos archivos .ts hay en tu proyecto sin interrumpir el flujo de la conversación. ¿Cuál es la forma más eficiente?',
+      opts: [
+        'Abres una nueva terminal, corres el comando, copias el output, lo pegas en Claude',
+        'Escribes !find . -name \'*.ts\' | wc -l — el resultado entra al contexto de Claude automáticamente',
+        'Le pides a Claude que busque los archivos usando sus herramientas nativas',
+        'Abres el explorador de archivos y cuentas manualmente',
+      ],
+      correct: 1,
+      exp: 'El prefijo ! ejecuta comandos shell y el output entra directamente al contexto sin salir de Claude Code. Elimina el ciclo manual de copiar/pegar. Para tareas de exploración rápida del proyecto, ! es la herramienta más eficiente.',
+    },
+    {
+      q: 'Quieres que Claude Code trabaje en una tarea larga (30+ minutos) mientras haces otra cosa, y recibir notificaciones de decisiones importantes desde el móvil. ¿Qué combinación usas?',
+      opts: [
+        'Dejas el terminal abierto y vuelves cada rato a revisar',
+        'claude --channels con Telegram o Discord configurado + Ctrl+B para mandarlo a background',
+        'Usas /goal para definir el objetivo y /export cuando termina',
+        'No es posible — Claude Code requiere supervisión constante',
+      ],
+      correct: 1,
+      exp: '--channels retransmite los prompts de aprobación a Telegram o Discord. Ctrl+B manda la operación a background. La combinación te permite supervisar y aprobar desde el móvil mientras Claude trabaja autónomamente. /goal complementa esto definiendo la condición de éxito.',
+    },
+    {
+      q: 'Tu CLAUDE.md tiene 3,000 líneas con toda la documentación del proyecto. ¿Cuál es el problema y cuál es la solución?',
+      opts: [
+        'No hay problema — más contexto siempre es mejor para Claude',
+        'Claude no puede leer archivos de más de 1,000 líneas — hay un límite técnico',
+        'CLAUDE.md se lee completo al inicio de cada sesión — 3,000 líneas se cobran en tokens antes de cualquier trabajo. Solución: mantenerlo bajo 200 líneas con referencias @filename a archivos de detalle',
+        'El problema es el formato — debe estar en JSON, no Markdown',
+      ],
+      correct: 2,
+      exp: 'CLAUDE.md es overhead fijo por sesión. Cada palabra que contiene se cobra antes de tu primer mensaje. La práctica documentada: CLAUDE.md como índice liviano (<200 líneas) con referencias @filename a documentos de detalle que Claude carga solo cuando los necesita.',
+    },
+  ],
+  challenge: {
+    title: 'Reto 3.0 — Configura tu entorno de Claude Code correctamente',
+    desc: 'Configura los elementos de entorno que marcan la diferencia entre usuario básico y power user.',
+    steps: [
+      'Agrega CLAUDE_CODE_NO_FLICKER=1 a tu .zshrc: echo \'export CLAUDE_CODE_NO_FLICKER=1\' >> ~/.zshrc && source ~/.zshrc. Abre Claude Code y verifica que el streaming es más suave.',
+      'Crea el .claudeignore en la raíz de tu proyecto claude-academy con los directorios a ignorar: node_modules/, .git/, dist/.',
+      'Dentro de Claude Code, prueba los 3 prefijos: !ls -la (shell), # Este es un proyecto educativo en React+Vite (nota permanente), @src/da y presiona Tab (referencia de archivo con autocompletado).',
+      'Prueba /doctor para verificar que tu instalación está sana. Lee el output — ¿hay algo que mejorar?',
+      'Crea tu primer custom command: crea el archivo .claude/commands/check-data.md con el contenido: "Verifica que todos los archivos en src/data/ compilan correctamente corriendo el comando de verificación del CLAUDE.md. Reporta cualquier error encontrado." Úsalo con /check-data.',
+      'Prueba /goal: escribe "/goal El curso debe tener exactamente 44 lecciones todas con contenido completo" y observa cómo Claude trabaja autónomamente hacia ese objetivo.',
+    ],
+    checkpoint: 'Tienes el entorno correctamente configurado cuando: (1) El terminal no parpadea durante streaming. (2) Claude ignora node_modules y directorios de build. (3) Los 3 prefijos funcionan como se describe. (4) Tu custom command /check-data ejecuta la verificación automáticamente.',
+  },
+}
+
 // ─── 2.1 INSTALACIÓN Y PRIMERA SESIÓN ────────────────────────────────────────
 export const CLAUDE_CODE_SETUP = {
   id: 'mod2_l1',
@@ -856,6 +1005,7 @@ export const DREAMING_LESSON = {
 
 // ─── EXPORT CONSOLIDADO ───────────────────────────────────────────────────────
 export const CLAUDE_CODE_LESSONS = [
+  CLAUDE_CODE_REFERENCE,
   CLAUDE_CODE_SETUP,
   PLAN_EXECUTE_CLEAR,
   HOOKS_LESSON,
