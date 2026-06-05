@@ -613,6 +613,18 @@ export const AI_SAFETY_LESSON = {
       body: 'Hardcoded = comportamientos que nunca cambian sin importar qué instrucción reciba Claude, de quién sea, o con cuánta persuasión se intente. Ejemplos: no proporcionar ayuda para crear armas de destrucción masiva (biológicas, químicas, nucleares, radiológicas), no generar contenido sexual de menores, no tomar acciones que comprometan la supervisión humana de la IA. Estos límites no se negocian.\n\nSoftcoded = comportamientos por defecto que un operador puede ajustar. Ejemplos: responder en el idioma del usuario (un operador puede forzar un idioma), agregar disclaimers de seguridad (un operador médico puede modificarlos), nivel de detalle en temas sensibles (un operador de plataforma adulta puede expandirlo con acuerdo de Anthropic). El usuario puede ajustar algunos comportamientos softcoded también, dentro de lo que el operador permita.',
       highlight: null,
     },
+    {
+      type: 'concept',
+      title: 'Project Glasswing — IA responsable en ciberseguridad (2026)',
+      body: 'Project Glasswing es la iniciativa de Anthropic para desplegar Claude Mythos Preview — el modelo más avanzado de la empresa — con organizaciones de ciberseguridad seleccionadas antes de su lanzamiento público. Objetivo: encontrar vulnerabilidades críticas en infraestructura real antes de que lo hagan actores maliciosos.\n\nTimeline y escala:\n• Abr 2026: 50 organizaciones iniciales\n• Jun 2026: 150+ nuevas organizaciones\n• 10,000+ vulnerabilidades críticas encontradas a la fecha\n\nPartners fundadores: Amazon, Apple, Broadcom, Cisco, CrowdStrike, Google, JPMorganChase, Linux Foundation, Microsoft, NVIDIA, Palo Alto Networks. Anthropic comprometió hasta $100M en Claude credits para el programa.\n\nClaude Security (mayo 2026): plugin de Claude Code que escanea codebase en busca de vulnerabilidades y sugiere parches. Disponible vía /security-review en Claude Code.',
+      highlight: 'Importante: Claude Mythos y Project Glasswing son para ciberseguridad defensiva con organizaciones verificadas. Si eres investigador de seguridad legítimo: anthropic.com/form/cyber-use-case para solicitar acceso.',
+    },
+    {
+      type: 'concept',
+      title: 'IA responsable para PYMES y partnerships (2026)',
+      body: '**Mozilla Firefox (6 mar 2026)**: partnership de seguridad entre Anthropic y Mozilla para integrar Claude en el navegador Firefox con foco en privacidad y transparencia. Claude en Firefox respeta el modo de privacidad del navegador y no retiene datos de navegación.\n\n**IA responsable para pequeñas empresas**: Anthropic estableció partnerships con LISC (Local Initiatives Support Corporation), Workday Foundation y CDFIs (Community Development Financial Institutions) para garantizar que el acceso a IA de calidad no amplifique la brecha digital entre grandes corporaciones y pequeñas empresas. El objetivo: herramientas como Claude for Small Business son deliberadamente accesibles para negocios que no tienen departamentos de TI.',
+      highlight: null,
+    },
   ],
   quiz: [
     {
