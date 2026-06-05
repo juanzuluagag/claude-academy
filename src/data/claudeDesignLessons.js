@@ -64,6 +64,12 @@ export const CLAUDE_DESIGN_INTRO = {
       body: 'Ningún competidor hace esto: Claude Design puede leer tu repositorio GitHub o archivos de código y extraer automáticamente tus tokens de diseño — colores, tipografías, espaciados, componentes. En aproximadamente 5 minutos genera un design system que refleja tu codebase real. Luego aplica ese sistema a cualquier nuevo prototipo automáticamente. Para el Proyecto 6.3 (portal de fotografía), esto significa que Claude Design puede leer el código Next.js que ya tienes y generar el onboarding conversacional del cliente siguiendo exactamente los mismos tokens visuales.',
       highlight: 'El flujo más poderoso: Claude Design para prototipar → Claude Code para implementar. El prototipo generado por Design se pasa a Claude Code con el prompt: "Implementa este prototipo en Next.js. Aquí está el HTML/CSS de referencia: [output de Design]." Claude Code lo convierte en componentes React funcionales.',
     },
+    {
+      type: 'concept',
+      title: 'Claude para Microsoft Office: la extensión del ecosistema (ene–abr 2026)',
+      body: 'En paralelo a Claude Design, Anthropic lanzó integración profunda con Microsoft 365:\n\n• PowerPoint (5 feb 2026): Claude como panel lateral dentro de PowerPoint, powered by Opus 4.7. Escribe, edita y reformatea slides en lenguaje natural sin salir de la app.\n• Excel (feb 2026): análisis de datos no estructurados directamente en celdas. Conectores MCP en Excel (17 feb 2026) para traer datos de APIs. Contexto compartido Excel↔PowerPoint (11 mar 2026): un análisis en una hoja puede convertirse en slide automáticamente.\n• Skills en Office add-ins (11 mar 2026): instala tus Skills de Claude directamente en Word, Excel y PowerPoint — las mismas Skills que usas en Claude Code ahora funcionan dentro de Office.\n• Add-ins nativos desde Cowork (9 abr 2026): acceso a Word, Excel y PowerPoint desde la pestaña CoWork con escritura y lectura bidireccional de archivos. Outlook en la hoja de ruta.',
+      highlight: 'Para tu negocio: si entregas reportes en PowerPoint (bodas, proyectos comerciales), el panel lateral de Claude + las Skills de tu negocio de fotografía pueden reformatear y enriquecer presentaciones directamente en PowerPoint sin cambiar de app.',
+    },
   ],
   quiz: [
     {
