@@ -348,6 +348,12 @@ export const PROJECT_PHOTOGRAPHY_WEB = {
       body: 'El paso final del asistente creativo es construir una Skill específica para tu negocio fotográfico. En ~/.claude/skills/claude-fotografia.md defines: tu estilo fotográfico, tus fotógrafos referentes, tus tarifas típicas por tipo de proyecto, tu mercado objetivo, tus valores como fotógrafo. Cuando esta Skill está activa, Claude responde sobre fotografía como alguien que conoce tu trabajo específico — no como un asistente genérico. Portable entre Claude Code, Cursor con extensión Claude, y cualquier IDE compatible.',
       highlight: null,
     },
+    {
+      type: 'concept',
+      title: 'Computer Use: automatización de workflows de post-producción',
+      body: 'Computer Use (disponible en la API de Claude) permite que Claude controle directamente aplicaciones de escritorio — no solo el navegador. Para un negocio de fotografía, abre la posibilidad de automatizar los workflows de post-producción que hoy son repetitivos:\n\n• Lightroom / Capture One: Claude puede abrir el software, navegar por carpetas de sesiones, aplicar presets por lotes, exportar en múltiples resoluciones y renombrar archivos según convención.\n• Revisión de metadatos: recorrer una carpeta de RAWs, verificar que todos tienen los metadatos correctos (copyright, locación, modelo de cámara) y generar un reporte de los que faltan.\n• Backup y organización: mover archivos entregados a carpetas de archivo, verificar checksums, actualizar el log de proyectos.\n\nCómo integrarlo en el Proyecto 9.3: en lugar de salir del portal para hacer la entrega, el flujo puede ser: cliente aprueba selección en el portal → Claude Code activa un agente de Computer Use → agente exporta las fotos aprobadas desde Lightroom en la resolución correcta → las sube a Supabase Storage → notifica al cliente.',
+      highlight: 'Estado actual (2026): Computer Use está disponible vía la API de Claude. Para integrarlo al portal del Proyecto 9.3 necesitas el plan Enterprise o API access. El caso de uso inmediato sin integración al portal: como workflow local en tu Mac con Claude Desktop y CoWork, donde Claude controla Lightroom directamente durante tu sesión de edición.',
+    },
   ],
   quiz: [
     {
@@ -469,6 +475,18 @@ export const PROJECT_QA_AGENT = {
       title: 'CI/CD: tests automáticos en cada Pull Request',
       body: 'El paso final es correr los tests automáticamente en GitHub Actions cada vez que haces un deploy. Claude Code configura el workflow completo: instalar Playwright, correr los tests en múltiples navegadores (Chromium, Firefox, WebKit), generar el reporte de resultados, y bloquear el merge si algún test crítico falla. Instrucción: "Configura GitHub Actions para correr los tests de Playwright en cada Pull Request. Si falla algún test del auth flow o del privacy guard, bloquea el merge automáticamente."',
       highlight: null,
+    },
+    {
+      type: 'concept',
+      title: 'Managed Agents: infraestructura de agentes sin construirla desde cero',
+      body: 'El pipeline de 4 agentes descrito en esta lección (Explorer → Test Case Generator → Automation Writer → Maintenance) requiere orquestación. Tienes dos opciones:\n\n**Build-your-own (enfoque anterior):** construir manualmente el orquestador con la API de Claude, gestionar el estado entre agentes, manejar reintentos y errores, y mantener el código de orquestación. Funciona pero requiere tiempo de desarrollo y mantenimiento.\n\n**Managed Agents (recomendado 2026):** Anthropic ofrece infraestructura de agentes gestionada donde la orquestación, el estado, los reintentos y los logs están listos. Claude actúa como orquestador principal y los subagentes como unidades especializadas, con toda la infraestructura manejada por Anthropic. Reduce el código de plomería a prácticamente cero y permite enfocarse en la lógica del negocio.\n\nPara el Proyecto 9.4, Managed Agents significa que puedes definir los 4 agentes y sus responsabilidades, y dejar que la plataforma gestione la coordinación entre ellos.',
+      highlight: 'Cuándo usar Managed Agents vs build-your-own: si el pipeline tiene más de 2 agentes, estado compartido entre pasos, o necesita reintentos automáticos — Managed Agents reduce semanas de infraestructura a horas de configuración. Para un agente único o pipeline lineal simple, build-your-own sigue siendo más directo.',
+    },
+    {
+      type: 'concept',
+      title: 'Outcomes y Dreaming: el patrón correcto para el agente de QA',
+      body: 'Cuando diseñas la instrucción del QA Agent, el framing importa para la calidad del resultado:\n\n**Dreaming (incorrecto para producción):** "Encuentra todos los posibles bugs en el sitio." Esta instrucción abierta activa el modo exploración libre de Claude — útil para brainstorming, pero en QA produce cobertura inconsistente y agentes que se desvían en caminos no críticos.\n\n**Outcomes (correcto para QA):** "Verifica que estos 5 flujos críticos funcionan correctamente: [lista exacta]. Para cada uno, reporta: PASS o FAIL, el paso donde falló si aplica, y el screenshot del estado final." Esta instrucción orienta al agente hacia resultados verificables y deterministas — exactamente lo que necesitas en un pipeline de QA automatizado.\n\nEl patrón Outcomes define el resultado esperado con precisión. El agente no tiene libertad de interpretación — tiene una lista de condiciones que deben ser verdad al final. Dreaming es para descubrimiento; Outcomes es para verificación. En un QA Agent de producción, siempre usas Outcomes.',
+      highlight: 'Prompt de Outcomes para el auth flow: "Verifica el flujo de autenticación. PASS si: (1) un email no registrado recibe página de registro, (2) tras registro el usuario NO puede acceder al portal privado hasta ser aprobado, (3) tras aprobación el login funciona y muestra solo los proyectos del usuario. FAIL si cualquier condición es falsa. Reporta screenshot del estado final de cada paso."',
     },
   ],
   quiz: [
