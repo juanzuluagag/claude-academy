@@ -305,6 +305,18 @@ export const MANAGED_AGENTS_LESSON = {
       body: 'Anthropic publicó en abril 2026 el patrón más efectivo para agentes complejos: (1) Planner: estructura el trabajo y define objetivos. (2) Generator: ejecuta las tareas. (3) Evaluator: revisa el output del Generator de forma independiente, sin estar influenciado por el razonamiento del Generator. El Evaluator ejecuta 5-15 ciclos de crítica-refinamiento. La clave: separar la evaluación elimina el problema de auto-calificación inflada.',
       highlight: null,
     },
+    {
+      type: 'concept',
+      title: 'Claude Agent SDK — el harness self-hosted',
+      body: 'Disponible desde Q1 2026, el Claude Agent SDK es el framework para construir agentes autónomos que corren en tu propia infraestructura. Filosofía: "darle un computador a Claude". Incluye: bash nativo, acceso al filesystem, soporte MCP, y un loop agéntico configurable.\n\nDiferencia con Managed Agents: el SDK te da control total — tú construyes la infraestructura, gestionas el estado, manejas errores y escalas. Managed Agents es plug-and-play con la infraestructura de Anthropic. El SDK es para equipos con requerimientos específicos de privacidad, infraestructura existente, o necesidad de control total del ciclo de vida del agente.',
+      highlight: 'Cuándo usar SDK vs Managed Agents: SDK cuando tienes infraestructura cloud propia y requerimientos de compliance estrictos. Managed Agents cuando quieres velocidad de desarrollo y no quieres gestionar servidores.',
+    },
+    {
+      type: 'concept',
+      title: 'Claude Finance — cookbook para agentes financieros (5 may 2026)',
+      body: 'Lanzado el 5 de mayo de 2026: 10 plantillas de agentes financieros como cookbook oficial para Managed Agents. Incluye: análisis de portfolios, monitoreo de métricas, generación de reportes financieros, due diligence automatizado. Integración destacada: conector MCP de Moody\'s con acceso a datos de 600M+ empresas.\n\nBenchmark verificado: Opus 4.7 obtuvo 64.37% en el Vals AI Finance Agent benchmark — el score más alto publicado para cualquier modelo en esa evaluación a la fecha de lanzamiento.',
+      highlight: null,
+    },
   ],
   quiz: [
     {
