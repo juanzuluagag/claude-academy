@@ -549,6 +549,12 @@ export const CONNECTORS_LESSON = {
       body: 'En claude.ai, en cualquier conversación, haz clic en el ícono de conectores (puzzle piece) en la barra de herramientas. Se abre el directorio con todas las apps disponibles. Selecciona la app, autoriza el acceso (OAuth — sin contraseñas), y listo. Claude ahora puede usar esa app en la conversación actual. Puedes conectar múltiples apps en la misma conversación.',
       highlight: null,
     },
+    {
+      type: 'concept',
+      title: 'Novedades de MCP 2026: Fantastical, AWS Platform y Legal connectors',
+      body: '**Fantastical MCP (18 mar 2026)**: el conector de calendario más usado en Mac/iOS ahora tiene integración MCP nativa. Claude puede leer y escribir en tu Fantastical directamente desde el chat: crear eventos, revisar tu semana, mover reuniones, agregar tareas.\n\n**Claude Platform en AWS (11 may 2026)**: acceso nativo de Claude a través de AWS IAM auth, CloudTrail, y billing de AWS. Incluye acceso a Managed Agents, Skills, Files API y Claude Console. Para empresas con infraestructura AWS, esto elimina la necesidad de un vendor adicional.\n\n**Self-hosted MCP Tunnels (19 may 2026)**: Managed Agents puede ahora conectarse a servidores MCP dentro de redes privadas sin exponerlos a internet. Un gateway ligero en tu red abre una conexión outbound hacia Anthropic — sin firewall inbound, sin endpoints públicos. Compatible con Cloudflare Tunnels, Daytona, Modal y Vercel.\n\n**Claude for Legal (20+ conectores MCP)**: el paquete open source incluye conectores MCP para DocuSign, Westlaw/CoCounsel, LexisNexis, iManage, NetDocuments, Everlaw, Box y Harvey.',
+      highlight: 'Para empresas: la plataforma en AWS es el path enterprise más limpio — todo el billing y compliance de Claude queda dentro del ecosistema AWS existente.',
+    },
   ],
   quiz: [
     {
