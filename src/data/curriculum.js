@@ -431,6 +431,24 @@ export const LESSONS = {
           body: 'Claude puede activar búsqueda web para consultar información actual. Esto es crítico porque el conocimiento de Claude tiene una fecha de corte — eventos recientes puede no conocerlos sin búsqueda. Cuando está activa, Claude indica qué fuentes consultó.',
           highlight: 'Actívala cuando preguntes sobre: noticias recientes, precios actuales, eventos de los últimos meses, o cualquier dato que cambia frecuentemente.',
         },
+        {
+          type: 'concept',
+          title: 'Claude Marketplace y MCP Apps: el ecosistema de extensiones (mar 2026)',
+          body: 'El 6 de marzo de 2026 Anthropic lanzó el Claude Marketplace — una tienda de Skills y plugins donde la comunidad y empresas publican extensiones instalables con un clic. Ya en enero (27 ene) habían lanzado MCP Apps en claude.ai: conectores directos a Canva, Asana, Slack, Figma, Box, Clay y Salesforce que se instalan desde claude.ai sin tocar código.\n\nVisuals interactivos (16 mar): Claude puede ahora responder con gráficos, diagramas y visualizaciones inline en el chat — no solo texto. Piensa en un gráfico de barras generado dentro de la conversación cuando preguntas por datos.\n\nInteractive Apps en móvil (25 mar): los Artifacts interactivos (apps React, dashboards) ahora también corren en las apps de iOS y Android — no solo en el navegador web.',
+          highlight: 'Para acceder a MCP Apps: en cualquier chat de claude.ai, haz clic en el ícono de conectores → "Browse MCP Apps". Requiere plan Pro o superior para la mayoría de conectores.',
+        },
+        {
+          type: 'concept',
+          title: 'Importar historial de otras IAs (3 mar 2026)',
+          body: 'Desde el 3 de marzo de 2026, puedes importar tus conversaciones de ChatGPT, Gemini, Grok y otras IAs directamente a Claude. Settings → Import conversations → selecciona la IA de origen → sube el archivo de export. Claude analiza el historial importado para enriquecer tu memoria y perfil automáticamente. Ideal si migras desde otro sistema.',
+          highlight: null,
+        },
+        {
+          type: 'concept',
+          title: 'Separación de créditos: interactivos vs programáticos (desde 15 jun 2026)',
+          body: 'A partir del 15 de junio de 2026, Anthropic separó los créditos de uso en dos pools distintos: Interactivos (chat en claude.ai, CoWork, apps web) y Programáticos (Agent SDK, claude -p desde terminal, API calls). Esta separación evita que tareas agénticas pesadas consuman los créditos de tu uso personal de chat.\n\nPráctica: si usas Claude Code o Agent SDK intensivamente, los créditos de esos usos ya no compiten con tus conversaciones de chat. Cada pool tiene su propio límite según tu plan.',
+          highlight: null,
+        },
       ],
       quiz: [
         {
