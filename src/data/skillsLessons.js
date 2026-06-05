@@ -203,6 +203,12 @@ export const SKILLS_LESSONS = [
         highlight: 'Consejo práctico: si cambias de Claude Code a Cursor o viceversa, tus Skills siguen funcionando. Si colaboras con un equipo, puedes versionar las Skills del proyecto en una carpeta .claude/skills/ en el repositorio compartido — todos en el equipo las heredan automáticamente.',
       },
       {
+        type: 'concept',
+        title: 'Skills en el tier gratuito — disponible desde 17 feb 2026',
+        body: 'Hasta enero 2026 las Skills estaban limitadas a planes pagados. El 17 de febrero Anthropic las habilitó para todos los usuarios incluyendo el plan Free. Esto incluye: las Skills pre-built nativas (pptx, xlsx, docx, pdf), la capacidad de subir Skills propias desde Settings, y acceso al marketplace para instalar Skills de la comunidad.\n\nEn Office add-ins (11 mar 2026), Skills también llegan a Word, Excel y PowerPoint — las mismas Skills que configuras en Claude Code o claude.ai funcionan automáticamente dentro de los add-ins de Office si tienes una cuenta Claude conectada.',
+        highlight: null,
+      },
+      {
         type: 'cards',
         title: 'Skills vs Prompts vs MCP — las diferencias clave',
         items: [
@@ -317,6 +323,12 @@ export const SKILLS_LESSONS = [
         title: 'marketingskills (Corey Haines) — para crecer tu negocio de fotografía',
         body: 'marketingskills (github.com/coreyhaines31/marketingskills) tiene Skills de marketing para Claude Code: CRO (optimización de conversiones), copywriting directo, SEO, analytics, email marketing, y growth engineering. Conectores MCP incluidos: GA4, Stripe, Mailchimp, Google Ads, Resend. Via Composio: HubSpot, Salesforce, Meta Ads, LinkedIn Ads, Google Sheets. Relevante directo para tu negocio: la skill de copywriting puede escribir el copy de tu sitio de fotografía en tu voz. La skill de SEO puede optimizar tus páginas de servicios. La skill de analytics conecta con GA4 para analizar el tráfico de tu portal. Instalación: npx skills add coreyhaines31/marketingskills.',
         highlight: null,
+      },
+      {
+        type: 'concept',
+        title: 'Claude for Legal — suite open source para práctica legal (12 may 2026)',
+        body: 'El 12 de mayo de 2026 Anthropic lanzó Claude for Legal bajo Apache 2.0 — 12 plugins de Skills por área de práctica jurídica más 20+ conectores MCP para software legal. Áreas cubiertas: Commercial, Corporate, Litigation, Privacy, IP y más. Conectores MCP incluidos: DocuSign, Westlaw/CoCounsel, LexisNexis, iManage, NetDocuments, Everlaw, Box, Harvey.\n\nPara usuarios no-abogados: los plugins de redacción de contratos y revisión de cláusulas son valiosos para cualquier negocio que maneje contratos de clientes. El plugin de Privacy es útil para compliance con protección de datos. Instalación desde el marketplace de CoWork o directamente desde el repositorio oficial de Anthropic.',
+        highlight: 'Para tu negocio de fotografía: el plugin de Commercial (contratos comerciales) puede revisar tus contratos de cliente, identificar cláusulas problemáticas, y sugerir mejoras en lenguaje natural. Es la diferencia entre enviar un contrato genérico y uno que protege realmente tus intereses.',
       },
       {
         type: 'concept',
