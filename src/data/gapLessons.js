@@ -130,6 +130,12 @@ export const COMPUTER_USE_LESSON = {
     },
     {
       type: 'concept',
+      title: 'El origen de CoWork — construido en 10 días con Claude Code',
+      body: 'CoWork es uno de los productos más interesantes de Anthropic por su historia de origen: fue construido en 10 días usando Claude Code para construirse a sí mismo. Un equipo pequeño usó Claude Code para escribir el código de CoWork, y CoWork para organizar y gestionar el propio proyecto. El resultado fue un producto funcional en un tiempo que antes habría tomado meses.\n\nTimeline de rollout:\n• Max (12 ene 2026)\n• Pro (16 ene 2026)\n• Team / Enterprise (23 ene 2026)\n• Windows beta (10–11 feb 2026)\n• GA macOS + Windows (9 abr 2026)\n\nCapacidades core: lee y escribe en carpeta autorizada, VM aislada, tareas multi-paso, subagentes en paralelo. Projects en CoWork (17–20 mar): workspace persistente con archivos, instrucciones, memoria y tareas programadas por proyecto — igual que Projects en claude.ai pero integrado en tu escritorio con acceso a tu sistema de archivos.',
+      highlight: 'Para activar Projects en CoWork: en la pestaña CoWork → esquina superior derecha → "New Project". Asigna una carpeta local del sistema de archivos y las instrucciones permanentes que aplican a todos los chats de ese proyecto.',
+    },
+    {
+      type: 'concept',
       title: '¿Cómo funciona Computer Use?',
       body: 'Claude recibe capturas de pantalla continuas, interpreta lo que ve (aplicaciones abiertas, texto en pantalla, botones disponibles), decide qué acción tomar (click, tipear, scroll, abrir app), ejecuta la acción, toma otra captura, y repite. No usa APIs de las aplicaciones — las opera visualmente, exactamente como lo haría un humano sentado frente al computador.',
       highlight: 'Analogía perfecta: es como contratar a alguien que puede operar cualquier programa de tu computador, sin entrenamiento específico en cada uno, porque simplemente lo ve y lo usa como cualquier humano.',
