@@ -18,7 +18,7 @@ export const MODULES = [
     color: '#06B6D4',
     weeks: 'Semana 1',
     available: true,
-    description: 'Los 3 archivos que hacen que Claude nunca empiece desde cero contigo: About Me, Voice Profile y Anti-AI Writing. Incluye Context Engineering y cómo migrar tus chats de otras IAs.',
+    description: 'El ecosistema Claude 2026 ($47B ARR, Anthropic Labs, 4 modos: Chat/Cowork/Code/Projects) y los archivos de identidad que hacen que Claude nunca empiece desde cero: About Me, Voice Profile y Anti-AI Writing.',
   },
   {
     id: 'mod1',

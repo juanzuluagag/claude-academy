@@ -18,6 +18,12 @@ export const IDENTITY_SETUP_LESSON = {
     },
     {
       type: 'concept',
+      title: 'El ecosistema Claude hoy (2026)',
+      body: 'Anthropic no es la misma empresa de 2023. En mayo de 2026 vale $380B, con $47B en ARR anualizado y un crecimiento de 80x en Q1 2026. El 12 de enero lanzaron Anthropic Labs — un nuevo brazo de producto experimental co-liderado por Mike Krieger (cofundador de Instagram) con Ami Vora al frente de Product. Su misión: construir los productos más audaces antes de que sean "seguros" para el main roadmap.\n\nLos 4 modos en que Claude existe hoy:\n• Chat — claude.ai, conversaciones con memoria, Connectors, Marketplace de Skills\n• Cowork — app de escritorio, automatización de flujos, control de pantalla, tareas programadas\n• Code — CLI en tu terminal, leer/escribir archivos, agentes de desarrollo, Dynamic Workflows\n• Projects — espacios persistentes con contexto, archivos, instrucciones y memoria compartida\n\nEntender en qué modo estás usando Claude determina qué features tienes disponibles y cómo configurar tu setup correctamente.',
+      highlight: 'Dato de carrera: Claude Code ya genera más de $2.5B en ARR anualizado — más que muchos unicornios. Las skills certificadas en implementación de Claude tienen mercado real y creciente.',
+    },
+    {
+      type: 'concept',
       title: 'Por qué Claude suena genérico — y cómo solucionarlo',
       body: 'Sin contexto sobre ti, Claude escribe como si fuera para cualquiera: frases cliché, tono corporativo genérico, estructura predecible. El problema no es Claude — es que no sabe quién eres. La solución son 3 archivos de texto que Claude lee automáticamente antes de cada sesión. Una vez creados, Claude nunca más empieza desde cero.',
       highlight: 'Dato verificado: la mejora en calidad de output al tener estos archivos configurados es mayor que cambiar de Sonnet a Opus. Es la palanca más poderosa disponible para cualquier usuario — y es gratis.',
