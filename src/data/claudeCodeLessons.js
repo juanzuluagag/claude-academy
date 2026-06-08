@@ -900,7 +900,7 @@ export const PRD_LESSON = {
 // ─── 4.7 DREAMING, OUTCOMES Y ROUTINES ───────────────────────────────────────
 export const DREAMING_LESSON = {
   id: 'mod4_l7',
-  num: '6.3',
+  num: '6.7',
   title: 'Dreaming, Outcomes y Routines: agentes que se mejoran solos',
   duration: '25 min',
   xpReward: 80,

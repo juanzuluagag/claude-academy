@@ -679,8 +679,8 @@ export const AI_SAFETY_LESSON = {
 // ─── LECCIÓN: Evaluar Outputs — Evals ────────────────────────────────────────
 export const EVALS_LESSON = {
   id: 'mod4_l6',
-  num: '6.2',
-  title: 'Evals: cómo saber si Claude está haciendo bien su trabajo',
+  num: '6.6',
+  title: 'Evals agénticos: mide la calidad de tus agentes con datos reales',
   duration: '25 min',
   xpReward: 70,
   videoId: 'EGWATU5S470',
@@ -786,5 +786,117 @@ export const EVALS_LESSON = {
       'Modifica algo del prompt y vuélvelo a correr. ¿Mejoró la tasa? ¿Empeoró en algún caso?',
     ],
     checkpoint: 'Tienes un Eval funcional cuando puedes hacer un cambio al prompt, correr los 10 casos, y decir con datos: "esto mejoró X% y solo empeoró en el caso Y." Ese nivel de claridad es lo que separa la optimización sistemática del ensayo y error a ciegas.',
+  },
+}
+
+// ─── LECCIÓN: Chat Memory y Claude Styles → Módulo 0 ─────────────────────────
+export const CHAT_MEMORY_LESSON = {
+  id: 'mod0_l2',
+  num: '0.2',
+  title: 'Chat Memory y Claude Styles: Claude que recuerda y escribe como tú',
+  duration: '20 min',
+  xpReward: 50,
+  videoId: 'NO_VIDEO',
+  videoCaption: 'Animación interactiva incluida en esta lección',
+  content: [
+    {
+      type: 'intro',
+      text: 'La Lección 0.1 te enseñó a crear archivos de identidad que Claude lee manualmente. Pero Claude también tiene dos sistemas automáticos que funcionan sin que hagas nada extra: Chat Memory, que recuerda lo que aprendes sobre ti conversación a conversación, y Claude Styles, que guarda cómo escribes y lo aplica en cada respuesta. No son sustitutos de los archivos de identidad — son complementarios. Esta lección explica cómo funcionan los dos sistemas, cuándo usarlos juntos, y qué hace realmente el Modo Incógnito (que NO es lo que la mayoría cree).',
+    },
+    {
+      type: 'comparison',
+      bad: 'Archivos de identidad (Lección 0.1)\n\n• Tú los creas manualmente con entrevista\n• Los cargas en un Project específico\n• Solo actúan en ese Project\n• Control total sobre el contenido\n• Ideal para: proyectos con contexto profundo y decisiones tomadas\n\nLimitación: si trabajas fuera del Project, Claude no tiene ese contexto.',
+      good: 'Chat Memory (esta lección)\n\n• Claude los construye automáticamente\n• Se aplica a TODAS tus conversaciones en claude.ai\n• Funciona en cualquier chat, no solo en Projects\n• Se actualiza sin intervención tuya\n• Ideal para: preferencias globales y patrones que usas en todo\n\nComplemento: usa Memory para preferencias globales + archivos de identidad para profundidad en proyectos.',
+    },
+    {
+      type: 'concept',
+      title: 'Chat Memory: cómo funciona el sistema automático',
+      body: 'Chat Memory es el sistema que permite a Claude recordar información sobre ti entre conversaciones. No es que Claude "recuerde" las conversaciones completas — es más sofisticado: aproximadamente cada 24 horas, Claude realiza un proceso de Memory Synthesis: revisa las conversaciones del período, extrae los patrones, preferencias y hechos relevantes, y los consolida en un perfil de memoria estructurado.\n\nLo que recuerda: tu profesión y contexto de trabajo, tus herramientas preferidas, tu estilo de comunicación, tus proyectos recurrentes, tus preferencias explícitas de formato y longitud.\n\nCómo revisarlo: Settings → Memory (en claude.ai) — puedes ver exactamente qué tiene guardado, editarlo o eliminar entradas específicas.',
+      highlight: 'Importar desde otras IAs: si vienes de ChatGPT, Gemini, o Grok, puedes importar lo que esas IAs saben sobre ti a la memoria de Claude. Settings → Memory → Import. Claude lee el export de tu historial y extrae los patrones relevantes. Si llevas meses con otra IA, esto puede darte semanas de head-start en personalización.',
+    },
+    {
+      type: 'cards',
+      title: 'Cuándo usar Memory vs archivos de identidad vs ambos',
+      items: [
+        {
+          name: 'Solo Chat Memory',
+          tag: 'Uso general',
+          color: '#10B981',
+          desc: 'Preferencias globales que aplican en todas tus conversaciones: idioma preferido, longitud típica de respuestas, áreas de expertise que siempre son relevantes. Memory es automático — simplemente usa Claude y el sistema aprende.',
+        },
+        {
+          name: 'Ambos sistemas',
+          tag: 'Máxima potencia',
+          color: '#6366F1',
+          desc: 'Memory maneja el contexto global que aplica siempre. Los archivos de identidad (About Me, Voice Profile, Anti-AI Writing) manejan el contexto profundo específico de un proyecto. La combinación da lo mejor de los dos mundos: amplitud automática + profundidad manual.',
+        },
+        {
+          name: 'Solo archivos de identidad',
+          tag: 'Proyectos sensibles',
+          color: '#F59E0B',
+          desc: 'Cuando necesitas control total sobre qué sabe Claude (trabajo con datos sensibles, clientes confidenciales, proyectos competitivos). Activa Modo Incógnito para el proyecto + archivos de identidad específicos del proyecto sin que se mezcle con la memoria global.',
+        },
+      ],
+    },
+    {
+      type: 'concept',
+      title: 'Modo Incógnito: lo que hace Y lo que NO hace',
+      body: 'El Modo Incógnito (ícono de gorro en la barra de herramientas) tiene un malentendido muy común. Lo que SÍ hace: Claude no usa tu Chat Memory en esa conversación, y las interacciones de esa sesión no se usan para actualizar la memoria ni para entrenar los modelos.\n\nLo que NO hace: NO borra inmediatamente la conversación. Anthropic retiene las conversaciones de Modo Incógnito durante 30 días antes de eliminarlas definitivamente. Esto es por razones de seguridad, cumplimiento y revisión de abuso — es una política documentada públicamente.\n\nImplicación práctica: si el requisito es que la conversación no exista en absoluto, el Modo Incógnito no es suficiente. Para eso necesitas la API con Zero Data Retention (ZDR) — solo disponible en planes Enterprise.',
+      highlight: 'Caso de uso correcto para Modo Incógnito: cuando trabajas en algo que NO quieres que contamine tu memoria global (explorar un proyecto competidor, hacer preguntas sobre un tema delicado, probar prompts sin "enseñarle" hábitos a Claude). El propósito es aislamiento de la memoria, no privacidad absoluta.',
+    },
+    {
+      type: 'concept',
+      title: 'Claude Styles: perfiles de escritura globales',
+      body: 'Claude Styles son perfiles de escritura que defines una vez y se aplican automáticamente en todas tus conversaciones — sin que los cites en cada prompt. Viven en Settings → Styles, no en Projects.\n\nCuatro presets de fábrica: Concise (respuestas directas y cortas), Explanatory (detallado y didáctico), Formal (tono profesional y estructurado), Exploratory (amplio, con múltiples ángulos).\n\nEstilos personalizados: cargas 3-5 ejemplos de textos propios que te gusten y Claude los analiza para crear un perfil de tu voz. Si tienes artículos publicados, emails que te orgullecen, o textos que te pidieron replicar — estos son el material perfecto.\n\nDiferencia con Anti-AI Writing: el Style Profile define qué hacer. El Anti-AI Writing (Lección 0.1) define qué NO hacer. Son complementarios, no redundantes.',
+      highlight: 'El caso de uso más poderoso de Styles: si tienes un boletín, blog o newsletter con voz propia, cargas 5 de tus mejores artículos. Claude crea un Style de tu voz específica que aplica automáticamente en todos los borradores — sin que tengas que decir "escribe como yo" en cada prompt.',
+    },
+  ],
+  quiz: [
+    {
+      q: '¿Con qué frecuencia aproximada ocurre el proceso de Memory Synthesis en Chat Memory?',
+      opts: [
+        'En tiempo real — Claude actualiza la memoria inmediatamente después de cada mensaje',
+        'Cada 24 horas aproximadamente — Claude revisa conversaciones del período y consolida los patrones en el perfil de memoria',
+        'Solo cuando el usuario lo solicita explícitamente en Settings',
+        'Una vez por semana — el proceso es semanal para evitar sobrecargar el sistema',
+      ],
+      correct: 1,
+      exp: 'Memory Synthesis es un proceso periódico, no en tiempo real. Aproximadamente cada 24 horas, Claude revisa las conversaciones recientes, extrae patrones relevantes, y actualiza el perfil de memoria. Esto explica por qué un dato que mencionas hoy puede no estar en tu memoria hasta mañana.',
+    },
+    {
+      q: '¿Cuál es el malentendido más común sobre el Modo Incógnito en claude.ai?',
+      opts: [
+        'Que funciona solo en claude.ai Pro y no en la versión gratuita',
+        'Que protege completamente contra el rastreo de Anthropic — en realidad, Anthropic retiene las conversaciones de Modo Incógnito durante 30 días antes de eliminarlas definitivamente',
+        'Que desactiva Extended Thinking y solo permite respuestas rápidas',
+        'Que es equivalente al Modo Incógnito de Chrome — ningún dato se guarda en ningún servidor',
+      ],
+      correct: 1,
+      exp: 'Modo Incógnito aísla la sesión de tu Chat Memory (Claude no usa lo que sabe de ti y no aprende de esa sesión). Pero las conversaciones existen en los servidores de Anthropic durante 30 días por razones de seguridad y cumplimiento. No es privacidad absoluta — es aislamiento de la memoria. Para privacidad total, la única opción es la API con ZDR en Enterprise.',
+    },
+    {
+      q: '¿Cuál es la diferencia entre Claude Styles y el archivo Anti-AI Writing de la Lección 0.1?',
+      opts: [
+        'Son lo mismo con diferentes nombres — ambos definen el estilo de escritura de Claude',
+        'Claude Styles define cómo Claude DEBE escribir (patrones de tu voz). Anti-AI Writing define qué Claude NO debe hacer (tics genéricos de IA que arruinan el texto)',
+        'Claude Styles es global; Anti-AI Writing solo aplica dentro de un Project específico',
+        'Anti-AI Writing es automático; Claude Styles requiere configuración manual',
+      ],
+      correct: 1,
+      exp: 'Son complementarios en dirección opuesta. Un Style Profile creado con tus artículos dice "escribe con estas características positivas". El Anti-AI Writing dice "evita estas características negativas". Juntos generan escritura que suena como tú (positivo) y no suena a IA genérica (negativo). Sin el Anti-AI Writing, un Style Profile puede seguir usando guiones em y bullets para todo aunque capture tu voz correctamente.',
+    },
+  ],
+  challenge: {
+    title: 'Reto 0.2 — Configura Chat Memory y tu primer Claude Style',
+    desc: 'Activa el sistema de memoria automática y crea un perfil de escritura personalizado.',
+    steps: [
+      'Ve a claude.ai → Settings → Memory. Lee qué tiene guardado Claude sobre ti actualmente. Si la memoria está vacía o incompleta, empieza una conversación normal y cuéntale a Claude sobre tu trabajo y proyectos actuales — lo irá aprendiendo.',
+      'Si vienes de ChatGPT o Gemini: Settings → Memory → Import. Sigue el proceso para importar tu historial de otra IA. Claude extrae los patrones relevantes automáticamente.',
+      'Ve a Settings → Styles. Activa uno de los cuatro presets (Concise, Explanatory, Formal, Exploratory) según tu uso más frecuente. Prueba cómo cambia una respuesta de Claude.',
+      'Si tienes textos propios que te gusten (artículos, emails, propuestas): crea un Style personalizado. Clic en "Create a Style" → carga 3-5 ejemplos → Claude los analiza y genera el perfil.',
+      'Prueba tu Style personalizado: pide a Claude que escriba un párrafo sobre tu trabajo. ¿Suena como tú o suena genérico? Si suena genérico, los ejemplos que cargaste no son representativos de tu voz — busca textos más característicos.',
+      'Define cuándo usarás Modo Incógnito: escribe en una nota personal los 2-3 tipos de conversaciones que harás en Incógnito para que no contaminen tu memoria global.',
+    ],
+    checkpoint: 'El sistema está funcionando cuando: (1) Settings → Memory muestra información útil sobre tu contexto real. (2) Al iniciar un chat nuevo, Claude te trata de forma diferente a alguien sin contexto — hace referencias a lo que sabe de tu trabajo. (3) Con tu Style activo, un párrafo generado por Claude suena perceptiblemente más como tú que sin el Style.',
   },
 }

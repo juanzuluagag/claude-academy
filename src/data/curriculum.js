@@ -4,9 +4,11 @@ import { SKILLS_LESSONS } from './skillsLessons.js'
 import { PROJECT_KNOWLEDGE_OS, PROJECT_LIVING_ACADEMY, PROJECT_PHOTOGRAPHY_WEB, PROJECT_QA_AGENT } from './mod6Projects.js'
 import { CLAUDE_DESIGN_LESSONS } from './claudeDesignLessons.js'
 import { ADVISOR_STRATEGY_LESSON, CCA_LESSON } from './updateLessons.js'
-import { THINKING_LESSON, COMPUTER_USE_LESSON, MANAGED_AGENTS_LESSON, PROMPT_CACHING_LESSON, CONNECTORS_LESSON, ENTERPRISE_LESSON, TOKEN_SAVING_LESSON, WHATSAPP_AGENT_LESSON, TECH_STACK_LESSON, MCP_BUILD_LESSON, MCP_ECOSYSTEM_LESSON, AI_SAFETY_ADVANCED, AI_SAFETY_EVALS, MICROSOFT365_LESSON } from './gapLessons.js'
+import { THINKING_LESSON, COMPUTER_USE_LESSON, MANAGED_AGENTS_LESSON, CONNECTORS_LESSON, ENTERPRISE_LESSON, TOKEN_SAVING_LESSON, WHATSAPP_AGENT_LESSON, TECH_STACK_LESSON, MCP_BUILD_LESSON, MCP_ECOSYSTEM_LESSON, AI_SAFETY_ADVANCED, AI_SAFETY_EVALS, MICROSOFT365_LESSON, PROMPT_INJECTION_LESSON } from './gapLessons.js'
+import { AGENT_INTRO_LESSON, AGENT_ARCHITECTURES_LESSON, AGENT_ORCHESTRATION_LESSON, AGENT_SDK_LESSON } from './agentLessons.js'
 import { CLAUDE_CODE_LESSONS, DREAMING_LESSON } from './claudeCodeLessons.js'
-import { IDENTITY_SETUP_LESSON, CONTEXT_ENGINEERING_LESSON, SCHEDULED_TASKS_LESSON, AI_SAFETY_LESSON, EVALS_LESSON } from './newLessons.js'
+import { IDENTITY_SETUP_LESSON, CONTEXT_ENGINEERING_LESSON, SCHEDULED_TASKS_LESSON, AI_SAFETY_LESSON, EVALS_LESSON, CHAT_MEMORY_LESSON } from './newLessons.js'
+import { COWORK_INTRO_LESSON, SMALL_BUSINESS_LESSON } from './coworkLessons.js'
 
 export const MODULES = [
   {
@@ -133,16 +135,16 @@ export const MODULES = [
 ]
 
 export const LESSONS = {
-  mod0: [IDENTITY_SETUP_LESSON],
-  mod_safety: [AI_SAFETY_LESSON, AI_SAFETY_ADVANCED, AI_SAFETY_EVALS],
+  mod0: [IDENTITY_SETUP_LESSON, CHAT_MEMORY_LESSON],
+  mod_safety: [AI_SAFETY_LESSON, AI_SAFETY_ADVANCED, AI_SAFETY_EVALS, PROMPT_INJECTION_LESSON],
   mod_skills: SKILLS_LESSONS,
   mod2: [...CLAUDE_CODE_LESSONS, ADVISOR_STRATEGY_LESSON],
-  mod3: [COMPUTER_USE_LESSON, SCHEDULED_TASKS_LESSON, WHATSAPP_AGENT_LESSON, MICROSOFT365_LESSON],
-  mod4: [MANAGED_AGENTS_LESSON, EVALS_LESSON, DREAMING_LESSON],
+  mod3: [COWORK_INTRO_LESSON, COMPUTER_USE_LESSON, SCHEDULED_TASKS_LESSON, WHATSAPP_AGENT_LESSON, MICROSOFT365_LESSON, SMALL_BUSINESS_LESSON],
+  mod4: [AGENT_INTRO_LESSON, AGENT_ARCHITECTURES_LESSON, AGENT_ORCHESTRATION_LESSON, AGENT_SDK_LESSON, MANAGED_AGENTS_LESSON, EVALS_LESSON, DREAMING_LESSON],
   mod5: [CONNECTORS_LESSON, MCP_BUILD_LESSON, MCP_ECOSYSTEM_LESSON],
   mod7: [...CLAUDE_DESIGN_LESSONS],
   mod_close: [CCA_LESSON],
-  mod6: [TECH_STACK_LESSON, PROJECT_KNOWLEDGE_OS, PROJECT_LIVING_ACADEMY, PROJECT_PHOTOGRAPHY_WEB, PROJECT_QA_AGENT],
+  mod6: [TECH_STACK_LESSON, ENTERPRISE_LESSON, PROJECT_KNOWLEDGE_OS, PROJECT_LIVING_ACADEMY, PROJECT_PHOTOGRAPHY_WEB, PROJECT_QA_AGENT],
   mod1: [
     {
       id: 'mod1_l1',
@@ -990,7 +992,7 @@ export const GLOSSARY = [
     cat: 'Plataforma',
     def: 'Plataformas cloud de Amazon y Google que ofrecen acceso a Claude sin usar la API directa de Anthropic. Útil para empresas que ya tienen infraestructura en AWS o GCP y quieren facturación unificada.',
     ex: 'Una empresa con toda su infraestructura en AWS usando Claude a través de Bedrock para cumplimiento y facturación centralizada.',
-  },,
+  },
 
   // ── NUEVOS TÉRMINOS — MAYO 2026 ────────────────────────────────────────────
   {
@@ -1088,7 +1090,7 @@ export const GLOSSARY = [
     cat: 'Técnico',
     def: 'Red de servidores distribuidos globalmente que entrega contenido (fotos, videos, código) desde el servidor más cercano al usuario. Reduce el tiempo de carga dramáticamente. Vercel y Supabase Storage usan CDN automáticamente.',
     ex: 'Un cliente en Bogotá ve sus fotos desde un servidor en Latinoamérica. Uno en Madrid las ve desde Europa. Mismo archivo, mucho más rápido que si viniera de un único servidor en California.',
-  },,
+  },
 
   // ── CLAUDE CODE AVANZADO — MAYO 2026 ──────────────────────────────────────
   {
@@ -1169,13 +1171,12 @@ export const GLOSSARY = [
     def: 'Plataforma oficial de aprendizaje de Anthropic, lanzada marzo 2026. 17+ cursos gratuitos con certificados oficiales compartibles en LinkedIn. Cubre desde Claude 101 hasta MCP avanzado, Claude Code y subagentes. Sin suscripción de pago requerida. URL: anthropic.skilljar.com.',
     ex: 'Tras completar este curso, puedes obtener certificaciones oficiales de Anthropic en anthropic.skilljar.com para validar tu experticia en LinkedIn.',
   },
-,
   {
     term: 'Hallmark',
     cat: 'Herramientas',
     def: 'Skill open source lanzada el 19 mayo 2026 por Hassan El Mghari (@nutlope) de Together AI. Encodes 22 temas y 65 "slop-test gates" anti-diseño-genérico de IA en Claude Code, Cursor y Codex. Antes de entregar cualquier UI, Claude verifica tipografía, color, layout, motion y microinteracciones contra estas reglas. Instalar: npx skills add nutlope/hallmark.',
     ex: 'Con Hallmark activo, Claude no genera el típico diseño azul-sobre-blanco genérico. En cambio aplica pares tipográficos distintivos, sistemas de variables CSS coherentes y composición espacial que rompe con los defaults de IA.',
-  },,
+  },
 
   // ── TÉRMINOS NUEVOS — BUILD FINAL MAYO 2026 ───────────────────────────────
   {
@@ -1209,48 +1210,6 @@ export const GLOSSARY = [
     ex: 'Caminas entre sesiones de fotos y le dices a Claude tus ideas para el siguiente proyecto. Claude responde verbalmente con sugerencias.',
   },
   {
-    term: 'Claude Certified Architect (CCA)',
-    cat: 'Plataforma',
-    def: 'Primera certificación técnica oficial de Anthropic, lanzada el 12 de marzo de 2026. Valida expertise en diseño e implementación de soluciones de producción con Claude. 60 preguntas de opción múltiple, score mínimo 720/1000. 5 dominios: Agentic Architecture (27%), Claude Code, Tool Design & MCP (40% combinados), Prompt Engineering, Safety. Requiere Claude Partner Network (membresía gratuita).',
-    ex: 'Después de completar Claude Academy y practicar con los proyectos reales, puedes solicitar la certificación en anthropic.com/partners para validar formalmente tu expertise.',
-  },
-  {
-    term: 'gstack',
-    cat: 'Herramientas',
-    def: 'Toolkit open source de 23 slash commands creado por Garry Tan (CEO de Y Combinator) que convierte Claude Code en un equipo de ingeniería virtual. Loop de sprint: /office-hours → /plan-ceo-review → /plan-eng-review → build → /review → /qa → /ship. Cada skill pasa su output a la siguiente. 97,000+ estrellas en GitHub. MIT licensed. Instalación: npx skills add garrytan/gstack.',
-    ex: '/office-hours hace 6 preguntas de presión que refinan el scope antes de escribir código. /review lanza un staff engineer virtual que scannea bugs y auto-aplica fixes.',
-  },
-  {
-    term: 'Superpowers (plugin)',
-    cat: 'Herramientas',
-    def: 'Framework de Skills aceptado en el marketplace oficial de Anthropic (enero 2026). 29,000+ estrellas en GitHub. Implementa: brainstorming socrático previo al código, TDD con ciclos red-green-refactor obligatorios, ejecución por subagentes en paralelo, debugging de 4 fases con análisis de causa raíz. Disponible en claude.com/plugins. Slash commands principales: /brainstorming, /execute-plan.',
-    ex: 'Antes de implementar cualquier feature, /brainstorming hace preguntas que refinan los requisitos. Los tests se escriben antes de la implementación — si el test pasa sin código, algo está mal.',
-  },
-  {
-    term: 'Composio',
-    cat: 'MCP',
-    def: 'Capa de integración MCP que da acceso OAuth a 100+ herramientas sin necesidad de que cada una tenga su propio servidor MCP: HubSpot, Salesforce, Meta Ads, LinkedIn Ads, Google Sheets, Slack y muchas más. Especialmente útil para herramientas que no tienen integración MCP nativa. Compatible con Claude Code y otros agentes.',
-    ex: 'Quieres que tu agente pueda escribir en un Google Sheet de resultados. Google Sheets no tiene MCP nativo — Composio lo expone como herramienta MCP en minutos.',
-  },
-  {
-    term: 'Firecrawl MCP',
-    cat: 'MCP',
-    def: 'Servidor MCP para web scraping masivo. Convierte páginas web en Markdown limpio para consumo de LLMs. Documentado por la comunidad como reductor del 80% de tokens vs dar HTML crudo a Claude. Compatible con Claude Code y agentes de investigación.',
-    ex: 'En lugar de darle a Claude el HTML de 50KB de una página web (con CSS, scripts y markup), Firecrawl extrae solo el contenido en Markdown — ~10KB de información real, 80% menos tokens.',
-  },
-  {
-    term: '/simplify',
-    cat: 'API & Dev',
-    def: 'Bundled skill nativa de Claude Code (no requiere instalación). Lanza 3 agentes de revisión en paralelo sobre el código modificado recientemente: uno para reuso de código, uno para calidad, uno para eficiencia. Agrega los hallazgos y aplica los fixes automáticamente. Usar después de implementar cualquier feature.',
-    ex: 'Después de implementar el componente de galería: /simplify → Claude lanza 3 revisores en paralelo → detecta código duplicado y lo refactoriza → commit más limpio.',
-  },
-  {
-    term: '/batch',
-    cat: 'API & Dev',
-    def: 'Bundled skill nativa de Claude Code. Describe un cambio en lenguaje natural y Claude descompone el trabajo en hasta 30 unidades independientes, lanza un agente por unidad en worktrees aislados, y abre un PR por unidad. Para refactorizaciones o actualizaciones que afectan muchos archivos.',
-    ex: '/batch "Agrega error handling a todos los API endpoints" → Claude identifica 15 endpoints → lanza 15 agentes en paralelo → cada uno actualiza su archivo → 15 PRs listos para review.',
-  },
-  {
     term: 'Prompt Injection',
     cat: 'Técnico',
     def: 'Ataque de seguridad donde un actor malicioso embebe instrucciones en contenido que el agente va a procesar — un documento, una página web, un email — que el modelo ejecuta como si fueran instrucciones legítimas. Claude Haiku 4.5 tiene cero protección contra este vector. Sonnet 4.6 y Opus 4.7 tienen protecciones significativamente mayores.',
@@ -1280,7 +1239,6 @@ export const GLOSSARY = [
     def: 'Ventana de contexto de 1 millón de tokens disponible en Opus 4.7, Opus 4.6 y Sonnet 4.6 sin surcharge desde el 13 de marzo de 2026. Una request de 900K tokens cuesta la misma tasa por token que una de 9K. Equivale a ~750,000 palabras, ~10 novelas completas, o un codebase mediano completo en memoria activa simultánea. Haiku 4.5 tiene 200K.',
     ex: 'Con 1M tokens puedes dar a Claude todo el codebase de un proyecto de 50,000 líneas, más la documentación, más el historial de PRs relevantes — todo en contexto activo al mismo tiempo.',
   },
-,
 
   // ── TÉRMINOS NUEVOS — BUILD FINAL MAYO 2026 ───────────────────────────────
   {
