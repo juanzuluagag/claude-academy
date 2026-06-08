@@ -614,6 +614,12 @@ export const WORKTREES_LESSON = {
     },
     {
       type: 'concept',
+      title: 'Agent View: gestiona todas tus sesiones desde un solo CLI',
+      body: 'Lanzado en mayo de 2026, Agent View es una feature del CLI de Claude Code que permite gestionar múltiples sesiones activas desde una sola vista sin cambiar de terminal:\n\nActivación: escribe /view en cualquier sesión de Claude Code o lanza claude --view.\n\nLo que muestra: lista de todas las sesiones activas con su status (working, waiting, done), el worktree o directorio de cada una, y el último mensaje del agente.\n\nInteracción inline: puedes responder a cualquier sesión directamente desde Agent View sin hacer switch de terminal. Útil cuando tienes 4 agentes corriendo y uno pide confirmación — respondes desde la vista central y el agente continúa.\n\nMonitoreo de progreso: cada sesión muestra el porcentaje de avance estimado y los archivos que está modificando en tiempo real. Si un agente se queda stuck o tarda demasiado, lo ves inmediatamente.',
+      highlight: 'Agent View no reemplaza los worktrees — los complementa. Los worktrees proveen el aislamiento; Agent View provee la visibilidad centralizada. Son la capa de orquestación visual que faltaba.',
+    },
+    {
+      type: 'concept',
       title: 'Casos de uso reales documentados por la comunidad',
       body: 'Caso 1 — 4 PRs antes del almuerzo: worktrees para 4 cards del backlog. Cada agente trabaja en su branch, tú revisas los PRs cuando terminan. Caso 2 — Migración de base de datos con cobertura de tests: agente 1 escribe las migraciones, agente 2 escribe los tests de integración en paralelo. Se unen en la branch final. Caso 3 — Refactorización multi-módulo: cada módulo en su worktree, sin riesgo de conflictos de merge. Caso 4 — Pipeline de investigación: AgentKit con AutoResearch donde cada rama de la investigación corre en su worktree y los resultados se consolidan.',
       highlight: null,

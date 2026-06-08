@@ -1397,6 +1397,12 @@ export const MCP_ECOSYSTEM_LESSON = {
           color: '#10B981',
           desc: 'OAuth para 100+ herramientas sin servidor MCP nativo: HubSpot, Salesforce, Meta Ads, LinkedIn Ads, Google Sheets, Slack. Instala Composio una vez y tienes acceso a todo su ecosistema.',
         },
+        {
+          name: 'Legal Industry Suite',
+          tag: 'Vertical: Derecho',
+          color: '#7C3AED',
+          desc: 'Lanzado en mayo 2026: 20+ conectores MCP y 12 plugins de área de práctica para bufetes y equipos legales internos. Cubre: investigación legal, contratos, e-discovery, gestión de asuntos y monitoreo regulatorio. Si tu stack incluye clientes del sector legal, este es el point of entry más rápido.',
+        },
       ],
     },
     {
