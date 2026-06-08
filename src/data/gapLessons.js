@@ -1628,7 +1628,7 @@ export const AI_SAFETY_EVALS = {
     {
       type: 'concept',
       title: 'El Evaluator pattern: Claude evalúa su propio output',
-      body: 'El patrón más poderoso para producción: un segundo agente (el Evaluator) revisa el output del primero (el Generator) de forma independiente. El Generator produce la propuesta de valor. El Evaluator la revisa contra el rubric. Si no cumple, el Generator revisa basado en el feedback. El loop continúa hasta pasar el rubric. Este es el mismo patrón detrás del feature "Outcomes" (Lección 6.3) lanzado en Code with Claude 2026 — que documentó +10.1% de mejora en calidad sin cambiar el modelo.',
+      body: 'El patrón más poderoso para producción: un segundo agente (el Evaluator) revisa el output del primero (el Generator) de forma independiente. El Generator produce la propuesta de valor. El Evaluator la revisa contra el rubric. Si no cumple, el Generator revisa basado en el feedback. El loop continúa hasta pasar el rubric. Este es el mismo patrón detrás del feature "Outcomes" (Lección 6.7) lanzado en Code with Claude 2026 — que documentó +10.1% de mejora en calidad sin cambiar el modelo.',
       highlight: null,
     },
   ],

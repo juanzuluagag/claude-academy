@@ -267,3 +267,116 @@ export const SMALL_BUSINESS_LESSON = {
     checkpoint: 'El workflow está funcionando cuando el primer email de seguimiento que Claude envía llega con el tono correcto, el monto correcto, y la sensación de que lo escribiste tú. Si un cliente responde sin darse cuenta de que fue automático, el workflow está perfecto.',
   },
 }
+
+// ─── PROYECTO MAESTRO 5.7 — STACK DE AUTOMATIZACIÓN COMPLETO ─────────────────
+export const COWORK_PROJECT_LESSON = {
+  id: 'mod3_project',
+  num: '5.7',
+  title: 'Proyecto: Stack de automatización completo — CoWork + Chrome + M365',
+  duration: '3-4 horas (proyecto de fin de semana)',
+  xpReward: 120,
+  videoId: 'NO_VIDEO',
+  videoCaption: 'Animación interactiva incluida',
+  content: [
+    {
+      type: 'intro',
+      text: 'Has aprendido CoWork, Chrome, Computer Use, Scheduled Tasks, WhatsApp, Microsoft 365 y Small Business workflows — cada uno por separado. Este proyecto integrador conecta todas esas piezas en un stack de automatización real para tu negocio. Al terminar tendrás un sistema que investiga, procesa, responde y reporta automáticamente — sin que tú intervengas en cada paso.',
+    },
+    {
+      type: 'concept',
+      title: 'Qué vas a construir',
+      body: 'Un pipeline de gestión de leads de 5 etapas:\n\n1. CAPTURA: WhatsApp AgentKit recibe consultas de clientes potenciales. Claude clasifica automáticamente: urgente, medio, bajo.\n\n2. INVESTIGACIÓN: Claude for Chrome investiga al prospecto — LinkedIn, web, noticias recientes. Genera un perfil de 1 página.\n\n3. PROPUESTA: Claude crea la propuesta personalizada en Word y el presupuesto en Excel vía Microsoft 365.\n\n4. SEGUIMIENTO: Scheduled Task revisa cada 48h si el prospecto respondió. Si no, Claude redacta y envía un follow-up personalizado vía Outlook.\n\n5. REPORTE: Cada lunes 9AM, Claude genera en Excel un dashboard de estado del pipeline: leads nuevos, propuestas enviadas, en seguimiento, cerrados.\n\nTodo el pipeline corre con mínima intervención tuya — solo apruebas propuestas antes de enviarlas.',
+      highlight: 'Este proyecto replica el stack que usan los primeros 500 usuarios de Claude CoWork en negocios de servicios profesionales. Tiempo promedio de implementación documentado: 4-6 horas de setup inicial.',
+    },
+    {
+      type: 'cards',
+      title: 'Stack completo del proyecto',
+      items: [
+        {
+          name: 'WhatsApp AgentKit',
+          tag: 'Captura — Lección 5.3',
+          color: '#25D366',
+          desc: 'Entrada del pipeline. Clasifica consultas entrantes por urgencia, tipo de servicio solicitado, y potencial de conversión. Notifica en tiempo real para los urgentes.',
+        },
+        {
+          name: 'Claude for Chrome',
+          tag: 'Investigación — Lección 5.0a',
+          color: '#4285F4',
+          desc: 'Perfil automático del prospecto: LinkedIn, web corporativa, noticias recientes. Entras a la reunión sabiendo más del cliente que él de ti.',
+        },
+        {
+          name: 'Microsoft 365',
+          tag: 'Propuesta — Lección 5.4',
+          color: '#0078D4',
+          desc: 'Word para la propuesta formal, Excel para el presupuesto detallado, PowerPoint para la presentación ejecutiva. Todo en un flujo de conversación continua sin cambiar de app.',
+        },
+        {
+          name: 'Scheduled Tasks + Outlook',
+          tag: 'Seguimiento — Lección 5.2',
+          color: '#0F6CBD',
+          desc: 'Seguimiento automatizado cada 48h. Claude adapta el tono del follow-up según el histórico y envía vía Outlook con tu firma.',
+        },
+        {
+          name: 'CoWork Dashboard',
+          tag: 'Reporte — Lección 5.0',
+          color: '#8B5CF6',
+          desc: 'Scheduled Task lunes 9AM: Claude genera el reporte de pipeline en Excel con estado de cada lead, revenue potencial y próximas acciones.',
+        },
+      ],
+    },
+    {
+      type: 'concept',
+      title: 'Lo que va en el CLAUDE.md de CoWork',
+      body: 'El CLAUDE.md de CoWork para este proyecto es el "manual de operaciones" que Claude lee antes de actuar. Sin él, Claude toma decisiones genéricas. Con él, toma decisiones como si conociera tu negocio desde hace meses.\n\nSecciones obligatorias:\n\n1. Criterios de clasificación de leads: qué hace que una consulta sea urgente (presupuesto alto, referido, deadline específico), media (interés real pero sin urgencia), o baja (solo cotizando).\n\n2. Estructura de propuesta: tus secciones habituales, tu forma de presentar precios, los elementos que siempre incluyes.\n\n3. Tono y voz: cómo escribes a clientes — formal/informal, cuánto detalle das, qué saludos usas.\n\n4. Reglas de seguimiento: cuándo escalar a llamada (tercer follow-up sin respuesta), cuándo desestimar (30 días sin respuesta), qué decir en cada situación.',
+      highlight: null,
+    },
+  ],
+  quiz: [
+    {
+      q: '¿Cuál es el rol de CoWork en el stack de automatización de este proyecto?',
+      opts: [
+        'CoWork solo maneja el reporte semanal en Excel',
+        'CoWork es el orquestador central — coordina cuándo y cómo se activan Chrome, M365 y Scheduled Tasks',
+        'CoWork reemplaza a WhatsApp como canal de entrada de leads',
+        'CoWork solo funciona cuando el computador está activo con el usuario presente',
+      ],
+      correct: 1,
+      exp: 'CoWork actúa como el cerebro del pipeline: recibe la señal de WhatsApp, decide qué pasos ejecutar en qué orden, lanza Chrome para la investigación, activa M365 para los documentos, y programa los Scheduled Tasks de seguimiento. Sin CoWork como orquestador, cada herramienta sería manual.',
+    },
+    {
+      q: '¿Por qué el seguimiento automático vía Outlook es más efectivo que uno genérico?',
+      opts: [
+        'Los emails automáticos tienen mejor tasa de entrega técnica',
+        'Claude adapta el tono y contenido del follow-up según el histórico del prospecto — referencia la conversación anterior, no un template genérico',
+        'Outlook tiene IA integrada que mejora los emails automáticamente',
+        'Los clientes responden más a emails que a mensajes de WhatsApp',
+      ],
+      correct: 1,
+      exp: 'El valor está en la personalización contextual: Claude usa el historial acumulado para adaptar cada follow-up — qué se discutió, qué objeciones hubo, cuánto tiempo pasó. Un seguimiento que referencia la conversación anterior convierte significativamente mejor que uno genérico.',
+    },
+    {
+      q: '¿Qué pasa si no configuras el CLAUDE.md de CoWork antes de activar el pipeline?',
+      opts: [
+        'El pipeline no arranca — el CLAUDE.md es obligatorio para que CoWork funcione',
+        'Claude toma decisiones genéricas: clasifica leads sin tus criterios, crea propuestas sin tu estructura, escribe con un tono que no es el tuyo',
+        'Solo falla la etapa de seguimiento — el resto funciona igual',
+        'CoWork usa el CLAUDE.md del proyecto Claude Code si existe',
+      ],
+      correct: 1,
+      exp: 'El CLAUDE.md no es obligatorio técnicamente — el pipeline puede correr sin él. Pero el resultado será genérico: leads mal clasificados, propuestas que no reflejan tu forma de trabajar, follow-ups con un tono que no es el tuyo. El CLAUDE.md es lo que convierte a Claude de un asistente genérico en uno que conoce tu negocio.',
+    },
+  ],
+  challenge: {
+    title: 'Proyecto 5.7 — Implementa el pipeline completo en tu negocio',
+    desc: 'Construye el stack de automatización de 5 etapas adaptado a tu tipo de negocio.',
+    steps: [
+      'Escribe el CLAUDE.md de CoWork para este proyecto: criterios de clasificación de leads, estructura de propuesta, tono habitual con clientes, y reglas de seguimiento.',
+      'Verifica que tienes los 5 conectores activos: WhatsApp AgentKit (5.3), Claude for Chrome (5.0a), Microsoft 365 add-in (5.4), CoWork con Scheduled Tasks (5.0/5.2), y Outlook (beta en 5.4).',
+      'Configura el flujo de captura en WhatsApp AgentKit: añade la instrucción de clasificación. Prueba enviando un mensaje como si fueras un cliente potencial.',
+      'Crea el Skill de investigación en CoWork: cuando llega un lead clasificado como medio o urgente, Claude for Chrome investiga al prospecto y guarda el perfil en una carpeta local.',
+      'Conecta la etapa de propuesta: con el perfil del prospecto disponible, Claude abre M365 y genera la propuesta en Word y el presupuesto en Excel usando tu plantilla del CLAUDE.md.',
+      'Programa el Scheduled Task de seguimiento (cada 48h) y el reporte semanal (lunes 9AM). Corre el pipeline completo con un lead real o de prueba y verifica que las 5 etapas se activan correctamente.',
+    ],
+    checkpoint: 'El proyecto está completo cuando: (1) un mensaje de WhatsApp pasa por las 5 etapas con mínima intervención tuya — solo apruebas la propuesta antes de enviarla, y (2) el lunes siguiente recibes el reporte de pipeline en Excel generado automáticamente.',
+  },
+}

@@ -8,7 +8,7 @@ import { THINKING_LESSON, COMPUTER_USE_LESSON, MANAGED_AGENTS_LESSON, CONNECTORS
 import { AGENT_INTRO_LESSON, AGENT_ARCHITECTURES_LESSON, AGENT_ORCHESTRATION_LESSON, AGENT_SDK_LESSON } from './agentLessons.js'
 import { CLAUDE_CODE_LESSONS, DREAMING_LESSON } from './claudeCodeLessons.js'
 import { IDENTITY_SETUP_LESSON, CONTEXT_ENGINEERING_LESSON, SCHEDULED_TASKS_LESSON, AI_SAFETY_LESSON, EVALS_LESSON, CHAT_MEMORY_LESSON } from './newLessons.js'
-import { COWORK_INTRO_LESSON, SMALL_BUSINESS_LESSON } from './coworkLessons.js'
+import { COWORK_INTRO_LESSON, SMALL_BUSINESS_LESSON, COWORK_PROJECT_LESSON } from './coworkLessons.js'
 import { MODELS_GUIDE_LESSON, CONSTITUTION_LESSON, CHROME_AGENT_LESSON, ADOBE_LESSON, ANT_CLI_LESSON, CHECKPOINTS_GITHUB_LESSON, MEMORY_API_LESSON, CLAUDE_SECURITY_LESSON, AWS_PLATFORM_LESSON } from './gap2Lessons.js'
 
 export const MODULES = [
@@ -140,7 +140,7 @@ export const LESSONS = {
   mod_safety: [CONSTITUTION_LESSON, AI_SAFETY_LESSON, AI_SAFETY_ADVANCED, AI_SAFETY_EVALS, PROMPT_INJECTION_LESSON, CLAUDE_SECURITY_LESSON],
   mod_skills: SKILLS_LESSONS,
   mod2: [...CLAUDE_CODE_LESSONS, ANT_CLI_LESSON, CHECKPOINTS_GITHUB_LESSON, ADVISOR_STRATEGY_LESSON],
-  mod3: [COWORK_INTRO_LESSON, CHROME_AGENT_LESSON, COMPUTER_USE_LESSON, SCHEDULED_TASKS_LESSON, WHATSAPP_AGENT_LESSON, MICROSOFT365_LESSON, SMALL_BUSINESS_LESSON],
+  mod3: [COWORK_INTRO_LESSON, CHROME_AGENT_LESSON, COMPUTER_USE_LESSON, SCHEDULED_TASKS_LESSON, WHATSAPP_AGENT_LESSON, MICROSOFT365_LESSON, SMALL_BUSINESS_LESSON, COWORK_PROJECT_LESSON],
   mod4: [AGENT_INTRO_LESSON, AGENT_ARCHITECTURES_LESSON, AGENT_ORCHESTRATION_LESSON, AGENT_SDK_LESSON, MANAGED_AGENTS_LESSON, EVALS_LESSON, DREAMING_LESSON, MEMORY_API_LESSON],
   mod5: [CONNECTORS_LESSON, MCP_BUILD_LESSON, MCP_ECOSYSTEM_LESSON],
   mod7: [...CLAUDE_DESIGN_LESSONS, ADOBE_LESSON],
@@ -1392,6 +1392,68 @@ export const GLOSSARY = [
     cat: 'Claude Code',
     def: 'Integración de Claude Code con plataformas de mensajería (Telegram y Discord, lanzada el 20 de marzo de 2026) que permite enviar prompts, recibir resultados y aprobar/rechazar acciones directamente desde el chat. Útil para equipos distribuidos que quieren supervisar agentes de Claude Code sin abrir una terminal.',
     ex: 'Un dev team configura Claude Code Channel en su Discord de trabajo: Claude Code notifica cuando termina un PR, el lead aprueba el merge con un emoji de check, y Claude hace push automáticamente.',
+  },
+
+  // ── NUEVOS TÉRMINOS JUNIO 2026 ─────────────────────────────────────────────
+  {
+    term: 'ant CLI',
+    cat: 'Claude Code',
+    def: 'CLI oficial de Anthropic para la API de Claude. Permite llamar a cualquier endpoint de la plataforma Claude desde el terminal en una sola línea: crear y correr Managed Agents, llamar a la Messages API, versionar configs como YAML. Instalación: brew install anthropics/tap/ant. Lanzado el 8 de abril de 2026.',
+    ex: 'ant messages create --model claude-sonnet-4-6 --message "Revisa este código" | grep "ERROR" → análisis de seguridad pipeable al resto del ecosistema Unix.',
+  },
+  {
+    term: 'Memory API',
+    cat: 'Agentes',
+    def: 'API de la plataforma Claude para que los agentes guarden y recuperen información entre sesiones de forma programática. Distinta de Chat Memory (que es automática para el usuario en claude.ai): la Memory API da control total al developer — qué guardar, cuándo, con qué scope (user/session/agent-level) — y tiene audit log completo. Beta pública desde 23 de abril de 2026.',
+    ex: 'Un agente de soporte guarda las preferencias del usuario en Memory API. En la segunda llamada, Claude ya sabe el plan, los bugs previos y el estilo de comunicación preferido — sin que el usuario repita nada.',
+  },
+  {
+    term: 'Claude Security',
+    cat: 'Seguridad',
+    def: 'Herramienta de análisis de vulnerabilidades en código usando Opus 4.7, en beta pública desde el 30 de abril de 2026. A diferencia de un linter o SAST estático, Claude entiende el flujo del código y detecta vulnerabilidades con nivel de confianza (High/Medium/Low) por hallazgo, incluyendo una categoría única: prompt injection en código que construye prompts dinámicamente.',
+    ex: 'platform.claude.com → Security → Scan: Claude analiza auth.js, detecta que el JWT no valida la firma correctamente (High confidence, Critical severity), y genera el patch corregido.',
+  },
+  {
+    term: 'Adobe for Creativity Connector',
+    cat: 'Conectores',
+    def: 'Conector lanzado el 28 de abril de 2026 que da a Claude acceso directo a más de 50 herramientas de Adobe Creative Cloud: Photoshop, Lightroom, Illustrator, Premiere, InDesign, Firefly y Express. El usuario describe el objetivo y Claude orquesta flujos multi-app sin que el usuario abra las aplicaciones manualmente.',
+    ex: 'Prompt: "Selecciona las 50 mejores fotos de las 800 RAW de esta boda, aplica mis presets de Lightroom, retoca los 10 retratos en Photoshop y exporta en 3 formatos." Claude ejecuta el flujo completo en las apps de Adobe.',
+  },
+  {
+    term: 'Agent View',
+    cat: 'Claude Code',
+    def: 'Feature del CLI de Claude Code (mayo 2026) que muestra todas las sesiones activas en una sola vista centralizada: status de cada agente, worktree o directorio, último mensaje, y porcentaje de avance estimado. Permite responder a cualquier sesión sin cambiar de terminal. Activación: /view o claude --view.',
+    ex: 'Con 4 worktrees corriendo en paralelo, Agent View muestra el estado de cada uno. El agente de tests pide confirmación — respondes inline desde Agent View sin abrir esa terminal.',
+  },
+  {
+    term: 'Checkpoints (Claude Code)',
+    cat: 'Claude Code',
+    def: 'Sistema de snapshots automáticos de Claude Code: antes de cada acción significativa, Claude guarda el estado de todos los archivos modificados. Permite rollback instantáneo con Esc×2 o /rewind. Los checkpoints son por sesión y se guardan en ~/.claude/file-history/<sessionId>/.',
+    ex: 'Claude modifica 5 archivos para implementar un feature. Algo falla. /rewind → listado de checkpoints → seleccionas el estado anterior → todos los archivos vuelven al estado original en 3 segundos.',
+  },
+  {
+    term: 'Data residency',
+    cat: 'Empresarial',
+    def: 'Requisito legal o regulatorio de que los datos de usuarios se procesen y almacenen exclusivamente dentro de una geografía específica. Para Claude en AWS (Amazon Bedrock), se puede elegir la región donde se procesan los datos — eu-west-1 para cumplir con GDPR en Europa, ap-southeast-1 para APAC. Anthropic certifica que los datos no salen de la región seleccionada.',
+    ex: 'Una empresa española configura Claude en Bedrock con región eu-west-1: cumple GDPR sin arquitecturas adicionales, con CloudTrail logging automático de cada llamada.',
+  },
+  {
+    term: 'Claude Mythos',
+    cat: 'Modelos',
+    def: 'Modelo de propósito general experimental de Anthropic, actualmente disponible solo en preview cerrada via Project Glasswing para organizaciones de ciberseguridad defensiva. Capaz de encontrar y explotar vulnerabilidades de software al nivel de expertos humanos élite. No disponible para uso general — acceso ampliado esperado Q3 2026.',
+    ex: 'Dentro de Project Glasswing, Claude Mythos analiza el código de infraestructura crítica y encuentra vulnerabilidades de día cero antes de que actores maliciosos las exploten.',
+  },
+  {
+    term: 'Constitución de Claude',
+    cat: 'Seguridad',
+    def: 'Documento público (anthropic.com/claude/constitution) publicado en enero de 2026 que describe los valores, principios y comportamiento de Claude. No es una lista de reglas prohibitivas — es una guía holística que se usa directamente en el entrenamiento del modelo. Prioridades: (1) Broadly Safe, (2) Broadly Ethical, (3) Adherent to Principles, (4) Genuinely Helpful.',
+    ex: 'Entender la Constitución explica por qué Claude a veces dice no, por qué pide más contexto, y por qué la sobre-cautela (rechazos innecesarios) también es considerada un fallo por Anthropic.',
+  },
+  {
+    term: 'Claude for Chrome',
+    cat: 'CoWork',
+    def: 'Extensión de Chrome que convierte el navegador en un agente activo: Claude lee el contenido de la pestaña activa, puede navegar a otras URLs, hacer clicks, rellenar formularios y seguir flujos de múltiples pasos. Complementa CoWork (que orquesta el OS) actuando como la capa de investigación y extracción web. Disponible completo para usuarios Max, beta para Pro.',
+    ex: '"Navega a los 5 principales competidores de mi sector, extrae sus precios del plan Pro, y genera una tabla comparativa." Claude lo hace sin que el usuario copie ni pegue nada.',
   },
 
 ]

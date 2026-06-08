@@ -135,7 +135,7 @@ export const CCA_LESSON = {
           name: 'Dominio 1: Agentic Architecture (27%)',
           tag: 'Más pesado',
           color: '#EF4444',
-          desc: 'Loops agénticos, orquestación multi-agente, subagentes, human-in-the-loop, evals. → Módulo 4 completo (lecciones 4.5, 4.6, 4.7) + lección 2.7 Advisor Strategy.',
+          desc: 'Loops agénticos, orquestación multi-agente, subagentes, human-in-the-loop, evals. → Módulo 4 completo (lecciones 6.5, 6.6, 6.7) + lección 3.7 Advisor Strategy.',
         },
         {
           name: 'Dominio 2: Claude Code Configuration',

@@ -3,6 +3,8 @@ import { MODULES, LESSONS } from '../data/curriculum.js'
 import { useProgress } from '../hooks/useProgress.js'
 import { ProgressBar } from './UI.jsx'
 
+const TOTAL_XP = Object.values(LESSONS).flat().reduce((s, l) => s + (l.xpReward || 0), 0)
+
 export default function Sidebar({ collapsed, onToggle }) {
   const { pathname } = useLocation()
   const nav = useNavigate()
@@ -56,7 +58,7 @@ export default function Sidebar({ collapsed, onToggle }) {
             <span style={{ fontSize: '10px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', letterSpacing: '1px' }}>XP TOTAL</span>
             <span style={{ fontSize: '12px', color: 'var(--accent)', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>{progress.xp}</span>
           </div>
-          <ProgressBar value={progress.xp} max={1000} color="var(--accent)" height={4} />
+          <ProgressBar value={progress.xp} max={TOTAL_XP} color="var(--accent)" height={4} />
         </div>
       )}
 

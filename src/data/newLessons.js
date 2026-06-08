@@ -735,7 +735,7 @@ export const EVALS_LESSON = {
     {
       type: 'concept',
       title: 'El patrón Planner-Generator-Evaluator en la práctica',
-      body: 'Como viste en el módulo de Agentes (lección 4.5), el Evaluator es un agente separado que critica el output del Generator sin acceso a su razonamiento. Esto elimina el sesgo de auto-evaluación. En la práctica: el Generator produce un borrador, el Evaluator lo revisa contra el rubric y proporciona feedback estructurado, el Generator incorpora el feedback y produce la versión final. Este patrón mejora la tasa de éxito en ~10 puntos porcentuales en benchmarks de Anthropic.',
+      body: 'Como viste en el módulo de Agentes (lección 6.6), el Evaluator es un agente separado que critica el output del Generator sin acceso a su razonamiento. Esto elimina el sesgo de auto-evaluación. En la práctica: el Generator produce un borrador, el Evaluator lo revisa contra el rubric y proporciona feedback estructurado, el Generator incorpora el feedback y produce la versión final. Este patrón mejora la tasa de éxito en ~10 puntos porcentuales en benchmarks de Anthropic.',
       highlight: null,
     },
   ],

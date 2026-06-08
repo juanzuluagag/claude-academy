@@ -27,7 +27,7 @@ export const PROJECT_KNOWLEDGE_OS = {
       type: 'concept',
       title: 'Las 3 capas del sistema',
       body: 'Capa 1 — Storage (Obsidian): archivos Markdown en tu Mac. Portable, sin vendor lock-in, legible por humanos y máquinas. Capa 2 — Intelligence (Claude Code + Filesystem MCP): Claude lee tu vault completo, razona sobre él, genera outputs y lo actualiza. Capa 3 — Automation (Scheduled Tasks de CoWork o cron): los 5 workflows corren automáticamente según horario. Sin estas 3 capas juntas, tienes una herramienta, no un sistema.',
-      highlight: 'Para este proyecto usamos Scheduled Tasks de CoWork en lugar de N8N — ya lo tienes configurado desde la Lección 3.4 y está incluido en tu plan Pro. N8N es la alternativa para usuarios avanzados que quieren más control.',
+      highlight: 'Para este proyecto usamos Scheduled Tasks de CoWork en lugar de N8N — ya lo tienes configurado desde la Lección 5.2 y está incluido en tu plan Pro. N8N es la alternativa para usuarios avanzados que quieren más control.',
     },
     {
       type: 'cards',

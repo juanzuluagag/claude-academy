@@ -36,7 +36,7 @@ export default function Dashboard() {
           De Cero a Experto<br />en Claude IA
         </h1>
         <p style={{ color: 'var(--text-sub)', fontSize: '15px', maxWidth: '500px' }}>
-          16 semanas · 7 módulos · 15 lecciones · Sin brechas de conocimiento
+          19 semanas · {MODULES.length} módulos · {totalLessons} lecciones · Sin brechas de conocimiento
         </p>
       </div>
 

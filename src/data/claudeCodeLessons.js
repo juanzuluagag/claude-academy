@@ -926,7 +926,7 @@ export const DREAMING_LESSON = {
     {
       type: 'concept',
       title: 'Outcomes: outputs que se auto-evalúan',
-      body: 'El problema que resuelve: la mayoría de equipos confía en que el agente auto-reporte si su output es bueno. Eso no funciona — el agente que produjo el output tiene sesgo inherente para evaluarlo positivamente. Outcomes implementa el patrón Evaluator que vimos en la Lección 4.6: cuando el agente produce un output, un grader separado lo evalúa en su propio context window contra un rubric que tú defines. Si no cumple el estándar, el agente recibe el feedback y revisa. El loop continúa hasta que el output pasa el rubric.',
+      body: 'El problema que resuelve: la mayoría de equipos confía en que el agente auto-reporte si su output es bueno. Eso no funciona — el agente que produjo el output tiene sesgo inherente para evaluarlo positivamente. Outcomes implementa el patrón Evaluator que vimos en la Lección 6.6: cuando el agente produce un output, un grader separado lo evalúa en su propio context window contra un rubric que tú defines. Si no cumple el estándar, el agente recibe el feedback y revisa. El loop continúa hasta que el output pasa el rubric.',
       highlight: 'Dato del lanzamiento: 10.1% de mejora en calidad de output añadiendo el grader loop — sin cambiar el modelo. Anthropic enfatizó: "la mayoría de equipos está dejando calidad sobre la mesa no porque sus modelos sean malos, sino porque no tienen forma sistemática de verificar outputs antes de entregar."',
     },
     {
@@ -968,7 +968,7 @@ export const DREAMING_LESSON = {
     {
       type: 'concept',
       title: 'Cómo prepararte para estas capacidades hoy',
-      body: 'Dreaming requiere un memory store estructurado — empieza hoy creando un archivo memory.md en tu proyecto donde documentes las decisiones importantes, workarounds conocidos y preferencias del equipo. Cuando Dreaming esté disponible para tu plan, tendrás la base ya construida. Outcomes requiere escribir un rubric — practica definiendo criterios explícitos de calidad para los outputs de tus agentes actuales. Es el mismo ejercicio de Evals (Lección 4.6). Routines requieren configurar bien tu CLAUDE.md y Skills — los Routines usan la misma configuración de tu proyecto local.',
+      body: 'Dreaming requiere un memory store estructurado — empieza hoy creando un archivo memory.md en tu proyecto donde documentes las decisiones importantes, workarounds conocidos y preferencias del equipo. Cuando Dreaming esté disponible para tu plan, tendrás la base ya construida. Outcomes requiere escribir un rubric — practica definiendo criterios explícitos de calidad para los outputs de tus agentes actuales. Es el mismo ejercicio de Evals (Lección 6.6). Routines requieren configurar bien tu CLAUDE.md y Skills — los Routines usan la misma configuración de tu proyecto local.',
       highlight: 'La inversión más rentable ahora: definir bien tu memory.md y tu rubric. Cuando Dreaming y Outcomes estén en beta pública para tu plan, los activarás con 0 trabajo adicional porque ya tienes la base.',
     },
   ],
@@ -1015,7 +1015,7 @@ export const DREAMING_LESSON = {
       'Crea un archivo rubric.md en .claude/ con los criterios de calidad de los outputs más importantes que Claude produce para ti (emails, código, análisis). Formato "Dado/Cuando/Entonces" igual que los criterios de aceptación del PRD.',
       'Actualiza tu CLAUDE.md para incluir una referencia a ambos archivos: @memory.md para contexto histórico, @rubric.md para estándares de calidad.',
       'Registra tu interés en el research preview de Dreaming en console.anthropic.com si ya está disponible para tu región.',
-      'Practica el patrón Evaluator ya disponible (Lección 4.6): en tu próxima sesión importante, pídele a Claude que evalúe su propio output contra el rubric.md antes de entregártelo.',
+      'Practica el patrón Evaluator ya disponible (Lección 6.6): en tu próxima sesión importante, pídele a Claude que evalúe su propio output contra el rubric.md antes de entregártelo.',
     ],
     checkpoint: 'La base está lista cuando: (1) memory.md documenta el conocimiento que un agente nuevo necesitaría para no repetir errores pasados. (2) rubric.md define estándares tan claros que Claude puede autoevaluar si los cumple. (3) Cuando llegue el acceso a Dreaming, activas la feature con un comando — no con semanas de setup.',
   },
